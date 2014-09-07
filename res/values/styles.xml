@@ -88,4 +88,14 @@
         <item name="android:background">@android:color/transparent</item>
         <item name="android:drawableTop">@drawable/cpu_button</item>
     </style>
+    
+    <style name="setCpuProfileButton">
+        <item name="android:width">100dp</item>
+        <item name="android:height">100dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:drawableTop">@drawable/cpu_profile_button</item>
+    </style>
+    
 </resources>

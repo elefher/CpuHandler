@@ -2,6 +2,7 @@ package com.elefher.tab;
 
 import com.elefher.cpuhandler.R;
 import com.elefher.implementation.CpuFreqPicker;
+import com.elefher.implementation.CpuFreqProfile;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -16,5 +17,6 @@ public class ControlCpu extends Activity {
 		setContentView(R.layout.controlcpu);
 		
 		CpuFreqPicker cpuFreqPicker = new CpuFreqPicker(this);
+		CpuFreqProfile cpuFreqProfile = new CpuFreqProfile(this);
 	}
 }
