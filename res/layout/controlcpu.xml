@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- Screen Design for control cpu tab -->
+
+    <LinearLayout
+        android:id="@+id/controlCpuContent"
+        style="@style/Content" >
+
+        <LinearLayout
+            android:id="@+id/controlCpu"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/controlCpuTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/cpuTitle"
+                    style="@style/textTitle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/setcpu" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/freqText"
+                style="@style/Content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/minFreq"
+                    style="@style/textCpu"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/maxFreq"
+                    style="@style/textCpu"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/freqSeekBar"
+                style="@style/Content"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    style="@style/Content"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <SeekBar
+                        android:id="@+id/minFreqSeek"
+                        style="@style/cpuFreqBar"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" >
+                    </SeekBar>
+
+                    <TextView
+                        android:id="@+id/minFreqSeekProgress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/Content"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <SeekBar
+                        android:id="@+id/maxFreqSeek"
+                        style="@style/cpuFreqBar"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" >
+                    </SeekBar>
+
+                    <TextView
+                        android:id="@+id/maxFreqSeekProgress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/buttonSetCpuFreq"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:gravity="center" 
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/setCpuButton"
+                    style="@style/setCpuButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/separate"
+            style="@style/SeparateLine"
+            android:orientation="horizontal" />
+    </LinearLayout>
+
+</LinearLayout>

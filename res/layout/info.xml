@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000" >
+
+    <LinearLayout
+        android:id="@+id/cpuInfo"
+        style="@style/Content" >
+
+        <!-- Screen Design for Info tab -->
+
+        <TextView
+            android:id="@+id/device"
+            style="@style/GeneralInfo" />
+
+        <TextView
+            android:id="@+id/codename"
+            style="@style/GeneralInfo" />
+
+        <TextView
+            android:id="@+id/kernel"
+            style="@style/GeneralInfo" />
+
+        <TextView
+            android:id="@+id/brand"
+            style="@style/GeneralInfo" />
+
+        <View
+            android:id="@+id/separate"
+            style="@style/SeparateLine"
+            android:orientation="horizontal" />
+
+        <TextView
+            android:id="@+id/text"
+            style="@style/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/DeviceStatus" />
+
+        <TextView
+            android:id="@+id/cores"
+            style="@style/CpuStats" />
+
+        <TextView
+            android:id="@+id/currentMin"
+            style="@style/CpuStats" />
+
+        <TextView
+            android:id="@+id/currentMax"
+            style="@style/CpuStats" />
+
+        <TextView
+            android:id="@+id/scalingCurrent"
+            style="@style/CpuStats" />
+    </LinearLayout>
+
+</ScrollView>

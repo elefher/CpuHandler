@@ -1,0 +1,340 @@
+package com.elefher.tab;
+
+import java.util.ArrayList;
+
+import com.elefher.cpuhandler.R;
+import com.elefher.implementation.MiscProgressBar;
+import com.elefher.utils.BatteryStat;
+import com.elefher.utils.CpuStat;
+import com.elefher.utils.DeviceInfo;
+import com.elefher.utils.MemoryStat;
+import com.elefher.utils.ReadFile;
+
+import android.app.ActionBar.LayoutParams;
+import android.app.Activity;
+import android.graphics.Color;
+import android.graphics.Typeface;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+public class Info extends Activity {
+
+	/** Called when the activity is first created. */
+	public static int cores = CpuStat.getNumCores();
+	long totalMemory = MemoryStat.getTotalMemory();
+	MemoryStat memoryStat;
+	CpuStat cpuStats = new CpuStat();
+	BatteryStat batteryStat;
+	ArrayList<TextView> textViewList;
+	ArrayList<MiscProgressBar> circleProgressBars;
+	MiscProgressBar totalCpuLineProgressBar, memoryUsageProgressBar,
+			batteryTempProgressBar, cpuTempProgressBar;
+	TextView totalCpu, totalCpuCores, memoryUsage, batteryStats,
+			batteryMiscStats, batteryTempStat, cpuTemp;
+	private boolean started = false;
+	private Handler handler = new Handler();
+
+	LinearLayout.LayoutParams params1, paramsMem, paramsCircle, paramsLine,
+			paramsLineMem, paramWith2Lines, separateLine, marginLeft;
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.info);
+
+		memoryStat = new MemoryStat(this);
+
+		// Cpu status
+		LinearLayout lcpuInfo = (LinearLayout) findViewById(R.id.cpuInfo);
+
+		// linear layout params for circle cpu
+		marginLeft = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
+				LayoutParams.WRAP_CONTENT);
+		marginLeft.leftMargin = 10;
+
+		separateLine = new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT,
+				1);
+		separateLine.topMargin = 10;
+
+		paramsCircle = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
+				LayoutParams.WRAP_CONTENT);
+		paramsCircle.width = 120;
+		paramsCircle.height = 120;
+
+		paramsLine = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
+				LayoutParams.WRAP_CONTENT);
+		paramsLine.width = 350;
+		paramsLine.height = 10;
+		paramsLine.setMargins(0, 60, 0, 0);
+
+		paramsLineMem = new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT,
+				10);
+		paramsLineMem.width = 500;
+		paramsLineMem.height = 10;
+
+		paramWith2Lines = new LinearLayout.LayoutParams(
+				LayoutParams.FILL_PARENT, 50);
+
+		params1 = new LinearLayout.LayoutParams(300, LayoutParams.WRAP_CONTENT);
+		params1.setMargins(20, 40, 0, 0);
+
+		paramsMem = new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, 60);
+		paramsMem.setMargins(20, 40, 0, 0);
+
+		// Linear layout params for layout
+		LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+				LayoutParams.FILL_PARENT, 120);
+		layoutParams.topMargin = 10;
+
+		// display standard device info like kernel, os etc.
+		TextView textCodeName = (TextView) findViewById(R.id.codename);
+		textCodeName.setText(DeviceInfo.codeName);
+		TextView textDevice = (TextView) findViewById(R.id.device);
+		textDevice.setText(DeviceInfo.device);
+		TextView textKernel = (TextView) findViewById(R.id.kernel);
+		textKernel.setText(DeviceInfo.kernel);
+		TextView textBrand = (TextView) findViewById(R.id.brand);
+		textBrand.setText(DeviceInfo.brand);
+		// *************************************************
+
+		// Total cpu cores
+		totalCpuCores = (TextView) findViewById(R.id.cores);
+		totalCpuCores.setText("Total Cores: " + cores);
+
+		// Initialize progress bars
+		textViewList = new ArrayList<TextView>(cores);
+		circleProgressBars = new ArrayList<MiscProgressBar>(cores);
+		totalCpuLineProgressBar = new MiscProgressBar(this,
+				R.drawable.lineprogressbar, paramsLineMem);
+		memoryUsageProgressBar = new MiscProgressBar(this,
+				R.drawable.lineprogressbar, paramsLineMem);
+		batteryTempProgressBar = new MiscProgressBar(this,
+				R.drawable.lineprogressbar, paramsLineMem);
+		cpuTempProgressBar = new MiscProgressBar(this,
+				R.drawable.lineprogressbar, paramsLineMem);
+
+		// Memory stats
+		LinearLayout memoryLayout = new LinearLayout(this);
+		memoryLayout.setOrientation(LinearLayout.VERTICAL);
+		memoryLayout.setLayoutParams(paramsMem);
+		memoryUsage = new TextView(this);
+		memoryUsage.setTextColor(Color.WHITE);
+		memoryUsage.setText("Mem Usage: " + ("0 / " + totalMemory + "MB"));
+		memoryUsage.setLayoutParams(paramWith2Lines);
+		memoryUsageProgressBar.max((int) totalMemory);
+		memoryUsageProgressBar.setCurrentProgress(0);
+		memoryLayout.addView(memoryUsage);
+		memoryLayout.addView(memoryUsageProgressBar);
+		lcpuInfo.addView(memoryLayout);
+		// *************************************************************
+
+		// Total cpu usage
+		LinearLayout totalCpuLayout = new LinearLayout(this);
+		totalCpuLayout.setOrientation(LinearLayout.VERTICAL);
+		totalCpuLayout.setLayoutParams(paramsMem);
+		totalCpu = new TextView(this);
+		totalCpu.setTypeface(Typeface.MONOSPACE);
+		totalCpu.setLayoutParams(paramWith2Lines);
+		totalCpu.setTextColor(Color.WHITE);
+		totalCpu.setTextSize(15);
+		totalCpu.setText("Cpu Usage: ");
+		totalCpuLineProgressBar.max(100);
+		totalCpuLineProgressBar.setCurrentProgress(0);
+		totalCpuLayout.addView(totalCpu);
+		totalCpuLayout.addView(totalCpuLineProgressBar);
+		lcpuInfo.addView(totalCpuLayout);
+		// ****************************************************
+
+		// Create text views about cpu status
+		for (int i = 0; i < cores; i++) {
+			// Create every time a new linear layout in order to have a
+			// new line.
+			LinearLayout layout = new LinearLayout(this);
+			layout.setOrientation(LinearLayout.HORIZONTAL);
+			layout.setLayoutParams(layoutParams);
+
+			textViewList.add(i, new TextView(this));
+			textViewList.get(i).setTypeface(Typeface.MONOSPACE);
+			textViewList.get(i).setLayoutParams(params1);
+			textViewList.get(i).setTextColor(Color.WHITE);
+			textViewList.get(i).setTextSize(15);
+			textViewList.get(i).setText("Core " + i + ": ");
+			layout.addView(textViewList.get(i));
+
+			circleProgressBars.add(i, new MiscProgressBar(this,
+					R.drawable.ringprogressbar, paramsCircle));
+			circleProgressBars.get(i).max(100);
+			circleProgressBars.get(i).rotation(110);
+			circleProgressBars.get(i).setCurrentProgress(0);
+			layout.addView(circleProgressBars.get(i));
+
+			lcpuInfo.addView(layout);
+		}
+
+		// Display cpu temperature
+		LinearLayout cpuTempLayout = new LinearLayout(this);
+		cpuTempLayout.setOrientation(LinearLayout.VERTICAL);
+		cpuTempLayout.setLayoutParams(paramsMem);
+		cpuTemp = new TextView(this);
+		cpuTemp.setTextColor(Color.WHITE);
+		cpuTemp.setTypeface(Typeface.MONOSPACE);
+		cpuTemp.setTextSize(15);
+		cpuTemp.setLayoutParams(paramWith2Lines);
+		cpuTempProgressBar.max(100);
+		cpuTempProgressBar.setCurrentProgress(0);
+		cpuTempLayout.addView(cpuTemp);
+		cpuTempLayout.addView(cpuTempProgressBar);
+		displayCpuTemp();
+		lcpuInfo.addView(cpuTempLayout);
+
+		// Display a separate line
+		View separateL = new View(this);
+		separateL.setLayoutParams(separateLine);
+		separateL.setBackgroundColor(Color.rgb(255, 215, 0));
+		lcpuInfo.addView(separateL);
+
+		// Display Battery Status
+		batteryStats = new TextView(this);
+		batteryStats.setTextColor(Color.rgb(255, 215, 0));
+		batteryStats.setTypeface(Typeface.MONOSPACE);
+		batteryStats.setTextSize(20);
+		batteryStats.setLayoutParams(marginLeft);
+		batteryStats.setText(R.string.BatteryStatus);
+		lcpuInfo.addView(batteryStats);
+
+		// Battery misc stats
+		batteryStat = new BatteryStat(this);
+
+		batteryMiscStats = new TextView(this);
+		batteryMiscStats.setTextColor(Color.WHITE);
+		batteryMiscStats.setTypeface(Typeface.MONOSPACE);
+		batteryMiscStats.setTextSize(15);
+		batteryMiscStats.setLayoutParams(marginLeft);
+		displayBatteryStats();
+		lcpuInfo.addView(batteryMiscStats);
+
+		// Battery temperature stat
+		LinearLayout batteryTempLayout = new LinearLayout(this);
+		batteryTempLayout.setOrientation(LinearLayout.VERTICAL);
+		batteryTempLayout.setLayoutParams(paramsMem);
+		batteryTempStat = new TextView(this);
+		batteryTempStat.setTextColor(Color.WHITE);
+		batteryTempStat.setTypeface(Typeface.MONOSPACE);
+		batteryTempStat.setTextSize(15);
+		batteryTempStat.setLayoutParams(paramWith2Lines);
+		batteryTempProgressBar.max(100);
+		batteryTempProgressBar.setCurrentProgress(0);
+		batteryTempLayout.addView(batteryTempStat);
+		batteryTempLayout.addView(batteryTempProgressBar);
+		displayBatteryTemp();
+		lcpuInfo.addView(batteryTempLayout);
+
+		startCpuStatus();
+		// *******************************************************************
+	}
+
+	private Runnable runnable = new Runnable() {
+		@Override
+		public void run() {
+			ArrayList<Integer> stats = new ArrayList<Integer>();
+			stats = cpuStats.toArrayList();
+
+			// update memory usage
+			long usageMem = memoryStat.getUsageMemory();
+			memoryUsage.setText("Mem Usage: "
+					+ (usageMem + " / " + totalMemory + "MB"));
+			memoryUsageProgressBar.setCurrentProgress((int) usageMem);
+
+			// update total cpu usage
+			int totalCpuUsage = stats.get(0);
+			totalCpu.setText("Cpu Usage: " + totalCpuUsage + "%");
+			totalCpuLineProgressBar.setCurrentProgress(totalCpuUsage);
+
+			// Update cpu's cores percentages and circle bar
+			int corePer;
+			for (int i = 0; i < cores; i++) {
+				corePer = stats.get(i + 1);
+				textViewList.get(i).setText("Core " + i + ": " + corePer + "%");
+				circleProgressBars.get(i).setCurrentProgress(corePer);
+			}
+
+			TextView currentMin = (TextView) findViewById(R.id.currentMin);
+			currentMin
+					.setText("Current Min Freq: "
+							+ ReadFile
+									.getStringOfFile("/sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq"));
+
+			TextView currentMax = (TextView) findViewById(R.id.currentMax);
+			currentMax
+					.setText("Current Max Freq: "
+							+ ReadFile
+									.getStringOfFile("/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq"));
+
+			TextView scalingCurrent = (TextView) findViewById(R.id.scalingCurrent);
+			scalingCurrent
+					.setText("Scaling Current Freq: "
+							+ ReadFile
+									.getStringOfFile("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq"));
+
+			// Update cpu temperature
+			displayCpuTemp();
+
+			// Update Battery stats
+			displayBatteryStats();
+			displayBatteryTemp();
+
+			if (started) {
+				startCpuStatus();
+			}
+		}
+	};
+
+	public void stopCpuStatus() {
+		started = false;
+		handler.removeCallbacks(runnable);
+	}
+
+	public void startCpuStatus() {
+		started = true;
+		handler.postDelayed(runnable, 2000);
+	}
+
+	private void displayCpuTemp() {
+		int cpuT = Integer.parseInt(ReadFile
+				.getStringOfFile("/sys/class/thermal/thermal_zone0/temp"));
+		cpuTemp.setText("Cpu Temp: " + String.valueOf(cpuT) + " \u00b0C");
+		cpuTempProgressBar.setCurrentProgress(cpuT);
+	}
+
+	private void displayBatteryStats() {
+		String batMiscStats = "";
+		if (batteryStat.isPresent) {
+			batMiscStats += "Level: " + batteryStat.level + "% \n";
+			batMiscStats += "Battery Plugged in : "
+					+ batteryStat.getPlugTypeString(batteryStat.plugged) + "\n";
+			batMiscStats += "Voltage = " + batteryStat.voltage + " mV";
+			batMiscStats += " Health: "
+					+ batteryStat.getHealthString(batteryStat.health) + "\n";
+			batMiscStats += "Status: "
+					+ batteryStat.getStatusString(batteryStat.status);
+		} else {
+			batMiscStats = "Battery not present!!!";
+		}
+		batteryMiscStats.setText(batMiscStats);
+	}
+
+	private void displayBatteryTemp() {
+		String batteryTemp = "";
+		float bTemp = (float) batteryStat.temperature / 10;
+		if (batteryStat.isPresent) {
+			batteryTemp = "Battery Temperature: " + bTemp + " \u00b0C \n";
+			batteryTempProgressBar.setCurrentProgress(Math.round(bTemp));
+		} else {
+			batteryTemp = "Battery not present!!!";
+		}
+		batteryTempStat.setText(batteryTemp);
+	}
+}

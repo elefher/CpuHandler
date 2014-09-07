@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CpuHandler</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="info">Cpu Info!</string>
+    <string name="DeviceStatus">Device Status</string>
+    <string name="BatteryStatus">Battery Status</string>
+    <string name="setCpuButton">Set Cpu Freq</string>
+    <string name="setcpu">Control Cpu</string>
+
+</resources>
