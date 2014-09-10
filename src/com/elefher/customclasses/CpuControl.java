@@ -1,4 +1,4 @@
-package com.elefher.utils;
+package com.elefher.customclasses;
 
 import java.io.DataOutputStream;
 import java.io.File;
@@ -12,6 +12,9 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.elefher.tab.Info;
+import com.elefher.utils.ArrayUtils;
+import com.elefher.utils.CpuUtils;
+import com.elefher.utils.ReadFile;
 
 public class CpuControl {
 
@@ -28,12 +31,8 @@ public class CpuControl {
 			+ "scaling_cur_freq";
 	private final static String cpuinfo_cur_freq = cpufreq_sys_dir
 			+ "cpuinfo_cur_freq";
-	private final static String scaling_governor = cpufreq_sys_dir
-			+ "scaling_governor";
 	private final static String scaling_available_freq = cpufreq_sys_dir
 			+ "scaling_available_frequencies";
-	private final static String scaling_available_governors = cpufreq_sys_dir
-			+ "scaling_available_governors";
 	private final static String scaling_stats_time_in_state = cpufreq_sys_dir
 			+ "stats/time_in_state";
 
@@ -46,22 +45,8 @@ public class CpuControl {
 		// setCpuFrequencies("594000", "1026000");
 	}
 
-	public static String getSUbinaryPath() {
-		String s = "/system/bin/su";
-		File f = new File(s);
-		if (f.exists()) {
-			return s;
-		}
-		s = "/system/xbin/su";
-		f = new File(s);
-		if (f.exists()) {
-			return s;
-		}
-		return null;
-	}
-
 	public static String[] getAvailableFreequencies() {
-		String[] frequencies = readStringArray(scaling_available_freq);
+		String[] frequencies = CpuUtils.readStringArray(scaling_available_freq);
 		
 		// In case does not exist frequencies return null
 		if (frequencies == null) {
@@ -150,7 +135,7 @@ public class CpuControl {
 
 			commands.add("exit\n");
 
-			Process p = Runtime.getRuntime().exec(getSUbinaryPath());
+			Process p = Runtime.getRuntime().exec(CpuUtils.getSUbinaryPath());
 			DataOutputStream dos = new DataOutputStream(p.getOutputStream());
 			for (String command : commands) {
 				dos.writeBytes(command);
@@ -166,13 +151,5 @@ public class CpuControl {
 					Toast.LENGTH_LONG).show();
 			return false;
 		}
-	}
-
-	private static String[] readStringArray(String filename) {
-		String line = ReadFile.getStringOfFile(filename);
-		if (line != null) {
-			return line.split(" ");
-		}
-		return null;
 	}
 }

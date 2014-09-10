@@ -8,5 +8,7 @@
     <string name="BatteryStatus">Battery Status</string>
     <string name="setCpuButton">Set Cpu Freq</string>
     <string name="setcpu">Cpu Frequency Control</string>
+    <string name="spinnerPrompt">Governors</string>
+    <string name="governorText">Select Governor:</string>
 
 </resources>

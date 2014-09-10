@@ -3,9 +3,9 @@ package com.elefher.implementation;
 import java.util.List;
 
 import com.elefher.cpuhandler.R;
+import com.elefher.customclasses.CpuControl;
 import com.elefher.db.Profile;
 import com.elefher.db.ProfilesDataSource;
-import com.elefher.utils.CpuControl;
 import com.elefher.utils.StringParser;
 
 import android.app.Activity;

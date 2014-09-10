@@ -3,11 +3,11 @@ package com.elefher.tab;
 import java.util.ArrayList;
 
 import com.elefher.cpuhandler.R;
-import com.elefher.implementation.MiscProgressBar;
-import com.elefher.utils.BatteryStat;
-import com.elefher.utils.CpuStat;
-import com.elefher.utils.DeviceInfo;
-import com.elefher.utils.MemoryStat;
+import com.elefher.customclasses.BatteryStat;
+import com.elefher.customclasses.CpuStat;
+import com.elefher.customclasses.DeviceInfo;
+import com.elefher.customclasses.MemoryStat;
+import com.elefher.utils.MiscProgressBar;
 import com.elefher.utils.ReadFile;
 
 import android.app.ActionBar.LayoutParams;

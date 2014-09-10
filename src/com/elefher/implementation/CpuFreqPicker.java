@@ -3,7 +3,7 @@ package com.elefher.implementation;
 import java.util.Arrays;
 
 import com.elefher.cpuhandler.R;
-import com.elefher.utils.CpuControl;
+import com.elefher.customclasses.CpuControl;
 
 import android.app.Activity;
 import android.view.View;

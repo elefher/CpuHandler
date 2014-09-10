@@ -1,4 +1,6 @@
-package com.elefher.utils;
+package com.elefher.customclasses;
+
+import com.elefher.utils.ReadFile;
 
 import android.app.ActivityManager;
 import android.app.ActivityManager.MemoryInfo;

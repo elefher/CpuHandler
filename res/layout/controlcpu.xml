@@ -102,9 +102,9 @@
                 android:id="@+id/buttonSetCpuFreq"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#FFFFFF"
-                android:gravity="center" 
-                android:orientation="horizontal">
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:textColor="#FFFFFF" >
 
                 <Button
                     android:id="@+id/setCpuButton"
@@ -112,14 +112,52 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
-                
+
                 <Button
                     android:id="@+id/setCpuProfileButton"
                     style="@style/setCpuProfileButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
-                
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/separate"
+            style="@style/SeparateLine"
+            android:orientation="horizontal" />
+
+        <LinearLayout
+            android:id="@+id/governors"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:textColor="#FFFFFF" >
+
+            <!-- android:prompt="@string/spinner_prompt" -->
+
+            <LinearLayout
+                android:id="@+id/governorsSpinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:textColor="#FFFFFF" >
+
+                <TextView
+                    android:id="@+id/governorCategory"
+                    style="@style/textCpu"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/governorText" />
+
+                <Spinner
+                    android:id="@+id/governorSpinner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_dropdown"
+                    android:spinnerMode="dialog" />
             </LinearLayout>
         </LinearLayout>
 
