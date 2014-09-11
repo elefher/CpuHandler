@@ -152,12 +152,11 @@
                     android:layout_height="wrap_content"
                     android:text="@string/governorText" />
 
-                <Spinner
-                    android:id="@+id/governorSpinner"
+                <Button
+                    android:id="@+id/governorButton"
+                    style="@style/setCpuProfileButton"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/btn_dropdown"
-                    android:spinnerMode="dialog" />
+                    android:layout_height="wrap_content" />
             </LinearLayout>
         </LinearLayout>
 

@@ -11,16 +11,13 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int btn_dropdown=0x7f020000;
-        public static final int btn_dropdown_normal=0x7f020001;
-        public static final int btn_dropdown_pressed=0x7f020002;
-        public static final int cpu_button=0x7f020003;
-        public static final int cpu_profile_button=0x7f020004;
-        public static final int cpufreqprogressbar=0x7f020005;
-        public static final int ic_launcher=0x7f020006;
-        public static final int lineprogressbar=0x7f020007;
-        public static final int ringprogressbar=0x7f020008;
-        public static final int thumb=0x7f020009;
+        public static final int cpu_button=0x7f020000;
+        public static final int cpu_profile_button=0x7f020001;
+        public static final int cpufreqprogressbar=0x7f020002;
+        public static final int ic_launcher=0x7f020003;
+        public static final int lineprogressbar=0x7f020004;
+        public static final int ringprogressbar=0x7f020005;
+        public static final int thumb=0x7f020006;
     }
     public static final class id {
         public static final int brand=0x7f060018;
@@ -37,8 +34,8 @@ public final class R {
         public static final int device=0x7f060015;
         public static final int freqSeekBar=0x7f060007;
         public static final int freqText=0x7f060004;
+        public static final int governorButton=0x7f060013;
         public static final int governorCategory=0x7f060012;
-        public static final int governorSpinner=0x7f060013;
         public static final int governors=0x7f060010;
         public static final int governorsSpinner=0x7f060011;
         public static final int kernel=0x7f060017;
