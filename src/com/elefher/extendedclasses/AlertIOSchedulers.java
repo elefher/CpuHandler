@@ -4,28 +4,28 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.widget.Toast;
 
-import com.elefher.abstractclasses.*;
+import com.elefher.abstractclasses.AlertDialogUtils;
 import com.elefher.cpuhandler.R;
-import com.elefher.customclasses.CpuGovernors;
 import com.elefher.customclasses.DisplayText;
+import com.elefher.customclasses.IOSchedulers;
 
-public class AlertGovernors extends AlertDialogUtils {
+public class AlertIOSchedulers extends AlertDialogUtils {
 
 	Activity activity;
 	
-	public AlertGovernors(Activity act) {
+	public AlertIOSchedulers(Activity act) {
 		super(act);
 		activity = act;
 
 		// Set id button
-		createButton(R.id.governorButton);
+		createButton(R.id.setIOScheduleButton);
 
 		// Set available governors to dialog
-		setItems(CpuGovernors.getAvailableGovernors());
+		setItems(IOSchedulers.getAvailableIOSchedules());
 
 		// Set icon and tile for the dialog
 		setIcon(R.drawable.ic_launcher);
-		setTitle("Governor: Choose your Governor");
+		setTitle("I/O Schedules:");
 
 		/*
 		 *  Set positive and negative button
@@ -39,23 +39,24 @@ public class AlertGovernors extends AlertDialogUtils {
 				 * Display message if user haven't choose a governor
 				 */
 				if (getStringItem.isEmpty()){
-					Toast.makeText(activity, "You have to choose a governor first!!", Toast.LENGTH_LONG).show();
+					Toast.makeText(activity, "You have to choose an i/o schedule first!!", Toast.LENGTH_LONG).show();
 					return;
 				}
 				
 				/*
-				 * Set the cpu Governor and update info about the current governor 
+				 * Set the i/o schedule and update info about the i/o schedule 
 				 */
-				boolean governorChanged = CpuGovernors.setGovernor(getStringItem);
-				if(!governorChanged){
-					Toast.makeText(activity, "Sorry, but the governor didn't change!!", Toast.LENGTH_LONG).show();
-				} else if(governorChanged){
-					Toast.makeText(activity, "The governor has changed to " + CpuGovernors.getCurrentGovernor() +
+				
+				boolean ioSchedulerChanged = IOSchedulers.setIOSchedule(getStringItem);
+				if(!ioSchedulerChanged){
+					Toast.makeText(activity, "Sorry, but the I/O Scheduler didn't change!!", Toast.LENGTH_LONG).show();
+				} else {
+					Toast.makeText(activity, "The I/O Scheduler has changed to " + IOSchedulers.getCurrentIOSchedule() +
 							"!!", Toast.LENGTH_LONG).show();
 				}
 				
-				// Update the current governor
-				DisplayText.updateText(activity, R.id.updatedCurrentGov, CpuGovernors.getCurrentGovernor());
+				// Update the current IOSchedule
+				DisplayText.updateText(activity, R.id.updateioschedule, IOSchedulers.getCurrentIOSchedule());
 				
 				/*
 				 *  Initialize var getStringItem in order to delete the preview choose 

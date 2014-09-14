@@ -36,8 +36,6 @@ public class CpuControl {
 	private final static String scaling_stats_time_in_state = cpufreq_sys_dir
 			+ "stats/time_in_state";
 
-	private final static String ioscheduler = "/sys/block/mmcblk0/queue/scheduler";
-
 	static Context context;
 
 	public CpuControl(Context cntx) {

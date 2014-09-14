@@ -200,7 +200,7 @@ public class Info extends Activity {
 		
 		currentGovernor = new TextView(this);
 		currentGovernor.setTextSize(30);
-		currentGovernor.setX(260);
+		currentGovernor.setX(225);
 		currentGovernor.setTextColor(Color.rgb(255, 215, 0));
 		currentGovernor.setText(CpuGovernors.getCurrentGovernor().toUpperCase());
 		

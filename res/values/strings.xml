@@ -8,7 +8,10 @@
     <string name="BatteryStatus">Battery Status</string>
     <string name="setCpuButton">Set Cpu Freq</string>
     <string name="setcpu">Cpu Frequency Control</string>
+    <string name="setioschedule">I/O Scheduler Control</string>
+    <string name="setcpugovernor">Cpu Governor Control</string>
     <string name="spinnerPrompt">Governors</string>
     <string name="currentGovernorDesc">Current Governor:</string>
+    <string name="currentIOScheduleDesc">Current I/O Schedule:</string>
 
 </resources>

@@ -1,7 +1,8 @@
 package com.elefher.implementation;
 
 import com.elefher.cpuhandler.R;
-import com.elefher.customclasses.DisplayCurrentGovernor;
+import com.elefher.customclasses.CpuGovernors;
+import com.elefher.customclasses.DisplayText;
 import com.elefher.extendedclasses.AlertGovernors;
 
 import android.app.Activity;
@@ -22,6 +23,6 @@ public class CpuGovernorPicker {
 		/*
 		 * Display the current governor
 		 */
-		DisplayCurrentGovernor.updateCurrentGovernor(activity, R.id.updatedCurrentGov, "");
+		DisplayText.updateText(activity, R.id.updatedCurrentGov, CpuGovernors.getCurrentGovernor());
 	}
 }
