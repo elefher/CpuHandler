@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.elefher.cpuhandler.R;
 import com.elefher.customclasses.BatteryStat;
+import com.elefher.customclasses.CpuGovernors;
 import com.elefher.customclasses.CpuStat;
 import com.elefher.customclasses.DeviceInfo;
 import com.elefher.customclasses.MemoryStat;
@@ -16,7 +17,10 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Gravity;
 import android.view.View;
+import android.view.animation.AnimationUtils;
+import android.view.animation.RotateAnimation;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -33,12 +37,13 @@ public class Info extends Activity {
 	MiscProgressBar totalCpuLineProgressBar, memoryUsageProgressBar,
 			batteryTempProgressBar, cpuTempProgressBar;
 	TextView totalCpu, totalCpuCores, memoryUsage, batteryStats,
-			batteryMiscStats, batteryTempStat, cpuTemp;
+			batteryMiscStats, batteryTempStat, cpuTemp, currentGovernor;
 	private boolean started = false;
 	private Handler handler = new Handler();
 
 	LinearLayout.LayoutParams params1, paramsMem, paramsCircle, paramsLine,
-			paramsLineMem, paramWith2Lines, separateLine, marginLeft;
+			paramsLineMem, paramWith2Lines, separateLine, marginLeft, statusGovernorParams,
+			displayGovernorParams;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -88,6 +93,12 @@ public class Info extends Activity {
 		LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
 				LayoutParams.FILL_PARENT, 120);
 		layoutParams.topMargin = 10;
+		
+		statusGovernorParams = new LinearLayout.LayoutParams(
+				LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT, 1.0f);
+		
+		displayGovernorParams = new LinearLayout.LayoutParams(
+				LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT, 1.0f);
 
 		// display standard device info like kernel, os etc.
 		TextView textCodeName = (TextView) findViewById(R.id.codename);
@@ -147,6 +158,14 @@ public class Info extends Activity {
 		totalCpuLayout.addView(totalCpuLineProgressBar);
 		lcpuInfo.addView(totalCpuLayout);
 		// ****************************************************
+		
+		/*
+		 *  Create Linearlayout view about cpu stats & governor
+		 *  Status and governor layouts are vertical, put them together
+		 *  in horizontal layout. 
+		 */
+		LinearLayout statusLayout = new LinearLayout(this);
+		statusLayout.setOrientation(LinearLayout.VERTICAL);
 
 		// Create text views about cpu status
 		for (int i = 0; i < cores; i++) {
@@ -170,10 +189,34 @@ public class Info extends Activity {
 			circleProgressBars.get(i).rotation(110);
 			circleProgressBars.get(i).setCurrentProgress(0);
 			layout.addView(circleProgressBars.get(i));
-
-			lcpuInfo.addView(layout);
+			
+			//lcpuInfo.addView(layout);
+			statusLayout.addView(layout);
 		}
-
+		
+		LinearLayout govLayout = new LinearLayout(this);
+		govLayout.setOrientation(LinearLayout.HORIZONTAL);
+		govLayout.setLayoutParams(displayGovernorParams);
+		
+		currentGovernor = new TextView(this);
+		currentGovernor.setTextSize(30);
+		currentGovernor.setX(260);
+		currentGovernor.setTextColor(Color.rgb(255, 215, 0));
+		currentGovernor.setText(CpuGovernors.getCurrentGovernor().toUpperCase());
+		
+		RotateAnimation rotate= (RotateAnimation)AnimationUtils.loadAnimation(this,R.drawable.rotateanimation);
+		currentGovernor.setAnimation(rotate);
+		
+		govLayout.addView(currentGovernor);
+		
+		LinearLayout statusGovLayout = new LinearLayout(this);
+		statusGovLayout.setOrientation(LinearLayout.HORIZONTAL);
+		statusGovLayout.setLayoutParams(statusGovernorParams);
+		statusGovLayout.addView(statusLayout);
+		statusGovLayout.addView(govLayout);
+		
+		lcpuInfo.addView(statusGovLayout);
+		
 		// Display cpu temperature
 		LinearLayout cpuTempLayout = new LinearLayout(this);
 		cpuTempLayout.setOrientation(LinearLayout.VERTICAL);
@@ -279,6 +322,9 @@ public class Info extends Activity {
 							+ ReadFile
 									.getStringOfFile("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq"));
 
+			// Update cpu governor
+			currentGovernor.setText(CpuGovernors.getCurrentGovernor().toUpperCase());
+			
 			// Update cpu temperature
 			displayCpuTemp();
 

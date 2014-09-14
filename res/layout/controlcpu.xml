@@ -73,7 +73,7 @@
                         android:id="@+id/minFreqSeekProgress"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#FFFFFF" />
+                        android:textColor="#ffd700" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -94,7 +94,7 @@
                         android:id="@+id/maxFreqSeekProgress"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#FFFFFF" />
+                        android:textColor="#ffd700" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -131,7 +131,6 @@
             android:id="@+id/governors"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:orientation="horizontal"
             android:textColor="#FFFFFF" >
 
@@ -145,18 +144,36 @@
                 android:orientation="vertical"
                 android:textColor="#FFFFFF" >
 
-                <TextView
-                    android:id="@+id/governorCategory"
-                    style="@style/textCpu"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/governorText" />
-
                 <Button
                     android:id="@+id/governorButton"
-                    style="@style/setCpuProfileButton"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content" />
+                    style="@style/setCpuGovernorButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/currentGov"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:textColor="#FFFFFF" >
+
+                <TextView
+                    android:id="@+id/currentGovDescription"
+                    style="@style/textCpu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/currentGovernorDesc" 
+                    android:layout_gravity="center_vertical|center_horizontal" />
+                
+                <TextView
+                    android:id="@+id/updatedCurrentGov"
+                    style="@style/dynamicTexts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" 
+                    android:layout_gravity="center_vertical|center_horizontal" />
             </LinearLayout>
         </LinearLayout>
 

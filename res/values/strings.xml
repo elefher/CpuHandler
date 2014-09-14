@@ -9,6 +9,6 @@
     <string name="setCpuButton">Set Cpu Freq</string>
     <string name="setcpu">Cpu Frequency Control</string>
     <string name="spinnerPrompt">Governors</string>
-    <string name="governorText">Select Governor:</string>
+    <string name="currentGovernorDesc">Current Governor:</string>
 
 </resources>

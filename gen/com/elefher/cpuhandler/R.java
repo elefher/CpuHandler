@@ -14,42 +14,48 @@ public final class R {
         public static final int cpu_button=0x7f020000;
         public static final int cpu_profile_button=0x7f020001;
         public static final int cpufreqprogressbar=0x7f020002;
-        public static final int ic_launcher=0x7f020003;
-        public static final int lineprogressbar=0x7f020004;
-        public static final int ringprogressbar=0x7f020005;
-        public static final int thumb=0x7f020006;
+        public static final int governor_button=0x7f020003;
+        public static final int governor_button_pressed=0x7f020004;
+        public static final int governorbutton=0x7f020005;
+        public static final int ic_launcher=0x7f020006;
+        public static final int lineprogressbar=0x7f020007;
+        public static final int ringprogressbar=0x7f020008;
+        public static final int rotateanimation=0x7f020009;
+        public static final int thumb=0x7f02000a;
     }
     public static final class id {
-        public static final int brand=0x7f060018;
+        public static final int brand=0x7f06001a;
         public static final int buttonSetCpuFreq=0x7f06000c;
-        public static final int codename=0x7f060016;
+        public static final int codename=0x7f060018;
         public static final int controlCpu=0x7f060001;
         public static final int controlCpuContent=0x7f060000;
         public static final int controlCpuTitle=0x7f060002;
-        public static final int cores=0x7f06001a;
-        public static final int cpuInfo=0x7f060014;
+        public static final int cores=0x7f06001c;
+        public static final int cpuInfo=0x7f060016;
         public static final int cpuTitle=0x7f060003;
-        public static final int currentMax=0x7f06001c;
-        public static final int currentMin=0x7f06001b;
-        public static final int device=0x7f060015;
+        public static final int currentGov=0x7f060013;
+        public static final int currentGovDescription=0x7f060014;
+        public static final int currentMax=0x7f06001e;
+        public static final int currentMin=0x7f06001d;
+        public static final int device=0x7f060017;
         public static final int freqSeekBar=0x7f060007;
         public static final int freqText=0x7f060004;
-        public static final int governorButton=0x7f060013;
-        public static final int governorCategory=0x7f060012;
+        public static final int governorButton=0x7f060012;
         public static final int governors=0x7f060010;
         public static final int governorsSpinner=0x7f060011;
-        public static final int kernel=0x7f060017;
+        public static final int kernel=0x7f060019;
         public static final int maxFreq=0x7f060006;
         public static final int maxFreqSeek=0x7f06000a;
         public static final int maxFreqSeekProgress=0x7f06000b;
         public static final int minFreq=0x7f060005;
         public static final int minFreqSeek=0x7f060008;
         public static final int minFreqSeekProgress=0x7f060009;
-        public static final int scalingCurrent=0x7f06001d;
+        public static final int scalingCurrent=0x7f06001f;
         public static final int separate=0x7f06000f;
         public static final int setCpuButton=0x7f06000d;
         public static final int setCpuProfileButton=0x7f06000e;
-        public static final int text=0x7f060019;
+        public static final int text=0x7f06001b;
+        public static final int updatedCurrentGov=0x7f060015;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -61,7 +67,7 @@ public final class R {
         public static final int BatteryStatus=0x7f040004;
         public static final int DeviceStatus=0x7f040003;
         public static final int app_name=0x7f040000;
-        public static final int governorText=0x7f040008;
+        public static final int currentGovernorDesc=0x7f040008;
         public static final int hello_world=0x7f040001;
         public static final int info=0x7f040002;
         public static final int setCpuButton=0x7f040005;
@@ -102,7 +108,9 @@ public final class R {
         /**  SeekBar Styling 
          */
         public static final int cpuFreqBar=0x7f050007;
+        public static final int dynamicTexts=0x7f05000d;
         public static final int setCpuButton=0x7f05000a;
+        public static final int setCpuGovernorButton=0x7f05000c;
         public static final int setCpuProfileButton=0x7f05000b;
         public static final int text=0x7f050004;
         public static final int textCpu=0x7f050009;

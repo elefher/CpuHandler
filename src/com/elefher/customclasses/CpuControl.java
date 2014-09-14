@@ -143,7 +143,7 @@ public class CpuControl {
 			}
 			dos.close();			
 			
-			int res = p.waitFor();
+			p.waitFor();
 			return true;
 		} catch (Exception ex) {
 			Log.e("", ex.toString());

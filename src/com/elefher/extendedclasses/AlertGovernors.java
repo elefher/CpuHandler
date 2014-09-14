@@ -7,6 +7,7 @@ import android.widget.Toast;
 import com.elefher.abstractclasses.*;
 import com.elefher.cpuhandler.R;
 import com.elefher.customclasses.CpuGovernors;
+import com.elefher.customclasses.DisplayCurrentGovernor;
 
 public class AlertGovernors extends AlertDialogUtils {
 
@@ -43,9 +44,18 @@ public class AlertGovernors extends AlertDialogUtils {
 				}
 				
 				/*
-				 * Set the cpu Governor
+				 * Set the cpu Governor and update info about the current governor 
 				 */
-				System.out.println(getStringItem);
+				boolean governorChanged = CpuGovernors.setGovernor(getStringItem);
+				if(!governorChanged){
+					Toast.makeText(activity, "Sorry, but the governor didn't change!!", Toast.LENGTH_LONG).show();
+				} else if(governorChanged){
+					Toast.makeText(activity, "The governor has changed to " + CpuGovernors.getCurrentGovernor() +
+							"!!", Toast.LENGTH_LONG).show();
+				}
+				
+				// Update the current governor
+				DisplayCurrentGovernor.updateCurrentGovernor(activity, R.id.updatedCurrentGov, "");
 				
 				/*
 				 *  Initialize var getStringItem in order to delete the preview choose 
