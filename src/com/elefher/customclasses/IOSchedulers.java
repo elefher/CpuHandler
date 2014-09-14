@@ -52,8 +52,7 @@ public class IOSchedulers {
 	}
 
 	public static boolean setIOSchedule(String newSchedule) {
-		String finalyIOScheduleString = CreateStringToSetIOSchedule(newSchedule);
-		if (finalyIOScheduleString.equals("")) {
+		if (newSchedule.equals("")) {
 			return false;
 		}
 
@@ -93,53 +92,5 @@ public class IOSchedulers {
 			Log.e("", ex.toString() + " Error: " + ex.getMessage());
 			return false;
 		}
-	}
-
-	public static String CreateStringToSetIOSchedule(String updateSchedule) {
-		String formatedUpdateSchedule = "[" + updateSchedule + "]";
-		String[] availableSchedules = getAvailableIOSchedules();
-		String newUpdatedScheduler = "";
-		int schedulesLength = availableSchedules.length;
-
-		if (availableSchedules != null) {
-			for (int i = 0; i < schedulesLength; i++) {
-				/*
-				 * When finds the enabled I/O Scheduler then remove the "[]" and
-				 * I/OScheduler disabled
-				 */
-				if (availableSchedules[i].charAt(0) == '[') {
-					if (i == 0) {
-						newUpdatedScheduler += availableSchedules[i].substring(
-								1, availableSchedules[i].length() - 1);
-					} else {
-						newUpdatedScheduler += " "
-								+ availableSchedules[i].substring(1,
-										availableSchedules[i].length() - 1);
-					}
-				}
-
-				/*
-				 * When scheduler of file system is equal with the schedule
-				 * which chose of the user then add "[]" around of the
-				 * scheduler. Also if the first element is equal with wishful
-				 * value then don't add a whitespace.
-				 */
-				if (availableSchedules[i].equals(updateSchedule)) {
-					if (i == 0) {
-						newUpdatedScheduler += formatedUpdateSchedule;
-					} else {
-						newUpdatedScheduler += " " + formatedUpdateSchedule;
-					}
-				} else {
-					if (i == 0) {
-						newUpdatedScheduler += availableSchedules[i];
-					} else {
-						newUpdatedScheduler += " " + availableSchedules[i];
-					}
-				}
-			}
-		}
-
-		return newUpdatedScheduler;
 	}
 }
