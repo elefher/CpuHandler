@@ -11,24 +11,13 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int cpu_button=0x7f020000;
-        public static final int cpu_button_pressed=0x7f020001;
-        public static final int cpu_profile_button=0x7f020002;
-        public static final int cpu_profile_button_pressed=0x7f020003;
-        public static final int cpubutton=0x7f020004;
-        public static final int cpufreqprogressbar=0x7f020005;
-        public static final int governor_button=0x7f020006;
-        public static final int governor_button_pressed=0x7f020007;
-        public static final int governorbutton=0x7f020008;
-        public static final int ic_launcher=0x7f020009;
-        public static final int ioschedule_button=0x7f02000a;
-        public static final int ioschedule_button_pressed=0x7f02000b;
-        public static final int ioschedulerbutton=0x7f02000c;
-        public static final int lineprogressbar=0x7f02000d;
-        public static final int profilebutton=0x7f02000e;
-        public static final int ringprogressbar=0x7f02000f;
-        public static final int rotateanimation=0x7f020010;
-        public static final int thumb=0x7f020011;
+        public static final int button1=0x7f020000;
+        public static final int cpufreqprogressbar=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int lineprogressbar=0x7f020003;
+        public static final int ringprogressbar=0x7f020004;
+        public static final int rotateanimation=0x7f020005;
+        public static final int thumb=0x7f020006;
     }
     public static final class id {
         public static final int brand=0x7f06001e;
@@ -117,20 +106,17 @@ public final class R {
         public static final int AppTheme=0x7f050001;
         public static final int Content=0x7f050002;
         public static final int CpuStats=0x7f050006;
-        public static final int GeneralInfo=0x7f050005;
-        public static final int SeparateLine=0x7f050003;
+        public static final int GeneralInfo=0x7f050003;
+        public static final int SeparateLine=0x7f050004;
         /**  SeekBar Styling 
          */
         public static final int cpuFreqBar=0x7f050007;
-        public static final int dynamicTexts=0x7f05000e;
+        public static final int dynamicTexts=0x7f05000b;
+        public static final int minTitleText=0x7f050009;
         public static final int setCpuButton=0x7f05000a;
-        public static final int setCpuGovernorButton=0x7f05000c;
-        public static final int setCpuProfileButton=0x7f05000b;
-        public static final int setIOScheduleButton=0x7f05000d;
-        public static final int text=0x7f050004;
-        public static final int textCpu=0x7f050009;
         /**  Text Title 
          */
-        public static final int textTitle=0x7f050008;
+        public static final int subText=0x7f050008;
+        public static final int titles=0x7f050005;
     }
 }

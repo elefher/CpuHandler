@@ -2,11 +2,31 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item android:id="@android:id/background">
-        <shape
-            android:shape="line" >
+        <shape android:shape="line" >
             <stroke
                 android:width="4dp"
-                android:color="#900000" />
+                android:color="#98AFC7" />
         </shape>
     </item>
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+                
+                <gradient
+                    android:angle="0"
+                    android:endColor="#EDDA74"
+                    android:startColor="#EDDA74" />
+
+                <corners android:radius="20dp" />
+
+                <!-- <stroke
+                    android:width="10dp"
+                    android:color="#50999999" />-->
+                <stroke
+                    android:width="0dp"
+                    android:color="#EDDA74" />
+            </shape>
+        </clip>
+    </item>
+
 </layer-list>

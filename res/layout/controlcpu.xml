@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:background="#504A4B" >
 
     <!-- Screen Design for control cpu tab -->
 
@@ -12,39 +12,38 @@
 
         <LinearLayout
             android:id="@+id/controlCpu"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
             <LinearLayout
                 android:id="@+id/controlCpuTitle"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >
 
                 <TextView
                     android:id="@+id/cpuTitle"
-                    style="@style/textTitle"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    style="@style/titles"
                     android:text="@string/setcpu" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/freqText"
-                style="@style/Content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal" >
 
                 <TextView
                     android:id="@+id/minFreq"
-                    style="@style/textCpu"
+                    style="@style/CpuStats"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/maxFreq"
-                    style="@style/textCpu"
+                    style="@style/CpuStats"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
@@ -52,32 +51,32 @@
 
             <LinearLayout
                 android:id="@+id/freqSeekBar"
-                style="@style/Content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal" >
 
                 <LinearLayout
-                    style="@style/Content"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
                     android:orientation="vertical" >
 
                     <SeekBar
                         android:id="@+id/minFreqSeek"
                         style="@style/cpuFreqBar"
-                        android:layout_width="fill_parent"
+                        android:minHeight="5dp"
+                        android:maxHeight="5dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content" >
                     </SeekBar>
 
                     <TextView
                         android:id="@+id/minFreqSeekProgress"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#ffd700" />
+                        style="@style/subText" />
                 </LinearLayout>
 
                 <LinearLayout
-                    style="@style/Content"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -86,21 +85,21 @@
                     <SeekBar
                         android:id="@+id/maxFreqSeek"
                         style="@style/cpuFreqBar"
-                        android:layout_width="fill_parent"
+                        android:minHeight="5dp"
+                        android:maxHeight="5dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content" >
                     </SeekBar>
 
                     <TextView
                         android:id="@+id/maxFreqSeekProgress"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#ffd700" />
+                        style="@style/subText" />
                 </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/buttonSetCpuFreq"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:textColor="#FFFFFF" >
@@ -114,9 +113,8 @@
                     <Button
                         android:id="@+id/setCpuButton"
                         style="@style/setCpuButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical|center_horizontal" />
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="Set Cpu" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -127,10 +125,9 @@
 
                     <Button
                         android:id="@+id/setCpuProfileButton"
-                        style="@style/setCpuProfileButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical|center_horizontal" />
+                        style="@style/setCpuButton"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="Cpu Profiles" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -147,7 +144,7 @@
 
             <TextView
                 android:id="@+id/cpuTitle"
-                style="@style/textTitle"
+                style="@style/titles"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/setcpugovernor" />
@@ -172,10 +169,9 @@
 
                     <Button
                         android:id="@+id/governorButton"
-                        style="@style/setCpuGovernorButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical|center_horizontal" />
+                        style="@style/setCpuButton"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="Cpu Governors" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -183,12 +179,11 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:orientation="vertical"
-                    android:textColor="#FFFFFF" >
+                    android:orientation="vertical" >
 
                     <TextView
                         android:id="@+id/currentGovDescription"
-                        style="@style/textCpu"
+                        style="@style/minTitleText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical|center_horizontal"
@@ -216,7 +211,7 @@
 
             <TextView
                 android:id="@+id/cpuTitle"
-                style="@style/textTitle"
+                style="@style/titles"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/setioschedule" />
@@ -235,10 +230,9 @@
 
                     <Button
                         android:id="@+id/setIOScheduleButton"
-                        style="@style/setIOScheduleButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical|center_horizontal" />
+                        style="@style/setCpuButton"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="I/O Schedulers" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -249,7 +243,7 @@
 
                     <TextView
                         android:id="@+id/ioscheduledesc"
-                        style="@style/textCpu"
+                        style="@style/minTitleText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical|center_horizontal"
@@ -271,4 +265,4 @@
             android:orientation="horizontal" />
     </LinearLayout>
 
-</LinearLayout>
+</ScrollView>

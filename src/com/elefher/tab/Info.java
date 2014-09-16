@@ -43,7 +43,7 @@ public class Info extends Activity {
 
 	LinearLayout.LayoutParams params1, paramsMem, paramsCircle, paramsLine,
 			paramsLineMem, paramWith2Lines, separateLine, marginLeft, statusGovernorParams,
-			displayGovernorParams;
+			displayGovernorParams, titles;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -59,6 +59,9 @@ public class Info extends Activity {
 		marginLeft = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
 				LayoutParams.WRAP_CONTENT);
 		marginLeft.leftMargin = 10;
+		
+		titles = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT,
+				LayoutParams.WRAP_CONTENT);
 
 		separateLine = new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT,
 				1);
@@ -77,8 +80,7 @@ public class Info extends Activity {
 
 		paramsLineMem = new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT,
 				10);
-		paramsLineMem.width = 500;
-		paramsLineMem.height = 10;
+		
 
 		paramWith2Lines = new LinearLayout.LayoutParams(
 				LayoutParams.FILL_PARENT, 50);
@@ -87,7 +89,7 @@ public class Info extends Activity {
 		params1.setMargins(20, 40, 0, 0);
 
 		paramsMem = new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, 60);
-		paramsMem.setMargins(20, 40, 0, 0);
+		paramsMem.setMargins(20, 40, 20, 0);
 
 		// Linear layout params for layout
 		LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
@@ -190,7 +192,6 @@ public class Info extends Activity {
 			circleProgressBars.get(i).setCurrentProgress(0);
 			layout.addView(circleProgressBars.get(i));
 			
-			//lcpuInfo.addView(layout);
 			statusLayout.addView(layout);
 		}
 		
@@ -199,9 +200,9 @@ public class Info extends Activity {
 		govLayout.setLayoutParams(displayGovernorParams);
 		
 		currentGovernor = new TextView(this);
-		currentGovernor.setTextSize(30);
+		currentGovernor.setTextSize(20);
 		currentGovernor.setX(225);
-		currentGovernor.setTextColor(Color.rgb(255, 215, 0));
+		currentGovernor.setTextColor(Color.rgb(188, 198, 204));
 		currentGovernor.setText(CpuGovernors.getCurrentGovernor().toUpperCase());
 		
 		RotateAnimation rotate= (RotateAnimation)AnimationUtils.loadAnimation(this,R.drawable.rotateanimation);
@@ -236,28 +237,39 @@ public class Info extends Activity {
 		// Display a separate line
 		View separateL = new View(this);
 		separateL.setLayoutParams(separateLine);
-		separateL.setBackgroundColor(Color.rgb(255, 215, 0));
+		separateL.setBackgroundColor(Color.rgb(237, 218, 116));
 		lcpuInfo.addView(separateL);
 
-		// Display Battery Status
+		// Display Battery Status Title
+		LinearLayout setCenter = new LinearLayout(this);
+		setCenter.setOrientation(1); // 1 means vertical
+		setCenter.setLayoutParams(titles);
+		
 		batteryStats = new TextView(this);
-		batteryStats.setTextColor(Color.rgb(255, 215, 0));
-		batteryStats.setTypeface(Typeface.MONOSPACE);
-		batteryStats.setTextSize(20);
-		batteryStats.setLayoutParams(marginLeft);
+		batteryStats.setTextColor(Color.rgb(188, 198, 204));
+		batteryStats.setTypeface(Typeface.SANS_SERIF, Typeface.BOLD);
+		batteryStats.setGravity(Gravity.CENTER);
+		batteryStats.setTextSize(25);
+		batteryStats.setLayoutParams(titles);
 		batteryStats.setText(R.string.BatteryStatus);
-		lcpuInfo.addView(batteryStats);
+		setCenter.addView(batteryStats);
+		lcpuInfo.addView(setCenter);
 
 		// Battery misc stats
 		batteryStat = new BatteryStat(this);
+		LinearLayout setCenterMisc = new LinearLayout(this);
+		setCenter.setOrientation(1); // 1 means vertical
+		setCenter.setLayoutParams(titles);
 
 		batteryMiscStats = new TextView(this);
-		batteryMiscStats.setTextColor(Color.WHITE);
-		batteryMiscStats.setTypeface(Typeface.MONOSPACE);
+		batteryMiscStats.setTextColor(Color.rgb(86, 165, 236));
+		batteryMiscStats.setTypeface(Typeface.SANS_SERIF);
+		batteryMiscStats.setGravity(Gravity.CENTER);
 		batteryMiscStats.setTextSize(15);
-		batteryMiscStats.setLayoutParams(marginLeft);
+		batteryMiscStats.setLayoutParams(titles);
+		setCenterMisc.addView(batteryMiscStats);
 		displayBatteryStats();
-		lcpuInfo.addView(batteryMiscStats);
+		lcpuInfo.addView(setCenterMisc);
 
 		// Battery temperature stat
 		LinearLayout batteryTempLayout = new LinearLayout(this);
@@ -308,19 +320,19 @@ public class Info extends Activity {
 			currentMin
 					.setText("Current Min Freq: "
 							+ ReadFile
-									.getStringOfFile("/sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq"));
+									.getStringOfFile("/sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq") + " KHz");
 
 			TextView currentMax = (TextView) findViewById(R.id.currentMax);
 			currentMax
 					.setText("Current Max Freq: "
 							+ ReadFile
-									.getStringOfFile("/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq"));
+									.getStringOfFile("/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq") + " KHz");
 
 			TextView scalingCurrent = (TextView) findViewById(R.id.scalingCurrent);
 			scalingCurrent
 					.setText("Scaling Current Freq: "
 							+ ReadFile
-									.getStringOfFile("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq"));
+									.getStringOfFile("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq") + " KHz");
 
 			// Update cpu governor
 			currentGovernor.setText(CpuGovernors.getCurrentGovernor().toUpperCase());
