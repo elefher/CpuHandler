@@ -4,6 +4,7 @@ import com.elefher.cpuhandler.R;
 import com.elefher.implementation.CpuFreqPicker;
 import com.elefher.implementation.CpuFreqProfile;
 import com.elefher.implementation.CpuGovernorPicker;
+import com.elefher.implementation.IOReadAheadPicker;
 import com.elefher.implementation.IOSchedulerPicker;
 
 import android.os.Bundle;
@@ -22,5 +23,6 @@ public class ControlCpu extends Activity {
 		CpuFreqProfile cpuFreqProfile = new CpuFreqProfile(this);
 		CpuGovernorPicker cpuGovernorPicker = new CpuGovernorPicker(this);
 		IOSchedulerPicker ioScheduler = new IOSchedulerPicker(this);
+		IOReadAheadPicker ioReadAhead = new IOReadAheadPicker(this);
 	}
 }

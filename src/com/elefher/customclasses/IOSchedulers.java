@@ -9,11 +9,13 @@ import android.util.Log;
 
 import com.elefher.tab.Info;
 import com.elefher.utils.CpuUtils;
+import com.elefher.utils.ReadFile;
 
 public class IOSchedulers {
 
 	private final static String ioscheduler = "/sys/block/mmcblk0/queue/scheduler";
 	private final static String SEARCH_IN_FOLDERS = "(loop|zram|dm-)[0-9]+";
+	private final static String SEARCH_FOR_READAHEADFOLDER = "179:[0-9]";
 
 	public IOSchedulers() {
 
@@ -72,6 +74,77 @@ public class IOSchedulers {
 								+ schedulerFile.getAbsolutePath() + "\n");
 						commands.add("chmod 0444 "
 								+ schedulerFile.getAbsolutePath() + "\n");
+					}
+				}
+			}
+
+			commands.add("exit\n");
+
+			Process p = Runtime.getRuntime().exec(CpuUtils.getSUbinaryPath());
+			DataOutputStream dos = new DataOutputStream(p.getOutputStream());
+			for (String command : commands) {
+				dos.writeBytes(command);
+				dos.flush();
+			}
+			dos.close();
+
+			p.waitFor();
+			return true;
+		} catch (Exception ex) {
+			Log.e("", ex.toString() + " Error: " + ex.getMessage());
+			return false;
+		}
+	}
+
+	/*
+	 * This function gets the cache of the sdcard in kb/s
+	 */
+	public static String getReadAheadBufferSize() {
+		try {
+			File folders = new File("/sys/devices/virtual/bdi/");
+			File[] dirs = folders.listFiles();
+			for (File dir : dirs) {
+				if (dir.isDirectory()
+						&& dir.getName().matches(SEARCH_FOR_READAHEADFOLDER)) {
+					File readAheadFile = new File(dir, "read_ahead_kb");
+					if (readAheadFile.exists()) {
+						return ReadFile.getStringOfFile(readAheadFile
+								.getAbsolutePath());
+					} else {
+						return null;
+					}
+				}
+			}
+		} catch (Exception ex) {
+			Log.e("", ex.toString() + " Error: " + ex.getMessage());
+		}
+		return null;
+	}
+	
+	/*
+	 * This function sets the cache of the sdcard in kb/s
+	 */
+	public static boolean setReadAheadBufferSize(String newBufferSize) {
+		if (newBufferSize.equals("")) {
+			return false;
+		}
+
+		try {
+			List<String> commands = new ArrayList<String>();
+
+			File folders = new File("/sys/devices/virtual/bdi/");
+			File[] dirs = folders.listFiles();
+			for (File dir : dirs) {
+				if (dir.isDirectory()
+						&& dir.getName().matches(SEARCH_FOR_READAHEADFOLDER)) {
+					File readAheadFile = new File(dir, "read_ahead_kb");
+					if (readAheadFile.exists()) {
+						commands.add("chmod 0644 "
+								+ readAheadFile.getAbsolutePath() + "\n");
+						commands.add("echo " + newBufferSize + " > "
+								+ readAheadFile.getAbsolutePath() + "\n");
+						commands.add("chmod 0444 "
+								+ readAheadFile.getAbsolutePath() + "\n");
 					}
 				}
 			}

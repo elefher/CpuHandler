@@ -58,17 +58,17 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
                     android:orientation="vertical" >
 
                     <SeekBar
                         android:id="@+id/minFreqSeek"
                         style="@style/cpuFreqBar"
-                        android:minHeight="5dp"
-                        android:maxHeight="5dp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" >
+                        android:layout_height="wrap_content"
+                        android:maxHeight="5dp"
+                        android:minHeight="5dp" >
                     </SeekBar>
 
                     <TextView
@@ -85,10 +85,10 @@
                     <SeekBar
                         android:id="@+id/maxFreqSeek"
                         style="@style/cpuFreqBar"
-                        android:minHeight="5dp"
-                        android:maxHeight="5dp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" >
+                        android:layout_height="wrap_content"
+                        android:maxHeight="5dp"
+                        android:minHeight="5dp" >
                     </SeekBar>
 
                     <TextView
@@ -164,8 +164,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:orientation="vertical"
-                    android:textColor="#FFFFFF" >
+                    android:orientation="vertical" >
 
                     <Button
                         android:id="@+id/governorButton"
@@ -205,7 +204,7 @@
             android:orientation="horizontal" />
 
         <LinearLayout
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
@@ -218,8 +217,9 @@
 
             <LinearLayout
                 android:id="@+id/ioschedulerlayout"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:baselineAligned="false"
                 android:orientation="horizontal" >
 
                 <LinearLayout
@@ -251,6 +251,71 @@
 
                     <TextView
                         android:id="@+id/updateioschedule"
+                        style="@style/dynamicTexts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- This is a 60% line of screen width in center position -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal"
+                android:weightSum="1" >
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.20" />
+
+                <View
+                    android:id="@+id/separatesubline"
+                    style="@style/SeparateSubLine" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.20" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <Button
+                        android:id="@+id/setReadAheadButton"
+                        style="@style/setCpuButton"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="Read Ahead Buffer Size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/readbuffersizedesc"
+                        style="@style/minTitleText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="@string/readbuffersizeDesc" />
+                    
+                    <TextView
+                        android:id="@+id/updatereadbuffersize"
                         style="@style/dynamicTexts"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

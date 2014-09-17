@@ -13,5 +13,6 @@
     <string name="spinnerPrompt">Governors</string>
     <string name="currentGovernorDesc">Current Governor:</string>
     <string name="currentIOScheduleDesc">Current I/O Schedule:</string>
+    <string name="readbuffersizeDesc">Read Ahead Buffer Size:</string>
 
 </resources>
