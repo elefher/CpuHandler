@@ -60,12 +60,14 @@ public final class R {
         public static final int updatedCurrentGov=0x7f060015;
         public static final int updateioschedule=0x7f060019;
         public static final int updatereadbuffersize=0x7f06001d;
+        public static final int voltagesContent=0x7f060028;
+        public static final int voltagesEdit=0x7f060029;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int controlcpu=0x7f030001;
         public static final int info=0x7f030002;
-        public static final int tab3=0x7f030003;
+        public static final int voltages=0x7f030003;
     }
     public static final class string {
         public static final int BatteryStatus=0x7f040004;
@@ -81,6 +83,7 @@ public final class R {
         public static final int setcpugovernor=0x7f040008;
         public static final int setioschedule=0x7f040007;
         public static final int spinnerPrompt=0x7f040009;
+        public static final int voltagesTitle=0x7f04000d;
     }
     public static final class style {
         /** 

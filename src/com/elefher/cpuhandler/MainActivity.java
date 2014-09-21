@@ -3,7 +3,7 @@ package com.elefher.cpuhandler;
 
 import com.elefher.tab.Info;
 import com.elefher.tab.ControlCpu;
-import com.elefher.tab.Tab3;
+import com.elefher.tab.Voltages;
 
 import android.app.Activity;
 import android.app.TabActivity;
@@ -53,8 +53,8 @@ public class MainActivity extends TabActivity implements OnTabChangeListener{
           tabHost.addTab(spec);
      
           /************* TAB3 ************/
-          intent = new Intent().setClass(this, Tab3.class);
-          spec = tabHost.newTabSpec("Third").setIndicator("")
+          intent = new Intent().setClass(this, Voltages.class);
+          spec = tabHost.newTabSpec("Third").setIndicator("Voltages")
                         .setContent(intent);
           tabHost.addTab(spec);
      

@@ -14,5 +14,6 @@
     <string name="currentGovernorDesc">Current Governor:</string>
     <string name="currentIOScheduleDesc">Current I/O Schedule:</string>
     <string name="readbuffersizeDesc">Read Ahead Buffer Size:</string>
+    <string name="voltagesTitle">Handle Cpu Voltages</string>
 
 </resources>

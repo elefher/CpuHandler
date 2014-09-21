@@ -36,7 +36,7 @@
             android:label="Tab2" >
         </activity>
         <activity
-            android:name="com.elefher.tab.Tab3"
+            android:name="com.elefher.tab.Voltages"
             android:label="Tab3" >
         </activity>
     </application>
