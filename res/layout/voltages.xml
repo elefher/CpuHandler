@@ -13,12 +13,46 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" 
+            android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <TextView 
+            <TextView
                 style="@style/titles"
                 android:text="@string/voltagesTitle" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="right"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="105dp"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/upVolts"
+                    style="@style/setTriangleUpButton" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="105dp"
+                android:orientation="horizontal"
+                android:rotation="180" >
+
+                <Button
+                    android:id="@+id/downVolts"
+                    style="@style/setTriangleUpButton" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout

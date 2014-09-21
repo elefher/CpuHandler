@@ -109,6 +109,16 @@
         <item name="android:textStyle">bold</item>
     </style>
     
+    <style name="setTriangleUpButton">
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:background">@drawable/trianglebutton</item>
+        <item name="android:layout_width">70dp</item>
+        <item name="android:layout_height">70dp</item>
+        <item name="android:textSize">10dp</item>
+        <item name="android:textColor">#504A4B</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
     <style name="dynamicTexts">
         <item name="android:textColor">#EDDA74</item>
         <item name="android:textSize">15dp</item>

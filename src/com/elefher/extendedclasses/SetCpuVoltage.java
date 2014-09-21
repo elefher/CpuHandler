@@ -24,12 +24,16 @@ public class SetCpuVoltage extends EditTextButtons {
 	public void setValue(String value) {
 		strValue = value;
 	}
+	
+	public void setTitle(String title){
+		strTitle = title;
+	}
 
 	@Override
-	public void createReachEditText(int rIdLinear, String title) {
+	public void createReachEditText(int rIdLinear) {
 		LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
 				LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-		params.topMargin = 5;
+		params.topMargin = 0;
 
 		LinearLayout.LayoutParams paramsCenter = new LinearLayout.LayoutParams(
 				0, LayoutParams.WRAP_CONTENT, 1);
@@ -42,12 +46,12 @@ public class SetCpuVoltage extends EditTextButtons {
 		horLayout.setOrientation(0);
 
 		titleText.setLayoutParams(paramsCenter);
-		titleText.setText(title);
+		titleText.setText(strTitle);
 		horLayout.addView(titleText);
 		// Set text tile styles
 		setTextViewStyles();
 
-		btnMinus = new Button(activity);
+		/*btnMinus = new Button(activity);
 		btnMinus.setText("-");
 		btnMinus.setWidth(30);
 		btnMinus.setHeight(30);
@@ -55,32 +59,34 @@ public class SetCpuVoltage extends EditTextButtons {
 		btnPlus = new Button(activity);
 		btnPlus.setText("+");
 		btnPlus.setWidth(30);
-		btnPlus.setHeight(30);
+		btnPlus.setHeight(30);*/
 		// Set styles for buttons
-		setButtonStyles();
+		//setButtonStyles();
 
 		// EditText part
 		setWidth(200);
 		setInputType(InputType.TYPE_CLASS_NUMBER);
+		setFocusableInTouchMode(false);
 		setText(strValue);
 		// Set styles for edit text
 		setEditTextStyles();
 
-		horLayout.addView(btnMinus);
+		//horLayout.addView(btnMinus);
 		horLayout.addView(this);
-		horLayout.addView(btnPlus);
+		//horLayout.addView(btnPlus);
 
 		mainLayout.addView(horLayout);
 
 		/*
 		 * Handle minus and plus buttons
 		 */
-		btnMinus.setOnClickListener(new OnClickListener() {
+		/*btnMinus.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				int step = -100;
+				int step = -250;
 				String text = getText().toString();
+				strValue = String.valueOf(Integer.parseInt(text) + step);
 				setText(String.valueOf(Integer.parseInt(text) + step));
 			}
 		});
@@ -89,11 +95,12 @@ public class SetCpuVoltage extends EditTextButtons {
 
 			@Override
 			public void onClick(View v) {
-				int step = 100;
+				int step = 250;
 				String text = getText().toString();
+				strValue = String.valueOf(Integer.parseInt(text) + step);
 				setText(String.valueOf(Integer.parseInt(text) + step));
 			}
-		});
+		});*/
 	}
 
 	@Override
@@ -105,13 +112,13 @@ public class SetCpuVoltage extends EditTextButtons {
 
 	@Override
 	public void setButtonStyles() {
-		btnMinus.setBackgroundResource(R.drawable.button1);
+		/*btnMinus.setBackgroundResource(R.drawable.button1);
 		btnMinus.setTextColor(Color.rgb(80, 74, 75));
 		btnMinus.setTypeface(Typeface.SANS_SERIF, 1);
 
 		btnPlus.setBackgroundResource(R.drawable.button1);
 		btnPlus.setTextColor(Color.rgb(80, 74, 75));
-		btnPlus.setTypeface(Typeface.SANS_SERIF, 1);
+		btnPlus.setTypeface(Typeface.SANS_SERIF, 1);*/
 	}
 
 	@Override

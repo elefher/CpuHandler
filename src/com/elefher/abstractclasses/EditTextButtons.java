@@ -10,7 +10,7 @@ public abstract class EditTextButtons extends EditText {
 	Activity activity;
 	public TextView titleText;
 	public Button btnMinus, btnPlus, button;
-	public String strValue;
+	public String strValue, strTitle;
 
 	public EditTextButtons(Activity act) {
 		super(act);
@@ -18,7 +18,7 @@ public abstract class EditTextButtons extends EditText {
 		titleText = new TextView(activity);
 	}
 	
-	public abstract void createReachEditText(int rIdLinear, String title);
+	public abstract void createReachEditText(int rIdLinear);
 	public abstract void setTextViewStyles();
 	public abstract void setButtonStyles();
 	public abstract void setEditTextStyles();

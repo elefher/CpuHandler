@@ -18,6 +18,7 @@ public final class R {
         public static final int ringprogressbar=0x7f020004;
         public static final int rotateanimation=0x7f020005;
         public static final int thumb=0x7f020006;
+        public static final int trianglebutton=0x7f020007;
     }
     public static final class id {
         public static final int brand=0x7f060022;
@@ -34,6 +35,7 @@ public final class R {
         public static final int currentMax=0x7f060026;
         public static final int currentMin=0x7f060025;
         public static final int device=0x7f06001f;
+        public static final int downVolts=0x7f06002a;
         public static final int freqSeekBar=0x7f060007;
         public static final int freqText=0x7f060004;
         public static final int governorButton=0x7f060012;
@@ -57,11 +59,12 @@ public final class R {
         public static final int setIOScheduleButton=0x7f060017;
         public static final int setReadAheadButton=0x7f06001b;
         public static final int text=0x7f060023;
+        public static final int upVolts=0x7f060029;
         public static final int updatedCurrentGov=0x7f060015;
         public static final int updateioschedule=0x7f060019;
         public static final int updatereadbuffersize=0x7f06001d;
         public static final int voltagesContent=0x7f060028;
-        public static final int voltagesEdit=0x7f060029;
+        public static final int voltagesEdit=0x7f06002b;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -120,9 +123,10 @@ public final class R {
         /**  SeekBar Styling 
          */
         public static final int cpuFreqBar=0x7f050008;
-        public static final int dynamicTexts=0x7f05000c;
+        public static final int dynamicTexts=0x7f05000d;
         public static final int minTitleText=0x7f05000a;
         public static final int setCpuButton=0x7f05000b;
+        public static final int setTriangleUpButton=0x7f05000c;
         /**  Text Title 
          */
         public static final int subText=0x7f050009;

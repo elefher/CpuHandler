@@ -1,16 +1,16 @@
 package com.elefher.customclasses;
 
 import com.elefher.cpuhandler.R;
+import com.elefher.tab.Voltages;
 
 import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.view.Gravity;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 import android.widget.LinearLayout.LayoutParams;
 
 public class SetVoltagesButton extends Button {
@@ -50,24 +50,24 @@ public class SetVoltagesButton extends Button {
 
 			@Override
 			public void onClick(View v) {
-				getEditTexts();
-				System.out.println("ttttttttt");
+				
+				/*
+				 * Check if voltages changed
+				 */
+				if(CpuGpuFreqVoltages.setCpuVoltages(getEditTexts())){
+					Toast.makeText(activity, "Greate the voltages has changed!!", Toast.LENGTH_LONG).show();
+				}else{
+					Toast.makeText(activity, "Somithing went wrong!!", Toast.LENGTH_LONG).show();
+				}
 			}
 		});
 	}
 	
-	private void getEditTexts(){
-		/*
-		 * Count all items in main layout. There is "-1" because we don't want to 
-		 * get the "Set Volts" button 
-		 */				
-		int mainLength = mainLayout.getChildCount() - 1;
-		
-		for(int i = 0; i < mainLength; i++){
-			if(mainLayout.getChildAt(i) instanceof EditText){
-				System.out.println("get val " + mainLayout.getChildAt(i));
-			}
+	private String getEditTexts(){
+		String str = "";
+		for (int i = 0; i < Voltages.lengthObj; i++){
+			str += Voltages.setCpuVoltsList.get(i).strTitle + " " + Voltages.setCpuVoltsList.get(i).strValue + "\n";
 		}
-		
+		return str;
 	}
 }

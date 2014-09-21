@@ -2,11 +2,9 @@ package com.elefher.customclasses;
 
 import java.io.DataOutputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import android.util.Log;
-import android.widget.Toast;
 
 import com.elefher.tab.Info;
 import com.elefher.utils.CpuUtils;
