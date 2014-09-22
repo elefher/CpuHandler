@@ -18,7 +18,6 @@ public final class R {
         public static final int ringprogressbar=0x7f020004;
         public static final int rotateanimation=0x7f020005;
         public static final int thumb=0x7f020006;
-        public static final int trianglebutton=0x7f020007;
     }
     public static final class id {
         public static final int brand=0x7f060022;

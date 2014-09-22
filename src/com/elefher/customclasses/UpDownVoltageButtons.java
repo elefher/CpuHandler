@@ -11,6 +11,9 @@ import android.widget.Button;
 
 public class UpDownVoltageButtons {
 
+	public static int offestCount = 0;
+	public static int offset = 250;
+	
 	public UpDownVoltageButtons(Activity act){
 		Button btnMinus = (Button) act.findViewById(R.id.downVolts);
 		Button btnPlus = (Button) act.findViewById(R.id.upVolts);
@@ -19,10 +22,9 @@ public class UpDownVoltageButtons {
 
 			@Override
 			public void onClick(View arg0) {
-				int downVal = -250;
-				changeEditValues(downVal);
-				System.out.println("down");
-				
+				int downVal = -offset;
+				offestCount--;
+				changeEditValuesOffset(downVal);								
 			}
 		});
 
@@ -30,14 +32,14 @@ public class UpDownVoltageButtons {
 
 			@Override
 			public void onClick(View v) {
-				int upVal = 250;
-				changeEditValues(upVal);
-				System.out.println("up");
+				int upVal = offset;
+				offestCount++;
+				changeEditValuesOffset(upVal);				
 			}
 		});
 	}
 	
-	private void changeEditValues(int val){
+	private void changeEditValuesOffset(int val){
 		for (SetCpuVoltage sCV : Voltages.setCpuVoltsList){
 			sCV.strValue = String.valueOf(Integer.parseInt(sCV.strValue)  + val);
 			sCV.setText(sCV.strValue);

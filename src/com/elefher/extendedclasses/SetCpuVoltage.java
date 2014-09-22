@@ -33,7 +33,7 @@ public class SetCpuVoltage extends EditTextButtons {
 	public void createReachEditText(int rIdLinear) {
 		LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
 				LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-		params.topMargin = 0;
+		params.topMargin = 5;
 
 		LinearLayout.LayoutParams paramsCenter = new LinearLayout.LayoutParams(
 				0, LayoutParams.WRAP_CONTENT, 1);
@@ -51,17 +51,14 @@ public class SetCpuVoltage extends EditTextButtons {
 		// Set text tile styles
 		setTextViewStyles();
 
-		/*btnMinus = new Button(activity);
+		btnMinus = new Button(activity);
 		btnMinus.setText("-");
-		btnMinus.setWidth(30);
-		btnMinus.setHeight(30);
 
 		btnPlus = new Button(activity);
 		btnPlus.setText("+");
-		btnPlus.setWidth(30);
-		btnPlus.setHeight(30);*/
+		
 		// Set styles for buttons
-		//setButtonStyles();
+		setButtonStyles();
 
 		// EditText part
 		setWidth(200);
@@ -71,16 +68,16 @@ public class SetCpuVoltage extends EditTextButtons {
 		// Set styles for edit text
 		setEditTextStyles();
 
-		//horLayout.addView(btnMinus);
+		horLayout.addView(btnMinus);
 		horLayout.addView(this);
-		//horLayout.addView(btnPlus);
+		horLayout.addView(btnPlus);
 
 		mainLayout.addView(horLayout);
 
 		/*
 		 * Handle minus and plus buttons
 		 */
-		/*btnMinus.setOnClickListener(new OnClickListener() {
+		btnMinus.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -100,7 +97,7 @@ public class SetCpuVoltage extends EditTextButtons {
 				strValue = String.valueOf(Integer.parseInt(text) + step);
 				setText(String.valueOf(Integer.parseInt(text) + step));
 			}
-		});*/
+		});
 	}
 
 	@Override
@@ -112,13 +109,15 @@ public class SetCpuVoltage extends EditTextButtons {
 
 	@Override
 	public void setButtonStyles() {
-		/*btnMinus.setBackgroundResource(R.drawable.button1);
+		btnMinus.setBackgroundResource(R.drawable.button1);
+		btnMinus.setLayoutParams(new LinearLayout.LayoutParams(80, 80));
 		btnMinus.setTextColor(Color.rgb(80, 74, 75));
 		btnMinus.setTypeface(Typeface.SANS_SERIF, 1);
 
 		btnPlus.setBackgroundResource(R.drawable.button1);
+		btnPlus.setLayoutParams(new LinearLayout.LayoutParams(80, 80));
 		btnPlus.setTextColor(Color.rgb(80, 74, 75));
-		btnPlus.setTypeface(Typeface.SANS_SERIF, 1);*/
+		btnPlus.setTypeface(Typeface.SANS_SERIF, 1);
 	}
 
 	@Override

@@ -1,5 +1,7 @@
 package com.elefher.customclasses;
 
+import java.util.ArrayList;
+
 import com.elefher.cpuhandler.R;
 import com.elefher.tab.Voltages;
 
@@ -50,24 +52,100 @@ public class SetVoltagesButton extends Button {
 
 			@Override
 			public void onClick(View v) {
-				
-				/*
-				 * Check if voltages changed
-				 */
-				if(CpuGpuFreqVoltages.setCpuVoltages(getEditTexts())){
-					Toast.makeText(activity, "Greate the voltages has changed!!", Toast.LENGTH_LONG).show();
-				}else{
-					Toast.makeText(activity, "Somithing went wrong!!", Toast.LENGTH_LONG).show();
+				if(!"0".equals(getEditOffset())){
+					offsetDoChanges();
+				} else {
+					editBtnsDoChanges();
 				}
 			}
 		});
 	}
 	
-	private String getEditTexts(){
-		String str = "";
-		for (int i = 0; i < Voltages.lengthObj; i++){
-			str += Voltages.setCpuVoltsList.get(i).strTitle + " " + Voltages.setCpuVoltsList.get(i).strValue + "\n";
+	/*
+	 * Create an offset string which is going to add or sub the voltages
+	 * in all frequencies
+	 */
+	private String getEditOffset(){
+		String offset = "";
+		
+		if(UpDownVoltageButtons.offestCount < 0){
+			offset = String.valueOf(UpDownVoltageButtons.offset * UpDownVoltageButtons.offestCount);
+		} else if(UpDownVoltageButtons.offestCount > 0){
+			offset = "+" + String.valueOf(UpDownVoltageButtons.offset * UpDownVoltageButtons.offestCount);
+		} else {
+			offset = "0";
 		}
-		return str;
+		
+		return offset;
+	}
+	
+	private void offsetDoChanges(){
+		/*
+		 * Check if voltages changed. Also prepare getEditOffset to arraylist
+		 * in order to fit in setCpuVoltages function.
+		 */
+		ArrayList<String> offset = new ArrayList<String>();
+		offset.add(getEditOffset());
+		if(CpuGpuFreqVoltages.setCpuVoltages(offset)){
+			Toast.makeText(activity, "Greate the voltages has changed!!", Toast.LENGTH_LONG).show();
+			UpDownVoltageButtons.offestCount = 0;
+		}else{
+			if("0".equals(getEditOffset())){
+				Toast.makeText(activity, "You didn't change voltages!!", Toast.LENGTH_LONG).show();
+			} else {
+				Toast.makeText(activity, "Somithing went wrong!!",
+						Toast.LENGTH_LONG).show();
+			}
+		}
+	}
+	
+	/*
+	 * Get all freqs and volts from edit texts
+	 */
+	private ArrayList<String> getChanges(){
+		ArrayList<String> storeNewFreqsVolts = new ArrayList<String>();
+		for(int i = 0; i < Voltages.lengthObj; i++){
+			String str = Voltages.setCpuVoltsList.get(i).strTitle + " " +Voltages.setCpuVoltsList.get(i).strValue;
+			storeNewFreqsVolts.add(str);
+		}
+		return storeNewFreqsVolts;
+	}
+	
+	/*
+	 * Compare new freqs-volts with current freqs-volts and 
+	 * set a new ArrayList. The new ArrayList is going to update the current
+	 * volts with new values.
+	 */
+	private ArrayList<String> compareNewCurrentVoltsGetDif(ArrayList<String> newVolts){
+		ArrayList<String> finalVolts = new ArrayList<String>();
+		ArrayList<String> currentVolts = CpuGpuFreqVoltages.getCpuVoltages();
+				
+		for(int i = 0; i < Voltages.lengthObj; i++){
+			// replaceAll used in order to ignore all spaces
+			if(!newVolts.get(i).replaceAll("\\s+","").equals(currentVolts.get(i).replaceAll("\\s+",""))){
+				// Create string without ":"
+				finalVolts.add(newVolts.get(i).replace(":", ""));
+			}
+		}
+		
+		return finalVolts;
+	}
+	
+	/*
+	 * This function called when edit button texts
+	 * must do changes in volts
+	 */
+	private void editBtnsDoChanges(){
+		ArrayList<String> finalVolts = compareNewCurrentVoltsGetDif(getChanges());
+		if(finalVolts.isEmpty()){
+			Toast.makeText(activity, "You didn't change voltages!!", Toast.LENGTH_LONG).show();
+		} else {
+			if(CpuGpuFreqVoltages.setCpuVoltages(finalVolts)){
+				Toast.makeText(activity, "Greate the voltages has changed!!", Toast.LENGTH_LONG).show();
+				UpDownVoltageButtons.offestCount = 0;
+			} else {
+				Toast.makeText(activity, "Somithing went wrong!!", Toast.LENGTH_LONG).show();
+			}
+		}
 	}
 }

@@ -27,13 +27,16 @@ public class CpuGpuFreqVoltages {
 		return arrayStringList;
 	}
 
-	public static boolean setCpuVoltages(String addSubVal) {
-		
+	public static boolean setCpuVoltages(ArrayList<String> addSubVal) {
+		if (addSubVal.isEmpty())
+			return false;
+
 		List<String> commands = new ArrayList<String>();
 		try {
 			commands.add("chmod 0644 " + cpufreq_sys_volts + "\n");
-			commands.add("echo " + addSubVal + " > " + cpufreq_sys_volts + "\n");
-			System.out.println("echo " + addSubVal + " > " + cpufreq_sys_volts + "\n");
+			for (String s : addSubVal) {
+				commands.add("echo " + s + " > " + cpufreq_sys_volts + "\n");
+			}
 			commands.add("exit\n");
 
 			Process p = Runtime.getRuntime().exec(CpuUtils.getSUbinaryPath());

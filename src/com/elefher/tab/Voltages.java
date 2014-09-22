@@ -7,7 +7,6 @@ import com.elefher.customclasses.CpuGpuFreqVoltages;
 import com.elefher.customclasses.SetVoltagesButton;
 import com.elefher.customclasses.UpDownVoltageButtons;
 import com.elefher.extendedclasses.SetCpuVoltage;
-import com.elefher.utils.CpuUtils;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -25,7 +24,7 @@ public class Voltages extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.voltages);
 
-		setCpuVoltages();
+		setCpuVoltagesSeparate();
 		
 		setCpuVoltsList = new ArrayList<SetCpuVoltage>();
 		
@@ -46,7 +45,7 @@ public class Voltages extends Activity {
 		UpDownVoltageButtons upDownOffsetBtns = new UpDownVoltageButtons(this);
 	}
 
-	private void setCpuVoltages() {
+	private void setCpuVoltagesSeparate() {
 		ArrayList<String> cpuFreqsVolts = CpuGpuFreqVoltages.getCpuVoltages();
 		int size = cpuFreqsVolts.size();
 		freqs = new String[size];
