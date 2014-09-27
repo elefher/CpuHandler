@@ -27,6 +27,8 @@ public class CpuFreqPicker implements OnSeekBarChangeListener, OnClickListener {
 	int lengthAvailableFreq = availableFreq.length;
 	int minAvailableFreqToInt = Integer.parseInt(minAvailableFreq);
 	int maxAvailableFreqToInt = Integer.parseInt(maxAvailableFreq);
+	
+	static String currentMinFreq, currentMaxFreq;
 
 	Activity activity;
 

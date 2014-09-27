@@ -15,5 +15,6 @@
     <string name="currentIOScheduleDesc">Current I/O Schedule:</string>
     <string name="readbuffersizeDesc">Read Ahead Buffer Size:</string>
     <string name="voltagesTitle">Handle Cpu Voltages</string>
+    <string name="setonboottext">Set On Boot</string>
 
 </resources>

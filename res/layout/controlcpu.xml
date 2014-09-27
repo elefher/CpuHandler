@@ -29,6 +29,18 @@
             </LinearLayout>
 
             <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal" >
+
+                <CheckBox
+                    android:id="@+id/checkBoxFreqs"
+                    style="@style/checkboxesonboot"
+                    android:text="@string/setonboottext" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/freqText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -150,6 +162,18 @@
                 android:text="@string/setcpugovernor" />
 
             <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal" >
+
+                <CheckBox
+                    android:id="@+id/checkBoxGovs"
+                    style="@style/checkboxesonboot"
+                    android:text="@string/setonboottext" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/governors"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -214,6 +238,18 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/setioschedule" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal" >
+
+                <CheckBox
+                    android:id="@+id/checkBoxIO"
+                    style="@style/checkboxesonboot"
+                    android:text="@string/setonboottext" />
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/ioschedulerlayout"
@@ -283,6 +319,18 @@
             </LinearLayout>
 
             <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal" >
+
+                <CheckBox
+                    android:id="@+id/checkBoxBufferSize"
+                    style="@style/checkboxesonboot"
+                    android:text="@string/setonboottext" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >
@@ -313,7 +361,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical|center_horizontal"
                         android:text="@string/readbuffersizeDesc" />
-                    
+
                     <TextView
                         android:id="@+id/updatereadbuffersize"
                         style="@style/dynamicTexts"
