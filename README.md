@@ -1,6 +1,6 @@
 <div id="content">
 	<div id="header">
-		<h1 style="float:center;color:red">CpuHandler Android app</h1>
+		<h1>CpuHandler Android app</h1>
 	</div>
 	<div id="mainContent">
              <h1>What is CpuHandler</h1>

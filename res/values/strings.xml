@@ -16,5 +16,19 @@
     <string name="readbuffersizeDesc">Read Ahead Buffer Size:</string>
     <string name="voltagesTitle">Handle Cpu Voltages</string>
     <string name="setonboottext">Set On Boot</string>
+    <string name="cpuFreqDescription">Try to lock min &amp; max cpu frequencies. Choosing set on boot, 
+        min &amp; max frequencies will apply auto when device reboot. Also try to create cpu profiles
+        with your favorite frequencies.</string>
+    <string name="govDescription">Choose your favorite governor. Try to find best governor for
+        cpu and let it to jump between min &amp; max frequencies. Use set on boot in order to reboot with
+        your favorite governor.</string>
+    <string name="ioDescription">Choose an I/O scheduler. They have many purposes depending 
+            on the goal of the I/O scheduler. Try to minimize time wasted by hard disk seeks,
+            to give a share of the disk bandwidth to each running process and more.</string>
+    <string name="bufferSizeDescription">The bigger the read-ahead buffer is, the better the SD card
+            can predict what command would come next. This gives you better performance, and a potential
+            increase of battery life.</string>
+    <string name="voltsDescription">Choose the voltage for every available frequency. Set on boot option doesn\'t
+        available for safety reasons.</string>
 
 </resources>

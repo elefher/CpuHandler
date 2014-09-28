@@ -26,6 +26,14 @@ public class CpuGpuFreqVoltages {
 
 		return arrayStringList;
 	}
+	
+	public static boolean hasCpuVoltages() {
+		File f = new File(cpufreq_sys_volts);
+		if(f.exists())
+			return true;
+		else
+			return false;
+	}
 
 	public static boolean setCpuVoltages(ArrayList<String> addSubVal) {
 		if (addSubVal.isEmpty())

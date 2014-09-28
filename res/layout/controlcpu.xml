@@ -29,6 +29,17 @@
             </LinearLayout>
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/cpuDescription"
+                    style="@style/itemdescription"
+                    android:text="@string/cpuFreqDescription" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -160,6 +171,17 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/setcpugovernor" />
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/govDescription"
+                    style="@style/itemdescription"
+                    android:text="@string/govDescription" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -238,8 +260,20 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/setioschedule" />
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
 
-            <!-- <LinearLayout
+                <TextView
+                    android:id="@+id/govDescription"
+                    style="@style/itemdescription"
+                    android:text="@string/ioDescription" />
+            </LinearLayout>
+
+            <!--
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -249,7 +283,8 @@
                     android:id="@+id/checkBoxIO"
                     style="@style/checkboxesonboot"
                     android:text="@string/setonboottext" />
-            </LinearLayout>-->
+            </LinearLayout>
+            -->
 
             <LinearLayout
                 android:id="@+id/ioschedulerlayout"
@@ -317,8 +352,20 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.20" />
             </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
 
-            <!-- <LinearLayout
+                <TextView
+                    android:id="@+id/govDescription"
+                    style="@style/itemdescription"
+                    android:text="@string/bufferSizeDescription" />
+            </LinearLayout>
+
+            <!--
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -328,7 +375,8 @@
                     android:id="@+id/checkBoxBufferSize"
                     style="@style/checkboxesonboot"
                     android:text="@string/setonboottext" />
-            </LinearLayout>-->
+            </LinearLayout>
+            -->
 
             <LinearLayout
                 android:layout_width="match_parent"

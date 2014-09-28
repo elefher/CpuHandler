@@ -23,52 +23,54 @@ public final class R {
         public static final int thumb=0x7f020009;
     }
     public static final class id {
-        public static final int brand=0x7f060024;
-        public static final int buttonSetCpuFreq=0x7f06000d;
-        public static final int checkBoxFreqs=0x7f060004;
-        public static final int checkBoxGovs=0x7f060011;
-        public static final int codename=0x7f060022;
+        public static final int brand=0x7f060026;
+        public static final int buttonSetCpuFreq=0x7f06000e;
+        public static final int checkBoxFreqs=0x7f060005;
+        public static final int checkBoxGovs=0x7f060013;
+        public static final int codename=0x7f060024;
         public static final int controlCpu=0x7f060001;
         public static final int controlCpuContent=0x7f060000;
         public static final int controlCpuTitle=0x7f060002;
-        public static final int cores=0x7f060026;
-        public static final int cpuInfo=0x7f060020;
+        public static final int cores=0x7f060028;
+        public static final int cpuDescription=0x7f060004;
+        public static final int cpuInfo=0x7f060022;
         public static final int cpuTitle=0x7f060003;
-        public static final int currentGov=0x7f060015;
-        public static final int currentGovDescription=0x7f060016;
-        public static final int currentMax=0x7f060028;
-        public static final int currentMin=0x7f060027;
-        public static final int device=0x7f060021;
-        public static final int downVolts=0x7f06002c;
-        public static final int freqSeekBar=0x7f060008;
-        public static final int freqText=0x7f060005;
-        public static final int governorButton=0x7f060014;
-        public static final int governors=0x7f060012;
-        public static final int governorsSpinner=0x7f060013;
-        public static final int ioscheduledesc=0x7f06001a;
-        public static final int ioschedulerlayout=0x7f060018;
-        public static final int kernel=0x7f060023;
-        public static final int maxFreq=0x7f060007;
-        public static final int maxFreqSeek=0x7f06000b;
-        public static final int maxFreqSeekProgress=0x7f06000c;
-        public static final int minFreq=0x7f060006;
-        public static final int minFreqSeek=0x7f060009;
-        public static final int minFreqSeekProgress=0x7f06000a;
-        public static final int readbuffersizedesc=0x7f06001e;
-        public static final int scalingCurrent=0x7f060029;
-        public static final int separate=0x7f060010;
-        public static final int separatesubline=0x7f06001c;
-        public static final int setCpuButton=0x7f06000e;
-        public static final int setCpuProfileButton=0x7f06000f;
-        public static final int setIOScheduleButton=0x7f060019;
-        public static final int setReadAheadButton=0x7f06001d;
-        public static final int text=0x7f060025;
-        public static final int upVolts=0x7f06002b;
-        public static final int updatedCurrentGov=0x7f060017;
-        public static final int updateioschedule=0x7f06001b;
-        public static final int updatereadbuffersize=0x7f06001f;
-        public static final int voltagesContent=0x7f06002a;
-        public static final int voltagesEdit=0x7f06002d;
+        public static final int currentGov=0x7f060017;
+        public static final int currentGovDescription=0x7f060018;
+        public static final int currentMax=0x7f06002a;
+        public static final int currentMin=0x7f060029;
+        public static final int device=0x7f060023;
+        public static final int downVolts=0x7f06002e;
+        public static final int freqSeekBar=0x7f060009;
+        public static final int freqText=0x7f060006;
+        public static final int govDescription=0x7f060012;
+        public static final int governorButton=0x7f060016;
+        public static final int governors=0x7f060014;
+        public static final int governorsSpinner=0x7f060015;
+        public static final int ioscheduledesc=0x7f06001c;
+        public static final int ioschedulerlayout=0x7f06001a;
+        public static final int kernel=0x7f060025;
+        public static final int maxFreq=0x7f060008;
+        public static final int maxFreqSeek=0x7f06000c;
+        public static final int maxFreqSeekProgress=0x7f06000d;
+        public static final int minFreq=0x7f060007;
+        public static final int minFreqSeek=0x7f06000a;
+        public static final int minFreqSeekProgress=0x7f06000b;
+        public static final int readbuffersizedesc=0x7f060020;
+        public static final int scalingCurrent=0x7f06002b;
+        public static final int separate=0x7f060011;
+        public static final int separatesubline=0x7f06001e;
+        public static final int setCpuButton=0x7f06000f;
+        public static final int setCpuProfileButton=0x7f060010;
+        public static final int setIOScheduleButton=0x7f06001b;
+        public static final int setReadAheadButton=0x7f06001f;
+        public static final int text=0x7f060027;
+        public static final int upVolts=0x7f06002d;
+        public static final int updatedCurrentGov=0x7f060019;
+        public static final int updateioschedule=0x7f06001d;
+        public static final int updatereadbuffersize=0x7f060021;
+        public static final int voltagesContent=0x7f06002c;
+        public static final int voltagesEdit=0x7f06002f;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -80,10 +82,14 @@ public final class R {
         public static final int BatteryStatus=0x7f040004;
         public static final int DeviceStatus=0x7f040003;
         public static final int app_name=0x7f040000;
+        public static final int bufferSizeDescription=0x7f040012;
+        public static final int cpuFreqDescription=0x7f04000f;
         public static final int currentGovernorDesc=0x7f04000a;
         public static final int currentIOScheduleDesc=0x7f04000b;
+        public static final int govDescription=0x7f040010;
         public static final int hello_world=0x7f040001;
         public static final int info=0x7f040002;
+        public static final int ioDescription=0x7f040011;
         public static final int readbuffersizeDesc=0x7f04000c;
         public static final int setCpuButton=0x7f040005;
         public static final int setcpu=0x7f040006;
@@ -92,6 +98,7 @@ public final class R {
         public static final int setonboottext=0x7f04000e;
         public static final int spinnerPrompt=0x7f040009;
         public static final int voltagesTitle=0x7f04000d;
+        public static final int voltsDescription=0x7f040013;
     }
     public static final class style {
         /** 
@@ -121,21 +128,22 @@ public final class R {
          */
         public static final int AppTheme=0x7f050001;
         public static final int Content=0x7f050002;
-        public static final int CpuStats=0x7f050007;
+        public static final int CpuStats=0x7f050008;
         public static final int GeneralInfo=0x7f050003;
         public static final int SeparateLine=0x7f050004;
         public static final int SeparateSubLine=0x7f050005;
-        public static final int checkboxesonboot=0x7f05000e;
+        public static final int checkboxesonboot=0x7f05000f;
         /**  SeekBar Styling 
          */
-        public static final int cpuFreqBar=0x7f050008;
-        public static final int dynamicTexts=0x7f05000d;
-        public static final int minTitleText=0x7f05000a;
-        public static final int setCpuButton=0x7f05000b;
-        public static final int setTriangleUpButton=0x7f05000c;
+        public static final int cpuFreqBar=0x7f050009;
+        public static final int dynamicTexts=0x7f05000e;
+        public static final int itemdescription=0x7f050007;
+        public static final int minTitleText=0x7f05000b;
+        public static final int setCpuButton=0x7f05000c;
+        public static final int setTriangleUpButton=0x7f05000d;
         /**  Text Title 
          */
-        public static final int subText=0x7f050009;
+        public static final int subText=0x7f05000a;
         public static final int titles=0x7f050006;
     }
 }
