@@ -93,7 +93,7 @@ public class OnBoot {
 		}
 	}
 
-	private void rmFile(String folder, String pathFileToCreate) {
+	public static void rmFile(String folder, String pathFileToCreate) {
 		try {
 
 			// Get Root
@@ -144,6 +144,10 @@ public class OnBoot {
 	}
 	
 	public static boolean checkExistsSetOnBootFile(String setOnBootFile){
-		return true;
+		File f = new File(setOnBootFile);
+		if(f.exists())
+			return true;
+		else
+			return false;
 	}
 }

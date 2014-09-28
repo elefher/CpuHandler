@@ -14,7 +14,7 @@ public abstract class AlertDialogUtils extends AlertDialog.Builder implements
 	Activity activity;
 	private Button button;
 	public String[] strItems;
-	public String getStringItem = "";
+	public static String getStringItem = "";
 
 	public AlertDialogUtils(Activity act) {
 		super(act);

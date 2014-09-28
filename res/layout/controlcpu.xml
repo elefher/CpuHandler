@@ -239,7 +239,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/setioschedule" />
 
-            <LinearLayout
+            <!-- <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -249,7 +249,7 @@
                     android:id="@+id/checkBoxIO"
                     style="@style/checkboxesonboot"
                     android:text="@string/setonboottext" />
-            </LinearLayout>
+            </LinearLayout>-->
 
             <LinearLayout
                 android:id="@+id/ioschedulerlayout"
@@ -318,7 +318,7 @@
                     android:layout_weight="0.20" />
             </LinearLayout>
 
-            <LinearLayout
+            <!-- <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -328,7 +328,7 @@
                     android:id="@+id/checkBoxBufferSize"
                     style="@style/checkboxesonboot"
                     android:text="@string/setonboottext" />
-            </LinearLayout>
+            </LinearLayout>-->
 
             <LinearLayout
                 android:layout_width="match_parent"

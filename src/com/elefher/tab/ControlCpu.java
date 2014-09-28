@@ -1,7 +1,6 @@
 package com.elefher.tab;
 
 import com.elefher.cpuhandler.R;
-import com.elefher.extendedclasses.SetOnBoot;
 import com.elefher.extendedclasses.SetOnBootTask;
 import com.elefher.implementation.CpuFreqPicker;
 import com.elefher.implementation.CpuFreqProfile;
@@ -27,6 +26,5 @@ public class ControlCpu extends Activity {
 		IOSchedulerPicker ioScheduler = new IOSchedulerPicker(this);
 		IOReadAheadPicker ioReadAhead = new IOReadAheadPicker(this);
 		SetOnBootTask setOnBootTask = new SetOnBootTask(this);
-		//SetOnBoot setOnBoot = new SetOnBoot(this);
 	}
 }

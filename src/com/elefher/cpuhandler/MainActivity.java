@@ -36,10 +36,10 @@ public class MainActivity extends TabActivity implements OnTabChangeListener{
        
           TabHost.TabSpec spec;
           Intent intent;
-     
+
            /************* TAB1 ************/
           // Create  Intents to launch an Activity for the tab (to be reused)
-          intent = new Intent().setClass(this, Info.class);
+          intent = new Intent().setClass(this, Info.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
           spec = tabHost.newTabSpec("First").setIndicator("Info")
                         .setContent(intent);
            
@@ -47,13 +47,13 @@ public class MainActivity extends TabActivity implements OnTabChangeListener{
           tabHost.addTab(spec);
      
           /************* TAB2 ************/
-          intent = new Intent().setClass(this, ControlCpu.class);
+          intent = new Intent().setClass(this, ControlCpu.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
           spec = tabHost.newTabSpec("Second").setIndicator("Control Cpu")
                         .setContent(intent);  
           tabHost.addTab(spec);
      
           /************* TAB3 ************/
-          intent = new Intent().setClass(this, Voltages.class);
+          intent = new Intent().setClass(this, Voltages.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
           spec = tabHost.newTabSpec("Third").setIndicator("Voltages")
                         .setContent(intent);
           tabHost.addTab(spec);
@@ -65,8 +65,6 @@ public class MainActivity extends TabActivity implements OnTabChangeListener{
           // Set Tab1 as Default tab and change image   
           //tabHost.getTabWidget().setCurrentTab(0);
           //tabHost.getTabWidget().getChildAt(0).setBackgroundResource(R.drawable.tab1_over);
-           
-     
        }
  
     @Override
