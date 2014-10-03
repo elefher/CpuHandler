@@ -174,7 +174,7 @@ public class SetOnBootTask extends CustomCheckBoxes {
 				+ " > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq");
 		onBoot.addCommand("\necho " + (int) CpuFreqPicker.curMinFreq
 				+ " > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq");
-		if (onBoot.setOnBoot()) {
+		if (onBoot.setOnBoot("/system")) {
 			Toast.makeText(activity, "set on boot is enabled!!",
 					Toast.LENGTH_LONG).show();
 		}
@@ -192,7 +192,7 @@ public class SetOnBootTask extends CustomCheckBoxes {
 		onBoot.setShell("#!/system/bin/sh");
 		onBoot.addCommand("\necho " + CpuGovernors.getCurrentGovernor()
 				+ " > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor");
-		if (onBoot.setOnBoot()) {
+		if (onBoot.setOnBoot("/system")) {
 			Toast.makeText(activity, "set on boot is enabled!!",
 					Toast.LENGTH_LONG).show();
 		}

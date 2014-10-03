@@ -36,7 +36,7 @@ public class OnBoot {
 	/*
 	 * Write commands into file and set it executable
 	 */
-	public boolean setOnBoot() {
+	public boolean setOnBoot(String rootFolder) {
 		String command = "";
 
 		if (commands.isEmpty() || shell.isEmpty())
@@ -50,15 +50,15 @@ public class OnBoot {
 
 		File f = new File(SYSTEM_INITD + fileName);
 		if (!f.exists()) {
-			changeFolderPermsToRW(SYSTEM_INITD, SYSTEM_INITD + fileName);
-			createScript(command, SYSTEM_INITD , SYSTEM_INITD + fileName);
+			createFile(rootFolder, SYSTEM_INITD + fileName);
+			createScript(command, rootFolder, SYSTEM_INITD + fileName);
 		} else {
-			createScript(command, SYSTEM_INITD, SYSTEM_INITD + fileName);
+			createScript(command, rootFolder, SYSTEM_INITD + fileName);
 		}
 		return true;
 	}
 
-	private void changeFolderPermsToRW(String folder, String pathFileToCreate) {
+	private void createFile(String folder, String pathFileToCreate) {
 		try {
 
 			// Get Root
@@ -104,8 +104,12 @@ public class OnBoot {
 			dos.writeBytes("mount -w -o remount,rw " + folder + "\n");
 			dos.flush();
 
-			// Create file
+			// delete file
 			dos.writeBytes("rm " + pathFileToCreate + "\n");
+			dos.flush();
+
+			// Remount system folder as Read-Only
+			dos.writeBytes("mount -r -o remount,ro " + folder + "\n");
 			dos.flush();
 
 			// End process
@@ -130,9 +134,9 @@ public class OnBoot {
 			// write code to the script file
 			dos.writeBytes("echo \"" + code + "\" > " + filePath + "\n");
 			dos.flush();
-			
-			// Remount system folder as writable within the root process
-			dos.writeBytes("mount -w -o remount,rw " + folder + "\n");
+
+			// Remount system folder as Read-Only
+			dos.writeBytes("mount -r -o remount,ro " + folder + "\n");
 			dos.flush();
 
 			// End process
@@ -142,10 +146,10 @@ public class OnBoot {
 			e.printStackTrace();
 		}
 	}
-	
-	public static boolean checkExistsSetOnBootFile(String setOnBootFile){
+
+	public static boolean checkExistsSetOnBootFile(String setOnBootFile) {
 		File f = new File(setOnBootFile);
-		if(f.exists())
+		if (f.exists())
 			return true;
 		else
 			return false;
