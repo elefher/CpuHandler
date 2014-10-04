@@ -17,6 +17,7 @@
     <string name="readbuffersizeDesc">Read Ahead Buffer Size:</string>
     <string name="voltagesTitle">Handle Cpu Voltages</string>
     <string name="setonboottext">Set On Boot</string>
+    <string name="gridTitle">Trickle Cpu Services</string>
     <string name="cpuFreqDescription">Try to lock min &amp; max cpu frequencies. Choosing set on boot, 
         min &amp; max frequencies will apply auto when device reboot. Also try to create cpu profiles
         with your favorite frequencies.</string>

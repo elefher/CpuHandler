@@ -1,14 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/gridview"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#504A4B"
-    android:columnWidth="130dp"
-    android:gravity="center"
-    android:horizontalSpacing="10dp"
-    android:numColumns="auto_fit"
-    android:stretchMode="columnWidth"
-    android:verticalSpacing="10dp" >
+    android:background="#504A4B" >
 
-</GridView>
+    <LinearLayout
+        android:id="@+id/topofgridlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="text text text text text text text text text text 
+            text text text text text text text text text text text text text text 
+            text text text text text text text text text text text text text text 
+            text text text text text text text text text text text text text text 
+            text text text text text text text text text text text text text text 
+            text text text text text text text text text text text text text text 
+            text text text text text text text text text text text text text text"
+                android:textSize="30dp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/separate"
+            style="@style/SeparateLine"
+            android:orientation="horizontal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/gridTitle"
+                style="@style/titles"
+                android:layout_marginBottom="5dp"
+                android:text="@string/gridTitle" />
+
+            <GridView
+                android:id="@+id/gridview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#504A4B"
+                android:columnWidth="130dp"
+                android:gravity="center"
+                android:horizontalSpacing="10dp"
+                android:numColumns="auto_fit"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="10dp" >
+            </GridView>
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

@@ -125,10 +125,10 @@
     
     <style name="gridButton">
         <item name="android:layout_centerInParent">true</item>
-        <item name="android:background">@drawable/button1</item>
+        <item name="android:background">@drawable/gridbutton</item>
         <item name="android:layout_width">130dp</item>
         <item name="android:layout_height">130dp</item>
-        <item name="android:textColor">#EDDA74</item>
+        <item name="android:textColor">#FFD700</item>
         <item name="android:textStyle">bold</item>
     </style>
     
