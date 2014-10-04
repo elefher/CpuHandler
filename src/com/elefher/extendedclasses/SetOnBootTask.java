@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.elefher.abstractclasses.CustomCheckBoxes;
 import com.elefher.cpuhandler.R;
+import com.elefher.customclasses.CpuControl;
 import com.elefher.customclasses.CpuGovernors;
 import com.elefher.customclasses.OnBoot;
 import com.elefher.implementation.CpuFreqPicker;
@@ -174,6 +175,12 @@ public class SetOnBootTask extends CustomCheckBoxes {
 				+ " > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq");
 		onBoot.addCommand("\necho " + (int) CpuFreqPicker.curMinFreq
 				+ " > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq");
+		// Max screen off frequency if supported by kernel
+		if(CpuControl.isScreenOffMaxFreqSupported()){
+			onBoot.addCommand("\necho " + (int) CpuFreqPicker.curMaxScreenOffFreq
+					+ " > /sys/devices/system/cpu/cpu0/cpufreq/screen_off_max_freq");
+		}
+		
 		if (onBoot.setOnBoot("/system")) {
 			Toast.makeText(activity, "set on boot is enabled!!",
 					Toast.LENGTH_LONG).show();

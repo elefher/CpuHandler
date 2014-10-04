@@ -8,6 +8,7 @@
     <string name="BatteryStatus">Battery Status</string>
     <string name="setCpuButton">Set Cpu Freq</string>
     <string name="setcpu">Cpu Frequency Control</string>
+    <string name="setmaxfreqscreenoff">Max Screen Off: </string>
     <string name="setioschedule">I/O Scheduler Control</string>
     <string name="setcpugovernor">Cpu Governor Control</string>
     <string name="spinnerPrompt">Governors</string>

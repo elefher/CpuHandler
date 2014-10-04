@@ -120,6 +120,72 @@
                 </LinearLayout>
             </LinearLayout>
 
+            <!-- This is a 60% line of screen width in center position -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal"
+                android:weightSum="1" >
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.20" />
+
+                <View
+                    android:id="@+id/separateline"
+                    style="@style/SeparateSubLine" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.20" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/maxfreqscreenoff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/minTitleText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/setmaxfreqscreenoff" >
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/currentmaxscreenofffreq"
+                        style="@style/dynamicTexts"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" >
+                    </TextView>
+                </LinearLayout>
+
+                <SeekBar
+                    android:id="@+id/maxFreqScreenOffSeek"
+                    style="@style/cpuFreqBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:maxHeight="5dp"
+                    android:minHeight="5dp" >
+                </SeekBar>
+            </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/buttonSetCpuFreq"
                 android:layout_width="match_parent"
@@ -171,7 +237,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/setcpugovernor" />
-            
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -260,7 +326,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/setioschedule" />
-            
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -352,7 +418,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.20" />
             </LinearLayout>
-            
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

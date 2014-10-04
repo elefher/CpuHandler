@@ -2,7 +2,6 @@ package com.elefher.customclasses;
 
 import java.io.DataOutputStream;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -35,17 +34,18 @@ public class CpuControl {
 			+ "scaling_available_frequencies";
 	private final static String scaling_stats_time_in_state = cpufreq_sys_dir
 			+ "stats/time_in_state";
+	private final static String screen_off_max_freq = cpufreq_sys_dir
+			+ "screen_off_max_freq";
 
 	static Context context;
 
 	public CpuControl(Context cntx) {
 		context = cntx;
-		// setCpuFrequencies("594000", "1026000");
 	}
 
 	public static String[] getAvailableFreequencies() {
 		String[] frequencies = CpuUtils.readStringArray(scaling_available_freq);
-		
+
 		// In case does not exist frequencies return null
 		if (frequencies == null) {
 			return null;
@@ -102,7 +102,7 @@ public class CpuControl {
 	public static boolean setCpuFrequencies(String min_freq, String max_freq) {
 		int min = Integer.parseInt(min_freq);
 		int max = Integer.parseInt(max_freq);
-		if(min > max)
+		if (min > max)
 			return false;
 
 		try {
@@ -139,8 +139,57 @@ public class CpuControl {
 				dos.writeBytes(command);
 				dos.flush();
 			}
-			dos.close();			
-			
+			dos.close();
+
+			p.waitFor();
+			return true;
+		} catch (Exception ex) {
+			Log.e("", ex.toString());
+			Toast.makeText(context, "Error: " + ex.getMessage(),
+					Toast.LENGTH_LONG).show();
+			return false;
+		}
+	}
+
+	public static String getScreenOffMaxFreq() {
+		return ReadFile.getStringOfFile(screen_off_max_freq);
+	}
+
+	public static boolean isScreenOffMaxFreqSupported() {
+		File file = new File(screen_off_max_freq);
+		if (file.exists())
+			return true;
+		return false;
+	}
+
+	public static boolean setScreenOffMaxFreq(String maxSreenOffFreq) {
+
+		try {
+			List<String> commands = new ArrayList<String>();
+
+			/*
+			 * Prepare permissions so that we can write
+			 */
+			commands.add("chmod 0664 " + screen_off_max_freq + "\n");
+
+			commands.add("echo " + maxSreenOffFreq + " > "
+					+ screen_off_max_freq + "\n");
+
+			/*
+			 * Set permissions in initial state
+			 */
+			commands.add("chmod 0444 " + screen_off_max_freq + "\n");
+
+			commands.add("exit\n");
+
+			Process p = Runtime.getRuntime().exec(CpuUtils.getSUbinaryPath());
+			DataOutputStream dos = new DataOutputStream(p.getOutputStream());
+			for (String command : commands) {
+				dos.writeBytes(command);
+				dos.flush();
+			}
+			dos.close();
+
 			p.waitFor();
 			return true;
 		} catch (Exception ex) {

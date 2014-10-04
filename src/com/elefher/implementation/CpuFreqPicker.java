@@ -17,13 +17,14 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 public class CpuFreqPicker implements OnSeekBarChangeListener, OnClickListener {
 
 	TextView minFreqText, maxFreqText, minFreqSeekProgress,
-			maxFreqSeekProgress;
-	public static float curMinFreq, curMaxFreq;
-	private SeekBar minBar, maxBar;
+			maxFreqSeekProgress, maxFreqScreenOffSeekProgress;
+	public static float curMinFreq, curMaxFreq, curMaxScreenOffFreq;
+	private SeekBar minBar, maxBar, maxScreenOffBar;
 	private Button setCpu;
 	String minAvailableFreq = CpuControl.getAvailableMinCpuFreq();
 	String maxAvailableFreq = CpuControl.getAvailableMaxCpuFreq();
-	public static String[] availableFreq = CpuControl.getAvailableFreequencies();
+	public static String[] availableFreq = CpuControl
+			.getAvailableFreequencies();
 	int lengthAvailableFreq = availableFreq.length;
 	int minAvailableFreqToInt = Integer.parseInt(minAvailableFreq);
 	int maxAvailableFreqToInt = Integer.parseInt(maxAvailableFreq);
@@ -38,6 +39,7 @@ public class CpuFreqPicker implements OnSeekBarChangeListener, OnClickListener {
 		// Initialize current frequencies
 		curMinFreq = Float.parseFloat(CpuControl.getCurrentMinCpuFreq());
 		curMaxFreq = Float.parseFloat(CpuControl.getCurrentMaxCpuFreq());
+		curMaxScreenOffFreq = Float.parseFloat(CpuControl.getScreenOffMaxFreq());
 
 		minFreqText = (TextView) activity.findViewById(R.id.minFreq);
 		maxFreqText = (TextView) activity.findViewById(R.id.maxFreq);
@@ -70,6 +72,26 @@ public class CpuFreqPicker implements OnSeekBarChangeListener, OnClickListener {
 
 		minBar.setOnSeekBarChangeListener(this);
 		maxBar.setOnSeekBarChangeListener(this);
+		/*
+		 * Add max screen off frequency if supported by kernel
+		 */
+		if (CpuControl.isScreenOffMaxFreqSupported()) {
+			maxFreqScreenOffSeekProgress = (TextView) activity
+					.findViewById(R.id.currentmaxscreenofffreq);
+
+			maxScreenOffBar = (SeekBar) activity
+					.findViewById(R.id.maxFreqScreenOffSeek);
+			maxScreenOffBar.setMax(lengthAvailableFreq - 1);
+			maxScreenOffBar.setProgress(Arrays.asList(availableFreq).indexOf(
+					String.valueOf(Integer.parseInt(CpuControl
+							.getScreenOffMaxFreq()))));
+
+			maxFreqScreenOffSeekProgress.setText(" "
+					+ Float.parseFloat(CpuControl.getScreenOffMaxFreq()) / 1000
+					+ " MHz");
+
+			maxScreenOffBar.setOnSeekBarChangeListener(this);
+		}
 		setCpu.setOnClickListener(this);
 	}
 
@@ -85,6 +107,11 @@ public class CpuFreqPicker implements OnSeekBarChangeListener, OnClickListener {
 			minFreqSeekProgress.setText("Min: " + currentFreqToMHz + " MHz");
 		} else if (arg0 == maxBar) {
 			maxFreqSeekProgress.setText("Max: " + currentFreqToMHz + " MHz");
+		}
+		// Max screen off used only if supported by kernel
+		else if (arg0 == maxScreenOffBar) {
+			maxFreqScreenOffSeekProgress.setText(" " + currentFreqToMHz
+					+ " MHz");
 		}
 	}
 
@@ -105,17 +132,16 @@ public class CpuFreqPicker implements OnSeekBarChangeListener, OnClickListener {
 		/*
 		 * Set cpu frequencies
 		 */
-		if(minBar.getProgress() > maxBar.getProgress()){
+		if (minBar.getProgress() > maxBar.getProgress()) {
 			Toast.makeText(activity, "You cannot set min > max!!!",
 					Toast.LENGTH_LONG).show();
 			return;
 		}
 		boolean isChanged = false;
-		String newMinFreq, newMaxFreq;
+		String newMinFreq, newMaxFreq, newMaxScreenOffFreq;
 		newMinFreq = availableFreq[minBar.getProgress()];
 		newMaxFreq = availableFreq[maxBar.getProgress()];
-		CpuControl cpuControl = new CpuControl(activity);
-		isChanged = cpuControl.setCpuFrequencies(newMinFreq, newMaxFreq);
+		isChanged = CpuControl.setCpuFrequencies(newMinFreq, newMaxFreq);
 		if (isChanged) {
 			// Initialize current frequencies
 			curMinFreq = Float.parseFloat(CpuControl.getCurrentMinCpuFreq());
@@ -125,9 +151,26 @@ public class CpuFreqPicker implements OnSeekBarChangeListener, OnClickListener {
 			maxFreqText.setText("Max Freq: " + curMaxFreq / 1000 + " MHz");
 			Toast.makeText(activity, "Cpu Frequencies Changed Successfully!!!",
 					Toast.LENGTH_LONG).show();
-		}else{
+		} else {
 			Toast.makeText(activity, "Sorry But Something Went Wrong!!!",
 					Toast.LENGTH_LONG).show();
+		}
+
+		if (CpuControl.isScreenOffMaxFreqSupported()) {
+			newMaxScreenOffFreq = availableFreq[maxScreenOffBar.getProgress()];
+			if (CpuControl.setScreenOffMaxFreq(newMaxScreenOffFreq)) {
+				// Initialize current max screen off frequency
+				curMaxScreenOffFreq = Float.parseFloat(CpuControl.getScreenOffMaxFreq());
+				// Update the initial max screen off frequency
+				maxFreqScreenOffSeekProgress.setText(" " + curMaxScreenOffFreq / 1000 + " MHz");
+				Toast.makeText(activity,
+						"Cpu Max Screen Off Frequency Changed Successfully!!!",
+						Toast.LENGTH_LONG).show();
+			} else {
+				Toast.makeText(activity,
+						"Max Screen Off Frequency didn't Change!!!",
+						Toast.LENGTH_LONG).show();
+			}
 		}
 	}
 }
