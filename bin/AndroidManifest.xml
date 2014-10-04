@@ -5,10 +5,10 @@
     android:versionName="1.0" >
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-	<uses-permission android:name="android.permission.VIBRATE" />
-	<uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="19" />
@@ -29,15 +29,24 @@
         </activity>
         <activity
             android:name="com.elefher.tab.Info"
-            android:label="Tab1" >
+            android:label="Info" >
+            <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.elefher.cpuhandler.MainActivity" />
         </activity>
         <activity
             android:name="com.elefher.tab.ControlCpu"
-            android:label="Tab2" >
+            android:label="Control Cpu" >
+            <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.elefher.cpuhandler.MainActivity" />
         </activity>
         <activity
             android:name="com.elefher.tab.Voltages"
-            android:label="Tab3" >
+            android:label="Voltages" >
+            <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.elefher.cpuhandler.MainActivity" />
         </activity>
     </application>
 

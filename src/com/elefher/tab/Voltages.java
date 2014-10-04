@@ -9,6 +9,8 @@ import com.elefher.customclasses.UpDownVoltageButtons;
 import com.elefher.extendedclasses.SetCpuVoltage;
 
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.view.MenuItem;
 import android.app.Activity;
 
 public class Voltages extends Activity {
@@ -23,6 +25,8 @@ public class Voltages extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.voltages);
+		
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 
 		setCpuVoltagesSeparate();
 		
@@ -60,5 +64,16 @@ public class Voltages extends Activity {
 			freqs[i] = str[0];
 			volts[i] = str[1];
 		}
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	    // Respond to the action bar's Up/Home button
+	    case android.R.id.home:
+	        NavUtils.navigateUpFromSameTask(this);
+	        return true;
+	    }
+	    return super.onOptionsItemSelected(item);
 	}
 }

@@ -17,7 +17,9 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.NavUtils;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
@@ -50,6 +52,8 @@ public class Info extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.info);
 
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		
 		memoryStat = new MemoryStat(this);
 
 		// Cpu status
@@ -382,6 +386,7 @@ public class Info extends Activity {
 			batMiscStats = "Battery not present!!!";
 		}
 		batteryMiscStats.setText(batMiscStats);
+		
 	}
 
 	private void displayBatteryTemp() {
@@ -394,5 +399,22 @@ public class Info extends Activity {
 			batteryTemp = "Battery not present!!!";
 		}
 		batteryTempStat.setText(batteryTemp);
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	    // Respond to the action bar's Up/Home button
+	    case android.R.id.home:
+	        NavUtils.navigateUpFromSameTask(this);
+	        return true;
+	    }
+	    return super.onOptionsItemSelected(item);
+	}
+	
+	@Override
+	protected void onStop(){
+		this.unregisterReceiver(batteryStat.battery_receiver);
+		super.onStop();
 	}
 }

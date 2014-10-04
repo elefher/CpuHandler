@@ -20,7 +20,7 @@ public class BatteryStat {
 		context.registerReceiver(battery_receiver, filter);
 	}
 
-	private BroadcastReceiver battery_receiver = new BroadcastReceiver() {
+	public BroadcastReceiver battery_receiver = new BroadcastReceiver() {
 		@Override
 		public void onReceive(Context context, Intent intent) {
 			isPresent = intent.getBooleanExtra("present", false);

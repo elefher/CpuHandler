@@ -10,6 +10,8 @@ import com.elefher.implementation.IOReadAheadPicker;
 import com.elefher.implementation.IOSchedulerPicker;
 
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.view.MenuItem;
 import android.app.Activity;
 
 public class ControlCpu extends Activity {
@@ -21,11 +23,24 @@ public class ControlCpu extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.controlcpu);
 		
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		
 		CpuFreqPicker cpuFreqPicker = new CpuFreqPicker(this);
 		CpuFreqProfile cpuFreqProfile = new CpuFreqProfile(this);
 		CpuGovernorPicker cpuGovernorPicker = new CpuGovernorPicker(this);
 		IOSchedulerPicker ioScheduler = new IOSchedulerPicker(this);
 		IOReadAheadPicker ioReadAhead = new IOReadAheadPicker(this);
 		SetOnBootTask setOnBootTask = new SetOnBootTask(this);
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	    // Respond to the action bar's Up/Home button
+	    case android.R.id.home:
+	        NavUtils.navigateUpFromSameTask(this);
+	        return true;
+	    }
+	    return super.onOptionsItemSelected(item);
 	}
 }
