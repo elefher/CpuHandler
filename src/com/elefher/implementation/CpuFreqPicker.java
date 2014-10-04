@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,7 +40,6 @@ public class CpuFreqPicker implements OnSeekBarChangeListener, OnClickListener {
 		// Initialize current frequencies
 		curMinFreq = Float.parseFloat(CpuControl.getCurrentMinCpuFreq());
 		curMaxFreq = Float.parseFloat(CpuControl.getCurrentMaxCpuFreq());
-		curMaxScreenOffFreq = Float.parseFloat(CpuControl.getScreenOffMaxFreq());
 
 		minFreqText = (TextView) activity.findViewById(R.id.minFreq);
 		maxFreqText = (TextView) activity.findViewById(R.id.maxFreq);
@@ -76,6 +76,11 @@ public class CpuFreqPicker implements OnSeekBarChangeListener, OnClickListener {
 		 * Add max screen off frequency if supported by kernel
 		 */
 		if (CpuControl.isScreenOffMaxFreqSupported()) {
+			LinearLayout maxScreenOffFreqLayout = (LinearLayout) activity.findViewById(R.id.maxfreqscreenofflayout);
+			maxScreenOffFreqLayout.setVisibility(View.VISIBLE);
+			
+			curMaxScreenOffFreq = Float.parseFloat(CpuControl.getScreenOffMaxFreq());
+			
 			maxFreqScreenOffSeekProgress = (TextView) activity
 					.findViewById(R.id.currentmaxscreenofffreq);
 

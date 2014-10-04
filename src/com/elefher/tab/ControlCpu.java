@@ -27,10 +27,5 @@ public class ControlCpu extends Activity {
 		IOSchedulerPicker ioScheduler = new IOSchedulerPicker(this);
 		IOReadAheadPicker ioReadAhead = new IOReadAheadPicker(this);
 		SetOnBootTask setOnBootTask = new SetOnBootTask(this);
-		if("".equals(CpuControl.getScreenOffMaxFreq())){
-			System.out.println("offff");
-		}else{
-			System.out.println("screen on max " + CpuControl.getScreenOffMaxFreq());
-		}
 	}
 }

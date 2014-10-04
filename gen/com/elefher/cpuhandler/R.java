@@ -55,7 +55,7 @@ public final class R {
         public static final int maxFreqScreenOffSeek=0x7f060011;
         public static final int maxFreqSeek=0x7f06000c;
         public static final int maxFreqSeekProgress=0x7f06000d;
-        public static final int maxfreqscreenoff=0x7f06000f;
+        public static final int maxfreqscreenofflayout=0x7f06000f;
         public static final int minFreq=0x7f060007;
         public static final int minFreqSeek=0x7f06000a;
         public static final int minFreqSeekProgress=0x7f06000b;
