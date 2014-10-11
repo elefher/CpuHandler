@@ -14,7 +14,7 @@ public class OnBoot {
 	Activity activity;
 	ArrayList<String> commands;
 	String fileName, shell;
-	private final static String SYSTEM_INITD = "/system/etc/init.d/";
+	public final static String SYSTEM_INITD = "/system/etc/init.d/";
 
 	public OnBoot(Activity act) {
 		activity = act;

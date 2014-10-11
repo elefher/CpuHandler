@@ -15,7 +15,7 @@ import com.elefher.implementation.CpuFreqPicker;
 
 public class SetOnBootTask extends CustomCheckBoxes {
 
-	CheckBox freqBox, govBox/*, ioBox, bufferBox*/;
+	public static CheckBox freqBox, govBox/*, ioBox, bufferBox*/;
 	Activity activity;
 
 	public SetOnBootTask(Activity act) {
@@ -171,16 +171,21 @@ public class SetOnBootTask extends CustomCheckBoxes {
 		OnBoot onBoot = new OnBoot(activity);
 		onBoot.fileName("99overclock");
 		onBoot.setShell("#!/system/bin/sh");
+		onBoot.addCommand("\necho chmod 0664" + " > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq");
+		onBoot.addCommand("\necho chmod 0664" + " > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq");
 		onBoot.addCommand("\necho " + (int) CpuFreqPicker.curMaxFreq
 				+ " > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq");
 		onBoot.addCommand("\necho " + (int) CpuFreqPicker.curMinFreq
 				+ " > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq");
 		// Max screen off frequency if supported by kernel
 		if(CpuControl.isScreenOffMaxFreqSupported()){
+			onBoot.addCommand("\necho chmod 0664" + " > /sys/devices/system/cpu/cpu0/cpufreq/screen_off_max_freq");
 			onBoot.addCommand("\necho " + (int) CpuFreqPicker.curMaxScreenOffFreq
 					+ " > /sys/devices/system/cpu/cpu0/cpufreq/screen_off_max_freq");
+			onBoot.addCommand("\necho chmod 0444" + " > /sys/devices/system/cpu/cpu0/cpufreq/screen_off_max_freq");
 		}
-		
+		onBoot.addCommand("\necho chmod 0444" + " > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq");
+		onBoot.addCommand("\necho chmod 0444" + " > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq");
 		if (onBoot.setOnBoot("/system")) {
 			Toast.makeText(activity, "set on boot is enabled!!",
 					Toast.LENGTH_LONG).show();
@@ -197,8 +202,10 @@ public class SetOnBootTask extends CustomCheckBoxes {
 		OnBoot onBoot = new OnBoot(activity);
 		onBoot.fileName("99governor");
 		onBoot.setShell("#!/system/bin/sh");
+		onBoot.addCommand("\necho chmod 0664" + " > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor");
 		onBoot.addCommand("\necho " + CpuGovernors.getCurrentGovernor()
 				+ " > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor");
+		onBoot.addCommand("\necho chmod 0444" + " > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor");
 		if (onBoot.setOnBoot("/system")) {
 			Toast.makeText(activity, "set on boot is enabled!!",
 					Toast.LENGTH_LONG).show();

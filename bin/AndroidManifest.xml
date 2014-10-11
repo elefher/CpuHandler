@@ -31,23 +31,40 @@
             android:name="com.elefher.tab.Info"
             android:label="Info" >
             <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.elefher.cpuhandler.MainActivity" />
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.elefher.cpuhandler.MainActivity" />
         </activity>
         <activity
             android:name="com.elefher.tab.ControlCpu"
             android:label="Control Cpu" >
             <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.elefher.cpuhandler.MainActivity" />
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.elefher.cpuhandler.MainActivity" />
         </activity>
         <activity
             android:name="com.elefher.tab.Voltages"
             android:label="Voltages" >
             <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.elefher.cpuhandler.MainActivity" />
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.elefher.cpuhandler.MainActivity" />
         </activity>
+        <activity
+            android:name="com.elefher.cpuhandler.ServicesAfterBooting"
+            android:label="Services" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.elefher.cpuhandler.MainActivity" />
+        </activity>
+
+        <receiver
+            android:name="ServicesAfterBooting"
+            android:enabled="true"
+            android:exported="true"
+            android:label="Boot Notification Trickle Cpu Handler" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
