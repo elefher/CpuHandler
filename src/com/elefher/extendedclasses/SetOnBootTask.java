@@ -25,11 +25,11 @@ public class SetOnBootTask extends CustomCheckBoxes {
 		// Initialize checkboxes
 		freqBox = (CheckBox) act.findViewById(R.id.checkBoxFreqs);
 		freqBox.setChecked(OnBoot
-				.checkExistsSetOnBootFile("/system/etc/init.d/99overclock"));
+				.checkExistsSetOnBootFile("/system/etc/init.d/99overclock.sh"));
 
 		govBox = (CheckBox) act.findViewById(R.id.checkBoxGovs);
 		govBox.setChecked(OnBoot
-				.checkExistsSetOnBootFile("/system/etc/init.d/99governor"));
+				.checkExistsSetOnBootFile("/system/etc/init.d/99governor.sh"));
 
 		/*ioBox = (CheckBox) act.findViewById(R.id.checkBoxIO);
 		ioBox.setChecked(OnBoot
@@ -169,7 +169,7 @@ public class SetOnBootTask extends CustomCheckBoxes {
 
 	private void freqBoxIsChecked() {
 		OnBoot onBoot = new OnBoot(activity);
-		onBoot.fileName("99overclock");
+		onBoot.fileName("99overclock.sh");
 		onBoot.setShell("#!/system/bin/sh");
 		onBoot.addCommand("\necho chmod 0664" + " > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq");
 		onBoot.addCommand("\necho chmod 0664" + " > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq");
@@ -193,14 +193,14 @@ public class SetOnBootTask extends CustomCheckBoxes {
 	}
 
 	private void freqBoxIsUnChecked() {
-		OnBoot.rmFile("/system", "/system/etc/init.d/99overclock");
+		OnBoot.rmFile("/system", "/system/etc/init.d/99overclock.sh");
 		Toast.makeText(activity, "set on boot is disabled!!", Toast.LENGTH_LONG)
 				.show();
 	}
 
 	private void govBoxIsChecked() {
 		OnBoot onBoot = new OnBoot(activity);
-		onBoot.fileName("99governor");
+		onBoot.fileName("99governor.sh");
 		onBoot.setShell("#!/system/bin/sh");
 		onBoot.addCommand("\necho chmod 0664" + " > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor");
 		onBoot.addCommand("\necho " + CpuGovernors.getCurrentGovernor()
@@ -213,7 +213,7 @@ public class SetOnBootTask extends CustomCheckBoxes {
 	}
 
 	private void govBoxIsUnChecked() {
-		OnBoot.rmFile("/system", "/system/etc/init.d/99governor");
+		OnBoot.rmFile("/system", "/system/etc/init.d/99governor.sh");
 		Toast.makeText(activity, "set on boot is disabled!!", Toast.LENGTH_LONG)
 				.show();
 	}

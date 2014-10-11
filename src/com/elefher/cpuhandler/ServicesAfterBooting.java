@@ -16,8 +16,8 @@ import android.widget.Toast;
 
 public class ServicesAfterBooting extends BroadcastReceiver {
 
-	private final String overclock = OnBoot.SYSTEM_INITD + "99overclock";
-	private final String governor = OnBoot.SYSTEM_INITD + "99governor";
+	private final String overclock = OnBoot.SYSTEM_INITD + "99overclock.sh";
+	private final String governor = OnBoot.SYSTEM_INITD + "99governor.sh";
 
 	public ServicesAfterBooting() {
 	}
@@ -66,7 +66,7 @@ public class ServicesAfterBooting extends BroadcastReceiver {
 			su = Runtime.getRuntime().exec("su");
 		    DataOutputStream outputStream = new DataOutputStream(su.getOutputStream());
 
-		    outputStream.writeBytes("sh "+file+"\n");
+		    outputStream.writeBytes("sh ./"+file+"\n");
 		    outputStream.flush();
 
 		    outputStream.writeBytes("exit\n");
