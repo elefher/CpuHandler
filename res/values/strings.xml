@@ -32,5 +32,8 @@
             increase of battery life.</string>
     <string name="voltsDescription">Choose the voltage for every available frequency. Set on boot option doesn\'t
         available for safety reasons.</string>
+    <string name="fastChargeDescription">Enabling this feature will disable access to phone storage, it is going to charge
+         faster when phone is pluged in to usb.</string>
+    <string name="miscTools">Miscellaneous Tools</string>
 
 </resources>

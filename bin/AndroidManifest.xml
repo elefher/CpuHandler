@@ -49,6 +49,13 @@
                 android:value="com.elefher.cpuhandler.MainActivity" />
         </activity>
         <activity
+            android:name="com.elefher.tab.MiscTools"
+            android:label="Misc Tools" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.elefher.cpuhandler.MainActivity" />
+        </activity>
+        <activity
             android:name="com.elefher.cpuhandler.ServicesAfterBooting"
             android:label="Services" >
             <meta-data

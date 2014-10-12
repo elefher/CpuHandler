@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.elefher.customclasses.CpuGpuFreqVoltages;
 import com.elefher.tab.ControlCpu;
 import com.elefher.tab.Info;
+import com.elefher.tab.MiscTools;
 import com.elefher.tab.Voltages;
 
 import android.app.Activity;
@@ -35,6 +36,7 @@ public class MainActivity extends Activity {
 		items.add("CONTROL CPU");
 		if(CpuGpuFreqVoltages.hasCpuVoltages())
 			items.add("VOLTAGES");
+		items.add("MISC TOOLS");
 		
 		gv.setAdapter(new CustomAdapter(this, R.layout.gridlayout, items));
 		
@@ -43,16 +45,19 @@ public class MainActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View v, int position,
 					long id) {
-				if(position == 0)
+				if("INFO".equals(items.get(position)))
 					startActivity(new Intent().setClass(that, Info.class).addFlags(
 							Intent.FLAG_ACTIVITY_CLEAR_TOP));
-				else if(position == 1)
+				else if("CONTROL CPU".equals(items.get(position)))
 					startActivity(new Intent().setClass(that, ControlCpu.class)
 							.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
 				else if("VOLTAGES".equals(items.get(position)))
 					startActivity(new Intent().setClass(that, Voltages.class)
 							.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
-				else if(position >= 3)
+				else if("MISC TOOLS".equals(items.get(position)))
+					startActivity(new Intent().setClass(that, MiscTools.class)
+							.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+				else if(position >= 4)
 					System.out.println("bigger than 3");
 			}
 			

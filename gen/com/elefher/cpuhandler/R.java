@@ -42,7 +42,10 @@ public final class R {
         public static final int currentMin=0x7f060032;
         public static final int currentmaxscreenofffreq=0x7f060014;
         public static final int device=0x7f06002c;
-        public static final int downVolts=0x7f060037;
+        public static final int downVolts=0x7f06003b;
+        public static final int fastCharge=0x7f060036;
+        public static final int fastchargeText=0x7f060037;
+        public static final int fastchargebutton=0x7f060038;
         public static final int freqSeekBar=0x7f06000d;
         public static final int freqText=0x7f06000a;
         public static final int govDescription=0x7f060019;
@@ -64,6 +67,7 @@ public final class R {
         public static final int minFreq=0x7f06000b;
         public static final int minFreqSeek=0x7f06000e;
         public static final int minFreqSeekProgress=0x7f06000f;
+        public static final int miscToolsContent=0x7f060035;
         public static final int readbuffersizedesc=0x7f060027;
         public static final int scalingCurrent=0x7f060034;
         public static final int separate=0x7f060001;
@@ -75,19 +79,20 @@ public final class R {
         public static final int setReadAheadButton=0x7f060026;
         public static final int text=0x7f060030;
         public static final int topofgridlayout=0x7f060000;
-        public static final int upVolts=0x7f060036;
+        public static final int upVolts=0x7f06003a;
         public static final int updatedCurrentGov=0x7f060020;
         public static final int updateioschedule=0x7f060024;
         public static final int updatereadbuffersize=0x7f060028;
-        public static final int voltagesContent=0x7f060035;
-        public static final int voltagesEdit=0x7f060038;
+        public static final int voltagesContent=0x7f060039;
+        public static final int voltagesEdit=0x7f06003c;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int controlcpu=0x7f030001;
         public static final int gridlayout=0x7f030002;
         public static final int info=0x7f030003;
-        public static final int voltages=0x7f030004;
+        public static final int misctools=0x7f030004;
+        public static final int voltages=0x7f030005;
     }
     public static final class string {
         public static final int BatteryStatus=0x7f040004;
@@ -97,11 +102,13 @@ public final class R {
         public static final int cpuFreqDescription=0x7f040011;
         public static final int currentGovernorDesc=0x7f04000b;
         public static final int currentIOScheduleDesc=0x7f04000c;
+        public static final int fastChargeDescription=0x7f040016;
         public static final int govDescription=0x7f040012;
         public static final int gridTitle=0x7f040010;
         public static final int hello_world=0x7f040001;
         public static final int info=0x7f040002;
         public static final int ioDescription=0x7f040013;
+        public static final int miscTools=0x7f040017;
         public static final int readbuffersizeDesc=0x7f04000d;
         public static final int setCpuButton=0x7f040005;
         public static final int setcpu=0x7f040006;
@@ -159,5 +166,6 @@ public final class R {
          */
         public static final int subText=0x7f05000a;
         public static final int titles=0x7f050006;
+        public static final int togglebutton=0x7f050011;
     }
 }

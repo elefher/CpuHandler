@@ -159,4 +159,11 @@
         <item name="android:layout_gravity">center_horizontal|center_vertical</item>
         <item name="android:button">@drawable/checkbox1</item>
     </style>
+    
+    <style name="togglebutton" parent="android:Widget">
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#EDDA74</item>
+    </style>
+   
 </resources>
