@@ -14,7 +14,6 @@ import android.widget.Toast;
 import com.elefher.abstractclasses.AlertDialogUtils;
 import com.elefher.cpuhandler.R;
 import com.elefher.customclasses.CpuControl;
-import com.elefher.customclasses.CpuGovernors;
 import com.elefher.db.Profile;
 import com.elefher.db.ProfilesDataSource;
 import com.elefher.utils.StringParser;

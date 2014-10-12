@@ -35,5 +35,7 @@
     <string name="fastChargeDescription">Enabling this feature will disable access to phone storage, it is going to charge
          faster when phone is pluged in to usb.</string>
     <string name="miscTools">Miscellaneous Tools</string>
+    <string name="powerSavingsDescription">This feature group tasks into the least cores possible. Also 
+        increase battery life. Set 0 for disable to 2 for the most aggressive.</string>
 
 </resources>
