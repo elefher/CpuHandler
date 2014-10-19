@@ -66,6 +66,11 @@
                         android:textOn="on" />
                 </LinearLayout>
             </LinearLayout>
+
+            <View
+                android:id="@+id/separate"
+                style="@style/SeparateLine"
+                android:orientation="horizontal" />
         </LinearLayout>
 
         <LinearLayout
@@ -92,8 +97,8 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_marginTop="20dp"
+                    android:layout_weight="1"
                     android:orientation="horizontal" >
 
                     <TextView
@@ -106,10 +111,10 @@
 
                     <TextView
                         android:id="@+id/currentPowerSavings"
+                        style="@style/dynamicTexts"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.4"
-                        style="@style/dynamicTexts" />
+                        android:layout_weight="0.4" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -125,6 +130,71 @@
                         android:text="Power Savings" />
                 </LinearLayout>
             </LinearLayout>
+
+            <View
+                android:id="@+id/separate"
+                style="@style/SeparateLine"
+                android:orientation="horizontal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/mpdecision"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    style="@style/itemdescription"
+                    android:text="@string/mpDecisionDescription" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/powerSavingsText"
+                        style="@style/minTitleText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:text="MP-Decision" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <ToggleButton
+                        android:id="@+id/mpdecisionbutton"
+                        style="@style/togglebutton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textOff="off"
+                        android:textOn="on" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/separate"
+                style="@style/SeparateLine"
+                android:orientation="horizontal" />
         </LinearLayout>
     </LinearLayout>
 

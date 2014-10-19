@@ -6,6 +6,8 @@ import com.elefher.customclasses.MiscServices;
 import com.elefher.extendedclasses.AlertPowerSavings;
 import com.elefher.extendedclasses.AlertProfiles;
 import com.elefher.implementation.ForceFastCharge;
+import com.elefher.implementation.MpDecision;
+import com.elefher.utils.ArrayUtils;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -41,6 +43,21 @@ public class MiscTools extends Activity {
 			TextView curPS = (TextView) findViewById(R.id.currentPowerSavings);
 			curPS.setText(MiscServices.getSchedMcPowerSavingsState());
 			AlertPowerSavings alertPowerSavings = new AlertPowerSavings(this);
+		}
+		
+		/*
+		 * Check if mpdecision exists. It is a kernel feature for Qualcomm cpu.
+		 * Mpdecision is a proprietary code and doesn't recommended. 
+		 * If feature exists then give to the user the right to disable or enable it.
+		 */
+		MiscServices miscServices = new MiscServices();
+		String mpdecisionFile = ArrayUtils.existPaths(miscServices.MPDECISION_PATHS);
+		if(mpdecisionFile != null){
+			LinearLayout mpdecisionLayout = (LinearLayout) findViewById(R.id.mpdecision);
+			mpdecisionLayout.setVisibility(View.VISIBLE);
+			// Firstly you have to set path for mpdecision
+			MpDecision.path = mpdecisionFile;
+			MpDecision mpDecision = new MpDecision(this);
 		}
 	}
 	

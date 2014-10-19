@@ -1,7 +1,5 @@
 package com.elefher.abstractclasses;
 
-import com.elefher.cpuhandler.R;
-
 import android.app.Activity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -10,18 +8,17 @@ import android.widget.ToggleButton;
 public abstract class ToggleButtonService {
 	
 	Activity activity;
-	public ToggleButton toggleBttn;
+	public final ToggleButton toggleBttn;
 	int RId;
 	
 	public ToggleButtonService(Activity act , int RIdBttn){
 		activity = act;
 		RId = RIdBttn;
+		toggleBttn = (ToggleButton) activity.findViewById(RId);
 		addListenerOnButton();		
 	}
 	
-	public void addListenerOnButton() {		
-		toggleBttn = (ToggleButton) activity.findViewById(RId);
-
+	public void addListenerOnButton() {
 		setBttnState();
 
 		toggleBttn.setOnClickListener(new OnClickListener() {

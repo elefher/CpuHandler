@@ -37,5 +37,8 @@
     <string name="miscTools">Miscellaneous Tools</string>
     <string name="powerSavingsDescription">This feature group tasks into the least cores possible. Also 
         increase battery life. Set 0 for disable to 2 for the most aggressive.</string>
+    <string name="mpDecisionDescription">This feature is for Qualcomm cpu. When enabled, cpu/gpu frequency
+        modification is not guaranteed and might override frequency settings. Mpdecision is a proprietary code
+         and doesn\'t recommended.</string>
 
 </resources>

@@ -1,9 +1,21 @@
 package com.elefher.utils;
 
+import java.io.File;
+import java.util.ArrayList;
+
 public class ArrayUtils {
 
 	public ArrayUtils(){
 		
+	}
+	
+	public static String existPaths(ArrayList<String> files) {
+		for(String file : files){
+			File f = new File(file);
+			if (f.exists())
+				return file;
+		}
+		return null;	
 	}
 	
 	public static int[] stringToIntArray(String[] array){

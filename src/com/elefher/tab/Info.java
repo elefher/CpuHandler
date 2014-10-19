@@ -13,11 +13,14 @@ import com.elefher.utils.ReadFile;
 
 import android.app.ActionBar.LayoutParams;
 import android.app.Activity;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.NavUtils;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -413,8 +416,19 @@ public class Info extends Activity {
 	}
 	
 	@Override
-	protected void onStop(){
-		this.unregisterReceiver(batteryStat.battery_receiver);
-		super.onStop();
+	protected void onPause(){
+		super.onPause();
+	    synchronized (this) {
+	        if(batteryStat.battery_receiver != null){
+	            unregisterReceiver(batteryStat.battery_receiver);
+	        }
+	    }
 	}
+	
+	@Override
+    public void onResume() {
+        super.onResume();
+        IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+		registerReceiver(batteryStat.battery_receiver, filter);
+    }
 }

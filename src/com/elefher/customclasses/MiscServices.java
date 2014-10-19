@@ -14,8 +14,11 @@ public class MiscServices {
 
 	public final static String FORCE_FAST_CHARGE = "/sys/kernel/fast_charge/force_fast_charge";
 	public final static String SCHED_MC_POWER_SAVINGS = "/sys/devices/system/cpu/sched_mc_power_savings";
-
+	public final static String MPDECISION = "/sys/module/msm_mpdecision/parameters/enabled";
+	public final static ArrayList<String> MPDECISION_PATHS = new ArrayList<String>();
+	
 	public MiscServices() {
+		MPDECISION_PATHS.add(MPDECISION);
 	}
 
 	public static boolean exists(String file) {
@@ -53,6 +56,35 @@ public class MiscServices {
 			Log.e("error: ", ex.toString());
 			return false;
 		}
+	}
+	
+	public static boolean setMpDecisionState(String path, String state) {
+		try {
+			List<String> commands = new ArrayList<String>();
+
+			commands.add("chmod 0664 " + path + "\n");
+			commands.add("echo " + state + " > " + path + "\n");			
+			commands.add("chmod 0444 " + path + "\n");
+			commands.add("exit\n");
+
+			Process p = Runtime.getRuntime().exec(CpuUtils.getSUbinaryPath());
+			DataOutputStream dos = new DataOutputStream(p.getOutputStream());
+			for (String command : commands) {
+				dos.writeBytes(command);
+				dos.flush();
+			}
+			dos.close();
+
+			p.waitFor();
+			return true;
+		} catch (Exception ex) {
+			Log.e("error: ", ex.toString());
+			return false;
+		}
+	}
+	
+	public static String getMpDecisionState(String path) {
+		return ReadFile.getStringOfFile(path);
 	}
 	
 	public static String getSchedMcPowerSavingsState() {

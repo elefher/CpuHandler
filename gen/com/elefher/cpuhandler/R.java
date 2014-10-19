@@ -43,7 +43,7 @@ public final class R {
         public static final int currentPowerSavings=0x7f06003b;
         public static final int currentmaxscreenofffreq=0x7f060014;
         public static final int device=0x7f06002c;
-        public static final int downVolts=0x7f06003f;
+        public static final int downVolts=0x7f060041;
         public static final int fastCharge=0x7f060036;
         public static final int fastchargeText=0x7f060037;
         public static final int fastchargebutton=0x7f060038;
@@ -69,6 +69,8 @@ public final class R {
         public static final int minFreqSeek=0x7f06000e;
         public static final int minFreqSeekProgress=0x7f06000f;
         public static final int miscToolsContent=0x7f060035;
+        public static final int mpdecision=0x7f06003d;
+        public static final int mpdecisionbutton=0x7f06003e;
         public static final int powerSavings=0x7f060039;
         public static final int powerSavingsButton=0x7f06003c;
         public static final int powerSavingsText=0x7f06003a;
@@ -83,12 +85,12 @@ public final class R {
         public static final int setReadAheadButton=0x7f060026;
         public static final int text=0x7f060030;
         public static final int topofgridlayout=0x7f060000;
-        public static final int upVolts=0x7f06003e;
+        public static final int upVolts=0x7f060040;
         public static final int updatedCurrentGov=0x7f060020;
         public static final int updateioschedule=0x7f060024;
         public static final int updatereadbuffersize=0x7f060028;
-        public static final int voltagesContent=0x7f06003d;
-        public static final int voltagesEdit=0x7f060040;
+        public static final int voltagesContent=0x7f06003f;
+        public static final int voltagesEdit=0x7f060042;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -113,6 +115,7 @@ public final class R {
         public static final int info=0x7f040002;
         public static final int ioDescription=0x7f040013;
         public static final int miscTools=0x7f040017;
+        public static final int mpDecisionDescription=0x7f040019;
         public static final int powerSavingsDescription=0x7f040018;
         public static final int readbuffersizeDesc=0x7f04000d;
         public static final int setCpuButton=0x7f040005;
