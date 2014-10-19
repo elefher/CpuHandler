@@ -106,7 +106,7 @@
                         style="@style/minTitleText"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.6"
+                        android:layout_weight="0.8"
                         android:text="Power Savings:" />
 
                     <TextView
@@ -114,7 +114,7 @@
                         style="@style/dynamicTexts"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.4" />
+                        android:layout_weight="0.2" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -182,6 +182,66 @@
 
                     <ToggleButton
                         android:id="@+id/mpdecisionbutton"
+                        style="@style/togglebutton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textOff="off"
+                        android:textOn="on" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/separate"
+                style="@style/SeparateLine"
+                android:orientation="horizontal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/intelliplug"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    style="@style/itemdescription"
+                    android:text="@string/intelliPlugDescription" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/powerSavingsText"
+                        style="@style/minTitleText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:text="Intelli-Plug" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <ToggleButton
+                        android:id="@+id/intelliplugbutton"
                         style="@style/togglebutton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

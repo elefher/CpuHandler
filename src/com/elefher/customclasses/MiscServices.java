@@ -15,10 +15,15 @@ public class MiscServices {
 	public final static String FORCE_FAST_CHARGE = "/sys/kernel/fast_charge/force_fast_charge";
 	public final static String SCHED_MC_POWER_SAVINGS = "/sys/devices/system/cpu/sched_mc_power_savings";
 	public final static String MPDECISION = "/sys/module/msm_mpdecision/parameters/enabled";
+	public final static String MPDECISION_KERNEL_BASED = "/sys/kernel/msm_mpdecision/conf/enabled";
+	public final static String INTELLIPLUG = "/sys/module/intelli_plug/parameters/intelli_plug_active";
 	public final static ArrayList<String> MPDECISION_PATHS = new ArrayList<String>();
+	public final static ArrayList<String> INTELLIPLUG_PATHS = new ArrayList<String>();
 	
 	public MiscServices() {
 		MPDECISION_PATHS.add(MPDECISION);
+		MPDECISION_PATHS.add(MPDECISION_KERNEL_BASED);
+		INTELLIPLUG_PATHS.add(INTELLIPLUG);
 	}
 
 	public static boolean exists(String file) {
@@ -58,7 +63,7 @@ public class MiscServices {
 		}
 	}
 	
-	public static boolean setMpDecisionState(String path, String state) {
+	public static boolean setMpDecisionIntelliPlugState(String path, String state) {
 		try {
 			List<String> commands = new ArrayList<String>();
 
@@ -83,7 +88,7 @@ public class MiscServices {
 		}
 	}
 	
-	public static String getMpDecisionState(String path) {
+	public static String getMpDecisionIntelliPlugState(String path) {
 		return ReadFile.getStringOfFile(path);
 	}
 	

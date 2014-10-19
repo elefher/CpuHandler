@@ -7,13 +7,13 @@ import com.elefher.abstractclasses.ToggleButtonService;
 import com.elefher.cpuhandler.R;
 import com.elefher.customclasses.MiscServices;
 
-public class MpDecision extends ToggleButtonService{
+public class IntelliPlug extends ToggleButtonService{
 
 	Activity activity;
 	public static String path;
 
-	public MpDecision(Activity act) {
-		super(act, R.id.mpdecisionbutton);
+	public IntelliPlug(Activity act) {
+		super(act, R.id.intelliplugbutton);
 		activity = act;
 	}
 

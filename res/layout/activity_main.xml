@@ -18,13 +18,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="text text text text text text text text text text 
-            text text text text text text text text text text text text text text 
-            text text text text text text text text text text text text text text 
-            text text text text text text text text text text text text text text 
-            text text text text text text text text text text text text text text 
-            text text text text text text text text text text text text text text 
-            text text text text text text text text text text text text text text"
+                android:text="text text text text text text text text text text
+                text text text text text text text text text text
+                text text text text text text text text text text
+                text text text text text text text text text text
+                text text text text text text text text text text
+                text text text text text text text text text text"
                 android:textSize="30dp" />
         </LinearLayout>
 
@@ -48,7 +47,7 @@
             <GridView
                 android:id="@+id/gridview"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="500dp"
                 android:background="#504A4B"
                 android:columnWidth="130dp"
                 android:gravity="center"

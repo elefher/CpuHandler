@@ -58,7 +58,7 @@ public class MainActivity extends Activity {
 					startActivity(new Intent().setClass(that, MiscTools.class)
 							.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
 				else if(position >= 4)
-					System.out.println("bigger than 3");
+					System.out.println("bigger than 4");
 			}
 			
 		});

@@ -6,6 +6,7 @@ import com.elefher.customclasses.MiscServices;
 import com.elefher.extendedclasses.AlertPowerSavings;
 import com.elefher.extendedclasses.AlertProfiles;
 import com.elefher.implementation.ForceFastCharge;
+import com.elefher.implementation.IntelliPlug;
 import com.elefher.implementation.MpDecision;
 import com.elefher.utils.ArrayUtils;
 
@@ -50,14 +51,23 @@ public class MiscTools extends Activity {
 		 * Mpdecision is a proprietary code and doesn't recommended. 
 		 * If feature exists then give to the user the right to disable or enable it.
 		 */
-		MiscServices miscServices = new MiscServices();
-		String mpdecisionFile = ArrayUtils.existPaths(miscServices.MPDECISION_PATHS);
+		MiscServices miscServicesMPDecision = new MiscServices();
+		String mpdecisionFile = ArrayUtils.existPaths(miscServicesMPDecision.MPDECISION_PATHS);
 		if(mpdecisionFile != null){
 			LinearLayout mpdecisionLayout = (LinearLayout) findViewById(R.id.mpdecision);
 			mpdecisionLayout.setVisibility(View.VISIBLE);
 			// Firstly you have to set path for mpdecision
 			MpDecision.path = mpdecisionFile;
 			MpDecision mpDecision = new MpDecision(this);
+		}
+		MiscServices miscServicesIntelliPlug = new MiscServices();
+		String intelliPlugFile = ArrayUtils.existPaths(miscServicesIntelliPlug.INTELLIPLUG_PATHS);
+		if(intelliPlugFile != null){
+			LinearLayout mpdecisionLayout = (LinearLayout) findViewById(R.id.intelliplug);
+			mpdecisionLayout.setVisibility(View.VISIBLE);
+			// Firstly you have to set path for intelliplug
+			IntelliPlug.path = intelliPlugFile;
+			IntelliPlug intelliplug = new IntelliPlug(this);
 		}
 	}
 	
