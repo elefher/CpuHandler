@@ -9,23 +9,23 @@ import com.elefher.cpuhandler.R;
 import com.elefher.customclasses.DisplayText;
 import com.elefher.customclasses.MiscServices;
 
-public class AlertPowerSavings extends AlertDialogUtils {
+public class AlertSweep2Wake extends AlertDialogUtils {
 
 	Activity activity;
 	
-	public AlertPowerSavings(Activity act) {
+	public AlertSweep2Wake(Activity act) {
 		super(act);
 		activity = act;
 
 		// Set id button
-		createButton(R.id.powerSavingsButton);
-		String[] items = {"0", "1", "2"};
-		// Set available governors to dialog
+		createButton(R.id.sweep2wakeButton);
+		String[] items = {"off", "sweep2wake+sweep2sleep", "sweep2sleep"};
+		// Set available options to dialog
 		setItems(items);
 
 		// Set icon and tile for the dialog
 		setIcon(R.drawable.ic_launcher);
-		setTitle("Kernel: Power Savings");
+		setTitle("Sweep2Wake");
 
 		/*
 		 *  Set positive and negative button
@@ -39,28 +39,35 @@ public class AlertPowerSavings extends AlertDialogUtils {
 				 * Display message if user haven't choose a value
 				 */
 				if (getStringItem.isEmpty()){
-					Toast.makeText(activity, "You have to choose a value first!!", Toast.LENGTH_LONG).show();
+					Toast.makeText(activity, "You have to choose an option first!!", Toast.LENGTH_LONG).show();
 					return;
 				}
 				
 				/*
-				 * Set the power savings value and update info about the current power savings value 
+				 * Set the sweep2wake value and update info about the current sweep2wake value 
 				 */
-				boolean powerSavingsChanged = MiscServices.setSchedMcPowerSavingsState(getStringItem);
-				if(!powerSavingsChanged){
-					Toast.makeText(activity, "Sorry, but the power savings didn't change!!", Toast.LENGTH_LONG).show();
+				boolean sweep2wakeChanged = MiscServices.setSweep2WakeState(getStringItem);
+				if(!sweep2wakeChanged){
+					Toast.makeText(activity, "Sorry, but the sweep2wake didn't change!!", Toast.LENGTH_LONG).show();
 				} else {
 					Toast.makeText(activity, "Apply Successfully !!", Toast.LENGTH_LONG).show();
 				}
 				
-				// Update the current governor
-				DisplayText.updateText(activity, R.id.currentPowerSavings, MiscServices.getSchedMcPowerSavingsState());
+				String sweep2wakeState = MiscServices.getSweep2WakeState();
+				if(sweep2wakeState.equals("0")){
+					sweep2wakeState = "Sweep2Wake: off";
+				}else if(sweep2wakeState.equals("1")){
+					sweep2wakeState = "Sweep2Wake: sweep2wake+sweep2sleep";
+				}else if(sweep2wakeState.equals("2")){
+					sweep2wakeState = "Sweep2Wake: sweep2sleep";
+				}
+				// Update the current sweep2wake
+				DisplayText.updateText(activity, R.id.sweep2wakeText, sweep2wakeState);
 				
 				/*
 				 *  Initialize var getStringItem in order to delete the preview choose 
 				 */
-				getStringItem = "";
-				
+				getStringItem = "";				
 			}
 		});
 

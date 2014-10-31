@@ -256,6 +256,25 @@
                 style="@style/SeparateLine"
                 android:orientation="horizontal" />
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/screenwakecontrol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <Button
+                android:id="@+id/screenWakeControlButton"
+                style="@style/setCpuButton"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:text="Screen Wake Control" />
+
+            <View
+                android:id="@+id/separate"
+                style="@style/SeparateLine"
+                android:orientation="horizontal" />
+        </LinearLayout>
     </LinearLayout>
 
 </ScrollView>

@@ -62,6 +62,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.elefher.cpuhandler.MainActivity" />
         </activity>
+        <activity
+            android:name="com.elefher.tab.ScreenWakeControl"
+            android:label="Screen Wake Control" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.elefher.cpuhandler.MainActivity" />
+        </activity>
 
         <receiver
             android:name="ServicesAfterBooting"

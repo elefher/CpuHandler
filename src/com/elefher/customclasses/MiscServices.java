@@ -17,6 +17,8 @@ public class MiscServices {
 	public final static String MPDECISION = "/sys/module/msm_mpdecision/parameters/enabled";
 	public final static String MPDECISION_KERNEL_BASED = "/sys/kernel/msm_mpdecision/conf/enabled";
 	public final static String INTELLIPLUG = "/sys/module/intelli_plug/parameters/intelli_plug_active";
+	public final static String SWEEP2WAKE = "/sys/android_touch/sweep2wake";
+	public final static String DOUBLETAP2WAKE = "/sys/android_touch/doubletap2wake";
 	public final static ArrayList<String> MPDECISION_PATHS = new ArrayList<String>();
 	public final static ArrayList<String> INTELLIPLUG_PATHS = new ArrayList<String>();
 	
@@ -119,5 +121,70 @@ public class MiscServices {
 			Log.e("error: ", ex.toString());
 			return false;
 		}
+	}
+	
+	public static boolean setSweep2WakeState(String state) {
+		if(state.equals("off")){
+			state = "0";
+		}else if(state.equals("sweep2wake+sweep2sleep")){
+			state = "1";
+		}else if(state.equals("sweep2sleep")){
+			state = "2";
+		}
+		try {
+			List<String> commands = new ArrayList<String>();
+
+			commands.add("chmod 0664 " + SWEEP2WAKE + "\n");
+			commands.add("echo " + state + " > " + SWEEP2WAKE + "\n");			
+			commands.add("chmod 0444 " + SWEEP2WAKE + "\n");
+			commands.add("exit\n");
+
+			Process p = Runtime.getRuntime().exec(CpuUtils.getSUbinaryPath());
+			DataOutputStream dos = new DataOutputStream(p.getOutputStream());
+			for (String command : commands) {
+				dos.writeBytes(command);
+				dos.flush();
+			}
+			dos.close();
+
+			p.waitFor();
+			return true;
+		} catch (Exception ex) {
+			Log.e("error: ", ex.toString());
+			return false;
+		}
+	}
+	
+	public static String getSweep2WakeState() {
+		return ReadFile.getStringOfFile(SWEEP2WAKE);
+	}
+	
+	public static boolean setDoubleTap2Wake(String state) {
+		try {
+			List<String> commands = new ArrayList<String>();
+
+			commands.add("chmod 0664 " + DOUBLETAP2WAKE + "\n");
+			commands.add("echo " + state + " > " + DOUBLETAP2WAKE + "\n");			
+			commands.add("chmod 0444 " + DOUBLETAP2WAKE + "\n");
+			commands.add("exit\n");
+
+			Process p = Runtime.getRuntime().exec(CpuUtils.getSUbinaryPath());
+			DataOutputStream dos = new DataOutputStream(p.getOutputStream());
+			for (String command : commands) {
+				dos.writeBytes(command);
+				dos.flush();
+			}
+			dos.close();
+
+			p.waitFor();
+			return true;
+		} catch (Exception ex) {
+			Log.e("error: ", ex.toString());
+			return false;
+		}
+	}
+	
+	public static String getDoubleTap2Wake() {
+		return ReadFile.getStringOfFile(DOUBLETAP2WAKE);
 	}
 }

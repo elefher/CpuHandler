@@ -41,5 +41,7 @@
         modification is not guaranteed and might override frequency settings. Mpdecision is a proprietary code
          and doesn\'t recommended.</string>
     <string name="intelliPlugDescription">Intelliplug is a hotplug replacement for qualcomms mp-decision. It\'s recommended!!</string>
+    <string name="sweep2WakeDescription">Select between off, sweep2wake+sweep2sleep and sweep2sleep.</string>
+    <string name="doubleTap2WakeDescription">DT2W allows you to wake the device by double tapping on the screen.</string>
 
 </resources>

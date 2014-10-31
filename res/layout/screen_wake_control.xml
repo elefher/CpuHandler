@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#504A4B" >
+
+    <!-- Screen Design for screen wake control Activity -->
+
+    <LinearLayout
+        android:id="@+id/miscToolsContent"
+        style="@style/Content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/sweep2wake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    style="@style/itemdescription"
+                    android:text="@string/sweep2WakeDescription" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/sweep2wakeText"
+                    style="@style/minTitleText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Sweep2Wake:" />
+                
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <Button
+                        android:id="@+id/sweep2wakeButton"
+                        style="@style/setCpuButton"
+                        android:layout_gravity="center"
+                        android:text="Choose" />
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:id="@+id/separate"
+                style="@style/SeparateLine"
+                android:orientation="horizontal" />
+        </LinearLayout>
+        
+        <LinearLayout
+            android:id="@+id/doubleTap2wake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    style="@style/itemdescription"
+                    android:text="@string/doubleTap2WakeDescription" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/doubleTap2WakeText"
+                    style="@style/minTitleText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="DoubleTap2Wake:" />
+                
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <Button
+                        android:id="@+id/doubleTap2wakeButton"
+                        style="@style/setCpuButton"
+                        android:layout_gravity="center"
+                        android:text="Choose" />
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:id="@+id/separate"
+                style="@style/SeparateLine"
+                android:orientation="horizontal" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

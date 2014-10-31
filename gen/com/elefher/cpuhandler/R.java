@@ -43,7 +43,10 @@ public final class R {
         public static final int currentPowerSavings=0x7f06003b;
         public static final int currentmaxscreenofffreq=0x7f060014;
         public static final int device=0x7f06002c;
-        public static final int downVolts=0x7f060043;
+        public static final int doubleTap2WakeText=0x7f060047;
+        public static final int doubleTap2wake=0x7f060046;
+        public static final int doubleTap2wakeButton=0x7f060048;
+        public static final int downVolts=0x7f06004b;
         public static final int fastCharge=0x7f060036;
         public static final int fastchargeText=0x7f060037;
         public static final int fastchargebutton=0x7f060038;
@@ -78,6 +81,8 @@ public final class R {
         public static final int powerSavingsText=0x7f06003a;
         public static final int readbuffersizedesc=0x7f060027;
         public static final int scalingCurrent=0x7f060034;
+        public static final int screenWakeControlButton=0x7f060042;
+        public static final int screenwakecontrol=0x7f060041;
         public static final int separate=0x7f060001;
         public static final int separateline=0x7f060012;
         public static final int separatesubline=0x7f060025;
@@ -85,14 +90,17 @@ public final class R {
         public static final int setCpuProfileButton=0x7f060018;
         public static final int setIOScheduleButton=0x7f060022;
         public static final int setReadAheadButton=0x7f060026;
+        public static final int sweep2wake=0x7f060043;
+        public static final int sweep2wakeButton=0x7f060045;
+        public static final int sweep2wakeText=0x7f060044;
         public static final int text=0x7f060030;
         public static final int topofgridlayout=0x7f060000;
-        public static final int upVolts=0x7f060042;
+        public static final int upVolts=0x7f06004a;
         public static final int updatedCurrentGov=0x7f060020;
         public static final int updateioschedule=0x7f060024;
         public static final int updatereadbuffersize=0x7f060028;
-        public static final int voltagesContent=0x7f060041;
-        public static final int voltagesEdit=0x7f060044;
+        public static final int voltagesContent=0x7f060049;
+        public static final int voltagesEdit=0x7f06004c;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -100,7 +108,8 @@ public final class R {
         public static final int gridlayout=0x7f030002;
         public static final int info=0x7f030003;
         public static final int misctools=0x7f030004;
-        public static final int voltages=0x7f030005;
+        public static final int screen_wake_control=0x7f030005;
+        public static final int voltages=0x7f030006;
     }
     public static final class string {
         public static final int BatteryStatus=0x7f040004;
@@ -110,6 +119,7 @@ public final class R {
         public static final int cpuFreqDescription=0x7f040011;
         public static final int currentGovernorDesc=0x7f04000b;
         public static final int currentIOScheduleDesc=0x7f04000c;
+        public static final int doubleTap2WakeDescription=0x7f04001c;
         public static final int fastChargeDescription=0x7f040016;
         public static final int govDescription=0x7f040012;
         public static final int gridTitle=0x7f040010;
@@ -128,6 +138,7 @@ public final class R {
         public static final int setmaxfreqscreenoff=0x7f040007;
         public static final int setonboottext=0x7f04000f;
         public static final int spinnerPrompt=0x7f04000a;
+        public static final int sweep2WakeDescription=0x7f04001b;
         public static final int voltagesTitle=0x7f04000e;
         public static final int voltsDescription=0x7f040015;
     }
