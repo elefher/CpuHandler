@@ -10,12 +10,15 @@ import com.elefher.tab.Voltages;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
+import android.widget.ImageButton;
 
 public class MainActivity extends Activity {
 
@@ -26,6 +29,8 @@ public class MainActivity extends Activity {
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
 		setContentView(R.layout.activity_main);
+		
+		donate();
 		
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -72,5 +77,19 @@ public class MainActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	
+	private void donate(){
+		ImageButton donateButton = (ImageButton) findViewById(R.id.donateButton);
+		donateButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				String url = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YA2VM42Y7T7UA";
+				Intent intent = new Intent(Intent.ACTION_VIEW);
+				intent.setData(Uri.parse(url));
+				startActivity(intent);				
+			}
+		});
 	}
 }
