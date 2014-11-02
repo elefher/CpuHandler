@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.elefher.cpuhandler"
+    package="com.cpu.tuner"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -19,7 +19,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.elefher.cpuhandler.MainActivity"
+            android:name="com.cpu.tuner.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,42 +32,42 @@
             android:label="Info" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.elefher.cpuhandler.MainActivity" />
+                android:value="com.cpu.tuner.MainActivity" />
         </activity>
         <activity
             android:name="com.elefher.tab.ControlCpu"
             android:label="Control Cpu" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.elefher.cpuhandler.MainActivity" />
+                android:value="com.cpu.tuner.MainActivity" />
         </activity>
         <activity
             android:name="com.elefher.tab.Voltages"
             android:label="Voltages" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.elefher.cpuhandler.MainActivity" />
+                android:value="com.cpu.tuner.MainActivity" />
         </activity>
         <activity
             android:name="com.elefher.tab.MiscTools"
             android:label="Misc Tools" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.elefher.cpuhandler.MainActivity" />
+                android:value="com.cpu.tuner.MainActivity" />
         </activity>
         <activity
-            android:name="com.elefher.cpuhandler.ServicesAfterBooting"
+            android:name="com.cpu.tuner.ServicesAfterBooting"
             android:label="Services" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.elefher.cpuhandler.MainActivity" />
+                android:value="com.cpu.tuner.MainActivity" />
         </activity>
         <activity
             android:name="com.elefher.tab.ScreenWakeControl"
             android:label="Screen Wake Control" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.elefher.cpuhandler.MainActivity" />
+                android:value="com.cpu.tuner.MainActivity" />
         </activity>
 
         <receiver

@@ -1,13 +1,10 @@
-package com.elefher.cpuhandler;
+package com.cpu.tuner;
 
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.IOException;
 
-import com.elefher.customclasses.CpuControl;
-import com.elefher.customclasses.CpuGovernors;
 import com.elefher.customclasses.OnBoot;
-import com.elefher.utils.CpuUtils;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

@@ -1,6 +1,8 @@
-package com.elefher.cpuhandler;
+package com.cpu.tuner;
 
 import java.util.ArrayList;
+
+import com.cpu.tuner.R;
 
 import android.app.Activity;
 import android.content.Context;

@@ -1,6 +1,6 @@
 package com.elefher.tab;
 
-import com.elefher.cpuhandler.R;
+import com.cpu.tuner.R;
 import com.elefher.customclasses.MiscServices;
 import com.elefher.extendedclasses.AlertPowerSavings;
 import com.elefher.implementation.ForceFastCharge;

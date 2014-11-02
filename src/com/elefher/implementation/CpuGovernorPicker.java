@@ -1,6 +1,6 @@
 package com.elefher.implementation;
 
-import com.elefher.cpuhandler.R;
+import com.cpu.tuner.R;
 import com.elefher.customclasses.CpuGovernors;
 import com.elefher.customclasses.DisplayText;
 import com.elefher.extendedclasses.AlertGovernors;

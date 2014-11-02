@@ -1,13 +1,12 @@
 package com.elefher.extendedclasses;
 
 import android.app.Activity;
-import android.content.Context;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import com.elefher.abstractclasses.CustomCheckBoxes;
-import com.elefher.cpuhandler.R;
+import com.cpu.tuner.R;
 import com.elefher.customclasses.CpuControl;
 import com.elefher.customclasses.CpuGovernors;
 import com.elefher.customclasses.OnBoot;

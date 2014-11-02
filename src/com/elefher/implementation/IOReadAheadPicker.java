@@ -3,7 +3,7 @@ package com.elefher.implementation;
 import android.app.Activity;
 import android.widget.Toast;
 
-import com.elefher.cpuhandler.R;
+import com.cpu.tuner.R;
 import com.elefher.customclasses.DisplayText;
 import com.elefher.customclasses.IOSchedulers;
 import com.elefher.extendedclasses.AlertIOReadAhead;

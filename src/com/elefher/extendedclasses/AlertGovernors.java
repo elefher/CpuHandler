@@ -5,7 +5,7 @@ import android.content.DialogInterface;
 import android.widget.Toast;
 
 import com.elefher.abstractclasses.*;
-import com.elefher.cpuhandler.R;
+import com.cpu.tuner.R;
 import com.elefher.customclasses.CpuGovernors;
 import com.elefher.customclasses.DisplayText;
 

@@ -2,7 +2,7 @@ package com.elefher.tab;
 
 import java.util.ArrayList;
 
-import com.elefher.cpuhandler.R;
+import com.cpu.tuner.R;
 import com.elefher.customclasses.CpuGpuFreqVoltages;
 import com.elefher.customclasses.SetVoltagesButton;
 import com.elefher.customclasses.UpDownVoltageButtons;

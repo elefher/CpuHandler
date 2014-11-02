@@ -2,7 +2,7 @@ package com.elefher.tab;
 
 import java.util.ArrayList;
 
-import com.elefher.cpuhandler.R;
+import com.cpu.tuner.R;
 import com.elefher.customclasses.BatteryStat;
 import com.elefher.customclasses.CpuGovernors;
 import com.elefher.customclasses.CpuStat;
@@ -20,7 +20,6 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.NavUtils;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;

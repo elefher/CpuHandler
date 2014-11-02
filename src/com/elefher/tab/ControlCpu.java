@@ -1,7 +1,6 @@
 package com.elefher.tab;
 
-import com.elefher.cpuhandler.R;
-import com.elefher.customclasses.CpuControl;
+import com.cpu.tuner.R;
 import com.elefher.extendedclasses.SetOnBootTask;
 import com.elefher.implementation.CpuFreqPicker;
 import com.elefher.implementation.CpuFreqProfile;

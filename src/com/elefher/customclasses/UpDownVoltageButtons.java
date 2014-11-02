@@ -1,6 +1,6 @@
 package com.elefher.customclasses;
 
-import com.elefher.cpuhandler.R;
+import com.cpu.tuner.R;
 import com.elefher.extendedclasses.SetCpuVoltage;
 import com.elefher.tab.Voltages;
 
