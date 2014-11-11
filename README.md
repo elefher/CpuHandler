@@ -1,14 +1,15 @@
 <div id="content">
 	<div id="header">
-		<h1>CpuHandler Android app</h1>
+		<h1 style="margin:0 auto;color:#BCC6CC">Trickle Cpu Handler For Android</h1>
 	</div>
 	<div id="mainContent">
-             <h1>What is CpuHandler</h1>
-                   <p>CpuHandler is an Android app. The idea is that user has to keep the whole power of Android kernel
-                   in his hand. Find and install a kernel which has more features than the stock kernel. So, if kernel has extra features
-                   then you can change clock frequencies (overclock) also user can create a profile with min &amp; max frequencies.
-                   User can change cpu governor, change I/O scheduler and set ahead buffer size. Set on boot feature is available
-                   in overclocking &amp; cpu governor. In future versions set on boot is going to settled in more settings. Another one feature is undervolting. User is free to collect info, check current frequency clock, how many cores running and check
-                   battery statistics.</p>
+             <h3 style="color:#56A5EC">What is CpuHandler</h3>
+                   <p>Trickle Cpu Handler is an application for changing the cpu settings on rooted Android smartphones and tablets. Trickle Cpu Handler works is a variety Android devices with custom ROMs.
+
+Trickle Cpu Handler has a beautiful and useful UI. You have all the power and features of your kernel in your screen. Firstly you can see all information of your device such as min &amp; max cpu frequency, current frequency, every cpu core workload and battery stats in INFO tab.
+
+Check the next tab CONTROL CPU in Trickle Cpu Handler. You are free to change the min & max frequencies, also you can save this frequencies and use these when you want. Choose your favorite governor and check how works between min &amp; max frequencies.
+
+Also Trickle Cpu Handler has 'voltage control' feature that is enabled only if supported of your kernel.</p>
 	</div>
 </div>
