@@ -18,8 +18,9 @@ ___
 
 ### Downloads ###
 
->Trickle Cpu Handler On Google Play: <a href="https://play.google.com/store/apps/details?id=com.cpu.tuner" title="Play Store TCH" target="_blank">![alt tag](http://codehit.gr/demo/del/trickle-cpu-handler-images/play-store-icon.png)</a> 
-Please don't forget to rate it and state your kind reviews so as to give me a chance to improve it for you.
+>Trickle Cpu Handler On Google Play: <a href="https://play.google.com/store/apps/details?id=com.cpu.tuner" title="Play Store TCH" target="_blank">![alt tag](http://codehit.gr/demo/del/trickle-cpu-handler-images/play-store-icon.png)</a>
+ 
+>Please don't forget to rate it and state your kind reviews so as to give me a chance to improve it for you.
 
 ___
 
@@ -55,7 +56,8 @@ ___
 
 ___
 
-###Trickle Cpu Handler License : GPL V3###
+###Trickle Cpu Handler License :### 
+><a href="http://www.gnu.org/copyleft/gpl.html">GPL V3</a>
 
 ___
 
