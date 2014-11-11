@@ -18,7 +18,7 @@ ___
 
 ### Downloads ###
 
-###### Trickle Cpu Handler On Google Play ###### <a href="https://play.google.com/store/apps/details?id=com.cpu.tuner" title="Play Store TCH" target="_blank">![alt tag](http://codehit.gr/demo/del/trickle-cpu-handler-images/play-store-icon.png)</a> 
+>Trickle Cpu Handler On Google Play: <a href="https://play.google.com/store/apps/details?id=com.cpu.tuner" title="Play Store TCH" target="_blank">![alt tag](http://codehit.gr/demo/del/trickle-cpu-handler-images/play-store-icon.png)</a> 
 Please don't forget to rate it and state your kind reviews so as to give me a chance to improve it for you.
 
 ___
@@ -51,7 +51,7 @@ ___
 ___
 
 ###Bug Reports###
->You can refer a bug <a href="http://forum.xda-developers.com/devdb/project/?id=6567#bugReporter">here</a>!
+>You can refer a bug <a href="http://forum.xda-developers.com/devdb/project/?id=6567#bugReporter" target="_blank">here</a>!
 
 ___
 
@@ -60,6 +60,9 @@ ___
 ___
 
 ###Donate###
-> Please if you like it you can donate to <a href="https://www.paypal.com/gr/cgi-bin/webscr?cmd=_flow&SESSION=wqLi2CZn5P2M_DQdguvpvwyICvo8BTh5iyWGxXyyWbvgpSwB44kRy4prSAa&dispatch=5885d80a13c0db1f8e263663d3faee8d66f31424b43e9a70645c907a6cbd8fb4" title="donation">![alt tag](http://codehit.gr/demo/del/trickle-cpu-handler-images/donate.gif)</a>
+> Please if you like it you can donate to <a href="https://www.paypal.com/gr/cgi-bin/webscr?cmd=_flow&SESSION=wqLi2CZn5P2M_DQdguvpvwyICvo8BTh5iyWGxXyyWbvgpSwB44kRy4prSAa&dispatch=5885d80a13c0db1f8e263663d3faee8d66f31424b43e9a70645c907a6cbd8fb4" title="donation" target="_blank">![alt tag](http://codehit.gr/demo/del/trickle-cpu-handler-images/donate.gif)</a>
 
-WebSite: Comming Soon!!!
+___
+
+###Website###
+> Comming Soon!!!
