@@ -57,7 +57,7 @@ ___
 ___
 
 ###Trickle Cpu Handler License :### 
-><a href="http://www.gnu.org/copyleft/gpl.html">GPL V3</a>
+><a href="http://www.gnu.org/copyleft/gpl.html" target="_blank">GPL V3</a>
 
 ___
 
