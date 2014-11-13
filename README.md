@@ -66,4 +66,4 @@ ___
 ___
 
 ###Website###
-> Comming Soon!!!
+> Coming Soon!!!
