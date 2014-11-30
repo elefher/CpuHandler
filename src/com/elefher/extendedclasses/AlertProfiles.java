@@ -5,6 +5,7 @@ import java.util.List;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
@@ -72,8 +73,8 @@ public class AlertProfiles extends AlertDialogUtils {
 		 * Create a completed linearLayout for alert dialog.
 		 */
 		LinearLayout.LayoutParams profileDialogParams = new LinearLayout.LayoutParams(
-				LinearLayout.LayoutParams.FILL_PARENT,
-				LinearLayout.LayoutParams.WRAP_CONTENT);
+				LayoutParams.FILL_PARENT,
+				LayoutParams.WRAP_CONTENT);
 		profileDialogParams.weight = 1;
 
 		LinearLayout profileNameLayout = new LinearLayout(activity);
@@ -249,7 +250,7 @@ public class AlertProfiles extends AlertDialogUtils {
 		
 		Boolean isChanged = false;
 		CpuControl cpuControl = new CpuControl(activity);
-		isChanged = cpuControl.setCpuFrequencies(newMinFreq, newMaxFreq);
+		isChanged = CpuControl.setCpuFrequencies(newMinFreq, newMaxFreq);
 		if (isChanged) {
 			// Initialize current frequencies
 			float curMinFreq = Float.parseFloat(CpuControl.getCurrentMinCpuFreq());

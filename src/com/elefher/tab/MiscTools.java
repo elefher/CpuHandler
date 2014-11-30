@@ -54,7 +54,7 @@ public class MiscTools extends Activity {
 		 * If feature exists then give to the user the right to disable or enable it.
 		 */
 		MiscServices miscServicesMPDecision = new MiscServices();
-		String mpdecisionFile = ArrayUtils.existPaths(miscServicesMPDecision.MPDECISION_PATHS);
+		String mpdecisionFile = ArrayUtils.existPaths(MiscServices.MPDECISION_PATHS);
 		if(mpdecisionFile != null){
 			LinearLayout mpdecisionLayout = (LinearLayout) findViewById(R.id.mpdecision);
 			mpdecisionLayout.setVisibility(View.VISIBLE);
@@ -63,7 +63,7 @@ public class MiscTools extends Activity {
 			MpDecision mpDecision = new MpDecision(this);
 		}
 		MiscServices miscServicesIntelliPlug = new MiscServices();
-		String intelliPlugFile = ArrayUtils.existPaths(miscServicesIntelliPlug.INTELLIPLUG_PATHS);
+		String intelliPlugFile = ArrayUtils.existPaths(MiscServices.INTELLIPLUG_PATHS);
 		if(intelliPlugFile != null){
 			LinearLayout mpdecisionLayout = (LinearLayout) findViewById(R.id.intelliplug);
 			mpdecisionLayout.setVisibility(View.VISIBLE);

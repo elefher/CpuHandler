@@ -8,7 +8,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-import android.widget.Toast;
 
 public class ProfilesDataSource {
 
@@ -110,14 +109,14 @@ public class ProfilesDataSource {
 				cursorSearch = selectCursorWithColumn(MySQLiteHelper.COLUMN_PROFILE);
 
 				cursorSearch.moveToFirst();
-				this.updatedProfile = cursorToProfile(cursorSearch);
+				ProfilesDataSource.updatedProfile = cursorToProfile(cursorSearch);
 				cursorSearch.moveToNext();
 
 				// make sure to close the cursor
 				cursorSearch.close();
 			}
 		}
-		return this.updatedProfile;
+		return ProfilesDataSource.updatedProfile;
 	}
 
 	public Cursor selectCursorWithColumn(String columnDep) {

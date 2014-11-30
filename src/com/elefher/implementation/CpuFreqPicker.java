@@ -36,13 +36,13 @@ public class CpuFreqPicker implements OnSeekBarChangeListener, OnClickListener {
 		this.activity = activity;
 
 		setCpu = (Button) activity.findViewById(R.id.setCpuButton);
-
 		// Initialize current frequencies
 		curMinFreq = Float.parseFloat(CpuControl.getCurrentMinCpuFreq());
 		curMaxFreq = Float.parseFloat(CpuControl.getCurrentMaxCpuFreq());
-
+		
 		minFreqText = (TextView) activity.findViewById(R.id.minFreq);
 		maxFreqText = (TextView) activity.findViewById(R.id.maxFreq);
+		
 		minFreqSeekProgress = (TextView) activity
 				.findViewById(R.id.minFreqSeekProgress);
 		maxFreqSeekProgress = (TextView) activity

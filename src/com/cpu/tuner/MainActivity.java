@@ -2,15 +2,19 @@ package com.cpu.tuner;
 
 import java.util.ArrayList;
 
+import org.json.JSONException;
+
 import com.cpu.tuner.R;
 import com.elefher.customclasses.CpuGpuFreqVoltages;
 import com.elefher.tab.ControlCpu;
 import com.elefher.tab.Info;
 import com.elefher.tab.MiscTools;
 import com.elefher.tab.Voltages;
+import com.elefher.utils.ReadFile;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -49,7 +53,14 @@ public class MainActivity extends Activity {
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
 		setContentView(R.layout.activity_main);
-
+		/* test code */
+		try {
+			ReadFile.getListOfFile("data/paths.json", "path", "scaling_min_freq", this);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		// end test code
 		donate();
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
@@ -129,6 +140,7 @@ public class MainActivity extends Activity {
 		alert.setView(message);
 
 		alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+			@Override
 			public void onClick(DialogInterface dialog, int whichButton) {
 			}
 		});

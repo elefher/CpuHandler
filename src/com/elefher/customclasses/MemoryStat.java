@@ -12,7 +12,7 @@ public class MemoryStat {
 	
 	public MemoryStat(Context context) {
 		mi = new MemoryInfo(); 
-		activityManager = (ActivityManager) context.getSystemService(context.ACTIVITY_SERVICE);
+		activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
 	}
 	
 	public static long getTotalMemory(){

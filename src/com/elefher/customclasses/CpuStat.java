@@ -116,6 +116,7 @@ public class CpuStat {
 		return usage;
 	}
 
+	@Override
 	public String toString() {
 		update();
 		StringBuffer buf = new StringBuffer();

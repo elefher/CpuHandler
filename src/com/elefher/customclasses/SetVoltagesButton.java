@@ -35,7 +35,7 @@ public class SetVoltagesButton extends Button {
 	public void positionButton(int rIdLayout){
 		mainLayout = (LinearLayout) activity.findViewById(rIdLayout);
 		
-		LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+		LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(android.view.ViewGroup.LayoutParams.WRAP_CONTENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
 		param.weight = 1f;
 		param.topMargin = 10;
 		param.gravity = Gravity.CENTER;

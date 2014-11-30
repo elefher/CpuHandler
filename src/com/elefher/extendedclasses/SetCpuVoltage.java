@@ -32,11 +32,11 @@ public class SetCpuVoltage extends EditTextButtons {
 	@Override
 	public void createReachEditText(int rIdLinear) {
 		LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-				LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+				android.view.ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
 		params.topMargin = 5;
 
 		LinearLayout.LayoutParams paramsCenter = new LinearLayout.LayoutParams(
-				0, LayoutParams.WRAP_CONTENT, 1);
+				0, android.view.ViewGroup.LayoutParams.WRAP_CONTENT, 1);
 
 		LinearLayout mainLayout = (LinearLayout) activity
 				.findViewById(rIdLinear);

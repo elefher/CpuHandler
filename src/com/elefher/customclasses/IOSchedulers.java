@@ -7,7 +7,6 @@ import java.util.List;
 
 import android.util.Log;
 
-import com.elefher.tab.Info;
 import com.elefher.utils.CpuUtils;
 import com.elefher.utils.ReadFile;
 

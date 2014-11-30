@@ -112,14 +112,14 @@ public class ServicesDataSource {
 				cursorSearch = selectCursorWithColumn(MySQLiteServicesHelper.COLUMN_ID);
 
 				cursorSearch.moveToFirst();
-				this.updatedService = cursorToService(cursorSearch);
+				ServicesDataSource.updatedService = cursorToService(cursorSearch);
 				cursorSearch.moveToNext();
 
 				// make sure to close the cursor
 				cursorSearch.close();
 			}
 		}
-		return this.updatedService;
+		return ServicesDataSource.updatedService;
 	}
 
 	public Cursor selectCursorWithColumn(String columnDep) {

@@ -62,51 +62,51 @@ public class Info extends Activity {
 		LinearLayout lcpuInfo = (LinearLayout) findViewById(R.id.cpuInfo);
 
 		// linear layout params for circle cpu
-		marginLeft = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
-				LayoutParams.WRAP_CONTENT);
+		marginLeft = new LinearLayout.LayoutParams(android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
+				android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
 		marginLeft.leftMargin = 10;
 		
-		titles = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT,
-				LayoutParams.WRAP_CONTENT);
+		titles = new LinearLayout.LayoutParams(android.view.ViewGroup.LayoutParams.MATCH_PARENT,
+				android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
 
-		separateLine = new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT,
+		separateLine = new LinearLayout.LayoutParams(android.view.ViewGroup.LayoutParams.FILL_PARENT,
 				1);
 		separateLine.topMargin = 10;
 
-		paramsCircle = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
-				LayoutParams.WRAP_CONTENT);
+		paramsCircle = new LinearLayout.LayoutParams(android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
+				android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
 		paramsCircle.width = 120;
 		paramsCircle.height = 120;
 
-		paramsLine = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
-				LayoutParams.WRAP_CONTENT);
+		paramsLine = new LinearLayout.LayoutParams(android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
+				android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
 		paramsLine.width = 350;
 		paramsLine.height = 10;
 		paramsLine.setMargins(0, 60, 0, 0);
 
-		paramsLineMem = new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT,
+		paramsLineMem = new LinearLayout.LayoutParams(android.view.ViewGroup.LayoutParams.FILL_PARENT,
 				10);
 		
 
 		paramWith2Lines = new LinearLayout.LayoutParams(
-				LayoutParams.FILL_PARENT, 50);
+				android.view.ViewGroup.LayoutParams.FILL_PARENT, 50);
 
-		params1 = new LinearLayout.LayoutParams(300, LayoutParams.WRAP_CONTENT);
+		params1 = new LinearLayout.LayoutParams(300, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
 		params1.setMargins(20, 40, 0, 0);
 
-		paramsMem = new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, 60);
+		paramsMem = new LinearLayout.LayoutParams(android.view.ViewGroup.LayoutParams.FILL_PARENT, 60);
 		paramsMem.setMargins(20, 40, 20, 0);
 
 		// Linear layout params for layout
 		LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-				LayoutParams.FILL_PARENT, 120);
+				android.view.ViewGroup.LayoutParams.FILL_PARENT, 120);
 		layoutParams.topMargin = 10;
 		
 		statusGovernorParams = new LinearLayout.LayoutParams(
-				LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT, 1.0f);
+				android.view.ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1.0f);
 		
 		displayGovernorParams = new LinearLayout.LayoutParams(
-				LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT, 1.0f);
+				android.view.ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1.0f);
 
 		// display standard device info like kernel, os etc.
 		TextView textCodeName = (TextView) findViewById(R.id.codename);
