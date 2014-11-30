@@ -56,5 +56,5 @@ public class CpuUtils {
 		}
 
 		return strLines;
-	}
+	} 
 }

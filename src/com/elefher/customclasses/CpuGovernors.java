@@ -4,6 +4,9 @@ import java.io.DataOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONException;
+
+import android.content.Context;
 import android.util.Log;
 
 import com.elefher.tab.Info;
@@ -12,18 +15,18 @@ import com.elefher.utils.ReadFile;
 
 public class CpuGovernors {
 
-	private final static String cpufreq_sys_dir = "/sys/devices/system/cpu/cpu0/cpufreq/";
+	/*private final static String cpufreq_sys_dir = "/sys/devices/system/cpu/cpu0/cpufreq/";
 	private final static String scaling_governor = cpufreq_sys_dir
 			+ "scaling_governor";
 	private final static String scaling_available_governors = cpufreq_sys_dir
-			+ "scaling_available_governors";
+			+ "scaling_available_governors";*/
 
 	public CpuGovernors() {
 
 	}
 
-	public static String[] getAvailableGovernors() {
-		String[] governors = CpuUtils.readStringArray(scaling_available_governors);
+	public static String[] getAvailableGovernors(Context cntx) {
+		String[] governors = CpuUtils.readStringArray(findFilePath("scaling_available_governors", cntx));
 
 		// In case does not exist governors return null
 		if (governors == null) {
@@ -33,17 +36,18 @@ public class CpuGovernors {
 		return governors;
 	}
 	
-	public static String getCurrentGovernor(){
+	public static String getCurrentGovernor(Context cntx){
 		String currentGov = "";
-		currentGov = ReadFile.getStringOfFile(scaling_governor);
+		currentGov = ReadFile.getStringOfFile(findFilePath("scaling_governor", cntx));
 		
 		return currentGov;
 	}
 	
-	public static boolean setGovernor(String governor){
+	public static boolean setGovernor(String governor, Context cntx){
 		if(governor.isEmpty())
 			return false;
-
+		
+		String scaling_governor = findFilePath("scaling_governor", cntx);
 		try {
 			List<String> commands = new ArrayList<String>();
 
@@ -82,4 +86,13 @@ public class CpuGovernors {
 		}
 	}
 
+	private static String findFilePath(String file, Context cntx){
+		try {
+			String path = ReadFile.existPath(ReadFile.getListOfFile("data/paths.json", "path", file, cntx));
+			return path;
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 }

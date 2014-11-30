@@ -46,7 +46,7 @@ public class AlertPowerSavings extends AlertDialogUtils {
 				/*
 				 * Set the power savings value and update info about the current power savings value 
 				 */
-				boolean powerSavingsChanged = MiscServices.setSchedMcPowerSavingsState(getStringItem);
+				boolean powerSavingsChanged = MiscServices.setSchedMcPowerSavingsState(getStringItem, activity);
 				if(!powerSavingsChanged){
 					Toast.makeText(activity, "Sorry, but the power savings didn't change!!", Toast.LENGTH_LONG).show();
 				} else {
@@ -54,7 +54,7 @@ public class AlertPowerSavings extends AlertDialogUtils {
 				}
 				
 				// Update the current governor
-				DisplayText.updateText(activity, R.id.currentPowerSavings, MiscServices.getSchedMcPowerSavingsState());
+				DisplayText.updateText(activity, R.id.currentPowerSavings, MiscServices.getSchedMcPowerSavingsState(activity));
 				
 				/*
 				 *  Initialize var getStringItem in order to delete the preview choose 

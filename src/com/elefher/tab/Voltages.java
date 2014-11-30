@@ -50,7 +50,7 @@ public class Voltages extends Activity {
 	}
 
 	private void setCpuVoltagesSeparate() {
-		ArrayList<String> cpuFreqsVolts = CpuGpuFreqVoltages.getCpuVoltages();
+		ArrayList<String> cpuFreqsVolts = CpuGpuFreqVoltages.getCpuVoltages(this);
 		int size = cpuFreqsVolts.size();
 		freqs = new String[size];
 		volts = new String[size];

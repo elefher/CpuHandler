@@ -1,5 +1,6 @@
 package com.elefher.utils;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -63,23 +64,27 @@ public class ReadFile {
 	public static String loadJSONFromAssets(String file, Context cntx) {
 		String json = null;
 		try {
-
 			InputStream is = cntx.getAssets().open(file);
-
 			int size = is.available();
-
 			byte[] buffer = new byte[size];
-
 			is.read(buffer);
-
 			is.close();
-
 			json = new String(buffer, "UTF-8");
-
 		} catch (IOException ex) {
 			ex.printStackTrace();
 			return null;
 		}
 		return json;
+	}
+	
+	public static String existPath(ArrayList<String> paths){
+		int pathsSize = paths.size();
+		for(int i = 0; i < pathsSize; i++){
+			File file = new File(paths.get(i));
+			if (file.exists()){
+				return paths.get(i);
+			}
+		}
+		return null;
 	}
 }

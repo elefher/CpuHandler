@@ -1,43 +1,48 @@
 package com.elefher.customclasses;
 
 import java.io.DataOutputStream;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONException;
+
+import android.content.Context;
 import android.util.Log;
 
 import com.elefher.utils.CpuUtils;
+import com.elefher.utils.ReadFile;
 
 public class CpuGpuFreqVoltages {
 
-	private final static String cpufreq_sys_volts = "/sys/devices/system/cpu/cpufreq/vdd_table/vdd_levels";
+	/*private final static String cpufreq_sys_volts = "/sys/devices/system/cpu/cpufreq/vdd_table/vdd_levels";
 	private final static String gpufreq_sys_volts = "/sys/devices/system/cpu/cpufreq/vdd_table/vdd_levels_GPU";
+	* gpufreq_sys_volts is an unsued feature!!!
+	*/
 
 	public CpuGpuFreqVoltages() {
 	}
 
-	public static ArrayList<String> getCpuVoltages() {
+	public static ArrayList<String> getCpuVoltages(Context cntx) {
 
 		ArrayList<String> arrayStringList = CpuUtils
-				.readStringArray2Cells(cpufreq_sys_volts);
+				.readStringArray2Cells(findFilePath("vdd_levels", cntx));
 
 		return arrayStringList;
 	}
 	
-	public static boolean hasCpuVoltages() {
-		File f = new File(cpufreq_sys_volts);
-		if(f.exists())
+	public static boolean hasCpuVoltages(Context cntx) {
+		String str = findFilePath("vdd_levels", cntx);
+		if(str != null && !str.isEmpty())
 			return true;
-		else
-			return false;
+		return false;
 	}
 
-	public static boolean setCpuVoltages(ArrayList<String> addSubVal) {
+	public static boolean setCpuVoltages(ArrayList<String> addSubVal, Context cntx) {
 		if (addSubVal.isEmpty())
 			return false;
-
+		
 		List<String> commands = new ArrayList<String>();
+		String cpufreq_sys_volts = findFilePath("vdd_levels", cntx);
 		try {
 			commands.add("chmod 0644 " + cpufreq_sys_volts + "\n");
 			for (String s : addSubVal) {
@@ -59,5 +64,15 @@ public class CpuGpuFreqVoltages {
 			Log.e("", ex.toString() + " Error: " + ex.getMessage());
 			return false;
 		}
+	}
+	
+	private static String findFilePath(String file, Context cntx){
+		try {
+			String path = ReadFile.existPath(ReadFile.getListOfFile("data/paths.json", "path", file, cntx));
+			return path;
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 }

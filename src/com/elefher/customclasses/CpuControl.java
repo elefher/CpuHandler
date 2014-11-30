@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.json.JSONException;
+
 import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
@@ -17,7 +19,7 @@ import com.elefher.utils.ReadFile;
 
 public class CpuControl {
 
-	private final static String cpufreq_sys_dir = "/sys/devices/system/cpu/cpu0/cpufreq/";
+	/*private final static String cpufreq_sys_dir = "/sys/devices/system/cpu/cpu0/cpufreq/";
 	private final static String scaling_min_freq = cpufreq_sys_dir
 			+ "scaling_min_freq";
 	private final static String cpuinfo_min_freq = cpufreq_sys_dir
@@ -34,8 +36,7 @@ public class CpuControl {
 			+ "scaling_available_frequencies";
 	private final static String scaling_stats_time_in_state = cpufreq_sys_dir
 			+ "stats/time_in_state";
-	private final static String screen_off_max_freq = cpufreq_sys_dir
-			+ "screen_off_max_freq";
+	private final static String screen_off_max_freq = cpufreq_sys_dir	+ "screen_off_max_freq";*/
 
 	static Context context;
 
@@ -43,8 +44,8 @@ public class CpuControl {
 		context = cntx;
 	}
 
-	public static String[] getAvailableFreequencies() {
-		String[] frequencies = CpuUtils.readStringArray(scaling_available_freq);
+	public static String[] getAvailableFreequencies(Context cntx) {
+		String[] frequencies = CpuUtils.readStringArray(findFilePath("scaling_available_frequencies", cntx));
 
 		// In case does not exist frequencies return null
 		if (frequencies == null) {
@@ -61,16 +62,16 @@ public class CpuControl {
 		return frequencies;
 	}
 
-	public static String getCurrentMinCpuFreq() {
-		return ReadFile.getStringOfFile(scaling_min_freq);
+	public static String getCurrentMinCpuFreq(Context cntx) {
+		return ReadFile.getStringOfFile(findFilePath("scaling_min_freq", cntx));
 	}
 
-	public static String getCurrentMaxCpuFreq() {
-		return ReadFile.getStringOfFile(scaling_max_freq);
+	public static String getCurrentMaxCpuFreq(Context cntx) {
+		return ReadFile.getStringOfFile(findFilePath("scaling_max_freq", cntx));
 	}
 
-	public static String getAvailableMinCpuFreq() {
-		String[] availableF = getAvailableFreequencies();
+	public static String getAvailableMinCpuFreq(Context cntx) {
+		String[] availableF = getAvailableFreequencies(cntx);
 		String minAvFreq = "";
 
 		// Convert String array to int array in order to sort it
@@ -84,8 +85,8 @@ public class CpuControl {
 		return minAvFreq;
 	}
 
-	public static String getAvailableMaxCpuFreq() {
-		String[] availableF = getAvailableFreequencies();
+	public static String getAvailableMaxCpuFreq(Context cntx) {
+		String[] availableF = getAvailableFreequencies(cntx);
 		String maxAvFreq = "";
 
 		// Convert String array to int array in order to sort it
@@ -99,12 +100,14 @@ public class CpuControl {
 		return maxAvFreq;
 	}
 
-	public static boolean setCpuFrequencies(String min_freq, String max_freq) {
+	public static boolean setCpuFrequencies(String min_freq, String max_freq, Context cntx) {
 		int min = Integer.parseInt(min_freq);
 		int max = Integer.parseInt(max_freq);
 		if (min > max)
 			return false;
-
+		
+		String scaling_min_freq = findFilePath("scaling_min_freq", cntx);
+		String scaling_max_freq = findFilePath("scaling_max_freq", cntx);
 		try {
 			List<String> commands = new ArrayList<String>();
 
@@ -151,19 +154,20 @@ public class CpuControl {
 		}
 	}
 
-	public static String getScreenOffMaxFreq() {
-		return ReadFile.getStringOfFile(screen_off_max_freq);
+	public static String getScreenOffMaxFreq(Context cntx) {
+		return ReadFile.getStringOfFile(findFilePath("screen_off_max_freq", cntx));
 	}
 
-	public static boolean isScreenOffMaxFreqSupported() {
-		File file = new File(screen_off_max_freq);
-		if (file.exists())
+	public static boolean isScreenOffMaxFreqSupported(Context cntx) {
+		String str = findFilePath("screen_off_max_freq", cntx);
+		if(str != null && !str.isEmpty())
 			return true;
 		return false;
 	}
 
-	public static boolean setScreenOffMaxFreq(String maxSreenOffFreq) {
+	public static boolean setScreenOffMaxFreq(String maxSreenOffFreq, Context cntx) {
 
+		String screen_off_max_freq = findFilePath("screen_off_max_freq", cntx);
 		try {
 			List<String> commands = new ArrayList<String>();
 
@@ -198,5 +202,15 @@ public class CpuControl {
 					Toast.LENGTH_LONG).show();
 			return false;
 		}
+	}
+	
+	private static String findFilePath(String file, Context cntx){
+		try {
+			String path = ReadFile.existPath(ReadFile.getListOfFile("data/paths.json", "path", file, cntx));
+			return path;
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 }

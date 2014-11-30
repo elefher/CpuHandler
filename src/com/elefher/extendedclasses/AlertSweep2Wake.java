@@ -46,14 +46,14 @@ public class AlertSweep2Wake extends AlertDialogUtils {
 				/*
 				 * Set the sweep2wake value and update info about the current sweep2wake value 
 				 */
-				boolean sweep2wakeChanged = MiscServices.setSweep2WakeState(getStringItem);
+				boolean sweep2wakeChanged = MiscServices.setSweep2WakeState(getStringItem, activity);
 				if(!sweep2wakeChanged){
 					Toast.makeText(activity, "Sorry, but the sweep2wake didn't change!!", Toast.LENGTH_LONG).show();
 				} else {
 					Toast.makeText(activity, "Apply Successfully !!", Toast.LENGTH_LONG).show();
 				}
 				
-				String sweep2wakeState = MiscServices.getSweep2WakeState();
+				String sweep2wakeState = MiscServices.getSweep2WakeState(activity);
 				if(sweep2wakeState.equals("0")){
 					sweep2wakeState = "Sweep2Wake: off";
 				}else if(sweep2wakeState.equals("1")){

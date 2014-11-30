@@ -154,7 +154,7 @@ public class AlertProfiles extends AlertDialogUtils {
 	private String[] getFrequencyOfSeek() {
 		SeekBar minBar = (SeekBar) activity.findViewById(R.id.minFreqSeek);
 		SeekBar maxBar = (SeekBar) activity.findViewById(R.id.maxFreqSeek);
-		String[] availableFreqs = CpuControl.getAvailableFreequencies();
+		String[] availableFreqs = CpuControl.getAvailableFreequencies(activity);
 		String[] frequencies = { availableFreqs[minBar.getProgress()],
 				availableFreqs[maxBar.getProgress()] };
 		return frequencies;
@@ -250,11 +250,11 @@ public class AlertProfiles extends AlertDialogUtils {
 		
 		Boolean isChanged = false;
 		CpuControl cpuControl = new CpuControl(activity);
-		isChanged = CpuControl.setCpuFrequencies(newMinFreq, newMaxFreq);
+		isChanged = CpuControl.setCpuFrequencies(newMinFreq, newMaxFreq, activity);
 		if (isChanged) {
 			// Initialize current frequencies
-			float curMinFreq = Float.parseFloat(CpuControl.getCurrentMinCpuFreq());
-			float curMaxFreq = Float.parseFloat(CpuControl.getCurrentMaxCpuFreq());
+			float curMinFreq = Float.parseFloat(CpuControl.getCurrentMinCpuFreq(activity));
+			float curMaxFreq = Float.parseFloat(CpuControl.getCurrentMaxCpuFreq(activity));
 			// Update the initial Freq values as text
 			TextView minFreqText = (TextView) activity.findViewById(R.id.minFreq);
 			TextView maxFreqText = (TextView) activity.findViewById(R.id.maxFreq);

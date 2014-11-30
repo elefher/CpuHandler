@@ -21,7 +21,7 @@ public class AlertGovernors extends AlertDialogUtils {
 		createButton(R.id.governorButton);
 
 		// Set available governors to dialog
-		setItems(CpuGovernors.getAvailableGovernors());
+		setItems(CpuGovernors.getAvailableGovernors(activity.getApplicationContext()));
 
 		// Set icon and tile for the dialog
 		setIcon(R.drawable.ic_launcher);
@@ -46,16 +46,16 @@ public class AlertGovernors extends AlertDialogUtils {
 				/*
 				 * Set the cpu Governor and update info about the current governor 
 				 */
-				boolean governorChanged = CpuGovernors.setGovernor(getStringItem);
+				boolean governorChanged = CpuGovernors.setGovernor(getStringItem, activity);
 				if(!governorChanged){
 					Toast.makeText(activity, "Sorry, but the governor didn't change!!", Toast.LENGTH_LONG).show();
 				} else if(governorChanged){
-					Toast.makeText(activity, "The governor has changed to " + CpuGovernors.getCurrentGovernor() +
+					Toast.makeText(activity, "The governor has changed to " + CpuGovernors.getCurrentGovernor(activity) +
 							"!!", Toast.LENGTH_LONG).show();
 				}
 				
 				// Update the current governor
-				DisplayText.updateText(activity, R.id.updatedCurrentGov, CpuGovernors.getCurrentGovernor());
+				DisplayText.updateText(activity, R.id.updatedCurrentGov, CpuGovernors.getCurrentGovernor(activity));
 				
 				/*
 				 *  Initialize var getStringItem in order to delete the preview choose 

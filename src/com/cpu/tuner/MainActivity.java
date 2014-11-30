@@ -53,14 +53,6 @@ public class MainActivity extends Activity {
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
 		setContentView(R.layout.activity_main);
-		/* test code */
-		try {
-			ReadFile.getListOfFile("data/paths.json", "path", "scaling_min_freq", this);
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		// end test code
 		donate();
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
@@ -70,7 +62,7 @@ public class MainActivity extends Activity {
 		items = new ArrayList<String>();
 		items.add("INFO");
 		items.add("CONTROL CPU");
-		if (CpuGpuFreqVoltages.hasCpuVoltages())
+		if (CpuGpuFreqVoltages.hasCpuVoltages(this))
 			items.add("VOLTAGES");
 		items.add("MISC TOOLS");
 

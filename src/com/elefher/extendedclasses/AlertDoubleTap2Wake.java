@@ -46,14 +46,14 @@ public class AlertDoubleTap2Wake extends AlertDialogUtils {
 				/*
 				 * Set the doubletap2wake value and update info about the current doubletap2wake value 
 				 */
-				boolean doubleTap2WakeChanged = MiscServices.setDoubleTap2Wake(getStringItem);
+				boolean doubleTap2WakeChanged = MiscServices.setDoubleTap2Wake(getStringItem, activity);
 				if(!doubleTap2WakeChanged){
 					Toast.makeText(activity, "Sorry, but the doubletap2wake didn't change!!", Toast.LENGTH_LONG).show();
 				} else {
 					Toast.makeText(activity, "Apply Successfully !!", Toast.LENGTH_LONG).show();
 				}
 				
-				String doubleTap2WakeState = MiscServices.getDoubleTap2Wake();
+				String doubleTap2WakeState = MiscServices.getDoubleTap2Wake(activity);
 				if(doubleTap2WakeState.equals("0")){
 					doubleTap2WakeState = "DoubleTap2Wake: Disabled";
 				}else if(doubleTap2WakeState.equals("1")){

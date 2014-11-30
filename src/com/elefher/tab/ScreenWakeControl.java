@@ -27,11 +27,13 @@ public class ScreenWakeControl extends Activity {
 		/*
 		 * Sweep2Wake
 		 */
-		if (MiscServices.exists(MiscServices.SWEEP2WAKE)) {
+		String sweep2wakeStr = MiscServices.findFilePath("sweep2wake", this);
+		if(sweep2wakeStr != null && !sweep2wakeStr.isEmpty()){
+		//if (MiscServices.exists(MiscServices.SWEEP2WAKE)) {
 			LinearLayout sweep2wakeLayout = (LinearLayout) findViewById(R.id.sweep2wake);
 			sweep2wakeLayout.setVisibility(View.VISIBLE);
 			
-			String sweep2wakeState = MiscServices.getSweep2WakeState();
+			String sweep2wakeState = MiscServices.getSweep2WakeState(this);
 			if (sweep2wakeState.equals("0")) {
 				sweep2wakeState = "Sweep2Wake: off";
 			} else if (sweep2wakeState.equals("1")) {
@@ -48,11 +50,13 @@ public class ScreenWakeControl extends Activity {
 		/*
 		 * DoubleTap2Wake
 		 */
-		if (MiscServices.exists(MiscServices.DOUBLETAP2WAKE)) {
+		String doubletap2wakeStr = MiscServices.findFilePath("doubletap2wake", this);
+		if(doubletap2wakeStr != null && !doubletap2wakeStr.isEmpty()){
+		//if (MiscServices.exists(MiscServices.DOUBLETAP2WAKE)) {
 			LinearLayout sweep2wakeLayout = (LinearLayout) findViewById(R.id.doubleTap2wake);
 			sweep2wakeLayout.setVisibility(View.VISIBLE);
 			
-			String doubleTap2WakeState = MiscServices.getDoubleTap2Wake();
+			String doubleTap2WakeState = MiscServices.getDoubleTap2Wake(this);
 			if(doubleTap2WakeState.equals("0")){
 				doubleTap2WakeState = "DoubleTap2Wake: Disabled";
 			}else if(doubleTap2WakeState.equals("1")){

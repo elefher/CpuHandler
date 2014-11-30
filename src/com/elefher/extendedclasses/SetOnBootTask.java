@@ -177,7 +177,7 @@ public class SetOnBootTask extends CustomCheckBoxes {
 		onBoot.addCommand("\necho " + (int) CpuFreqPicker.curMinFreq
 				+ " > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq");
 		// Max screen off frequency if supported by kernel
-		if(CpuControl.isScreenOffMaxFreqSupported()){
+		if(CpuControl.isScreenOffMaxFreqSupported(activity)){
 			onBoot.addCommand("\necho chmod 0664" + " > /sys/devices/system/cpu/cpu0/cpufreq/screen_off_max_freq");
 			onBoot.addCommand("\necho " + (int) CpuFreqPicker.curMaxScreenOffFreq
 					+ " > /sys/devices/system/cpu/cpu0/cpufreq/screen_off_max_freq");
@@ -202,7 +202,7 @@ public class SetOnBootTask extends CustomCheckBoxes {
 		onBoot.fileName("99governor.sh");
 		onBoot.setShell("#!/system/bin/sh");
 		onBoot.addCommand("\necho chmod 0664" + " > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor");
-		onBoot.addCommand("\necho " + CpuGovernors.getCurrentGovernor()
+		onBoot.addCommand("\necho " + CpuGovernors.getCurrentGovernor(activity)
 				+ " > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor");
 		onBoot.addCommand("\necho chmod 0444" + " > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor");
 		if (onBoot.setOnBoot("/system")) {

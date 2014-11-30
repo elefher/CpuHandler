@@ -23,6 +23,6 @@ public class CpuGovernorPicker {
 		/*
 		 * Display the current governor
 		 */
-		DisplayText.updateText(activity, R.id.updatedCurrentGov, CpuGovernors.getCurrentGovernor());
+		DisplayText.updateText(activity, R.id.updatedCurrentGov, CpuGovernors.getCurrentGovernor(activity));
 	}
 }

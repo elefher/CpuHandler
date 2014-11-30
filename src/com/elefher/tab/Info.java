@@ -13,6 +13,7 @@ import com.elefher.utils.ReadFile;
 
 import android.app.ActionBar.LayoutParams;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
@@ -48,6 +49,8 @@ public class Info extends Activity {
 	LinearLayout.LayoutParams params1, paramsMem, paramsCircle, paramsLine,
 			paramsLineMem, paramWith2Lines, separateLine, marginLeft, statusGovernorParams,
 			displayGovernorParams, titles;
+	
+	Context cntx = this;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -209,7 +212,7 @@ public class Info extends Activity {
 		currentGovernor.setTextSize(20);
 		currentGovernor.setX(225);
 		currentGovernor.setTextColor(Color.rgb(188, 198, 204));
-		currentGovernor.setText(CpuGovernors.getCurrentGovernor().toUpperCase());
+		currentGovernor.setText(CpuGovernors.getCurrentGovernor(this).toUpperCase());
 		
 		RotateAnimation rotate= (RotateAnimation)AnimationUtils.loadAnimation(this,R.drawable.rotateanimation);
 		currentGovernor.setAnimation(rotate);
@@ -341,7 +344,7 @@ public class Info extends Activity {
 									.getStringOfFile("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq") + " KHz");
 
 			// Update cpu governor
-			currentGovernor.setText(CpuGovernors.getCurrentGovernor().toUpperCase());
+			currentGovernor.setText(CpuGovernors.getCurrentGovernor(cntx).toUpperCase());
 			
 			// Update cpu temperature
 			displayCpuTemp();

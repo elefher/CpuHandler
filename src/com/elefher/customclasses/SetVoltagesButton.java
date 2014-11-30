@@ -86,7 +86,7 @@ public class SetVoltagesButton extends Button {
 		 */
 		ArrayList<String> offset = new ArrayList<String>();
 		offset.add(getEditOffset());
-		if(CpuGpuFreqVoltages.setCpuVoltages(offset)){
+		if(CpuGpuFreqVoltages.setCpuVoltages(offset, activity)){
 			Toast.makeText(activity, "Greate the voltages has changed!!", Toast.LENGTH_LONG).show();
 			UpDownVoltageButtons.offestCount = 0;
 		}else{
@@ -118,7 +118,7 @@ public class SetVoltagesButton extends Button {
 	 */
 	private ArrayList<String> compareNewCurrentVoltsGetDif(ArrayList<String> newVolts){
 		ArrayList<String> finalVolts = new ArrayList<String>();
-		ArrayList<String> currentVolts = CpuGpuFreqVoltages.getCpuVoltages();
+		ArrayList<String> currentVolts = CpuGpuFreqVoltages.getCpuVoltages(activity);
 				
 		for(int i = 0; i < Voltages.lengthObj; i++){
 			// replaceAll used in order to ignore all spaces
@@ -140,7 +140,7 @@ public class SetVoltagesButton extends Button {
 		if(finalVolts.isEmpty()){
 			Toast.makeText(activity, "You didn't change voltages!!", Toast.LENGTH_LONG).show();
 		} else {
-			if(CpuGpuFreqVoltages.setCpuVoltages(finalVolts)){
+			if(CpuGpuFreqVoltages.setCpuVoltages(finalVolts, activity)){
 				Toast.makeText(activity, "Greate the voltages has changed!!", Toast.LENGTH_LONG).show();
 				UpDownVoltageButtons.offestCount = 0;
 			} else {

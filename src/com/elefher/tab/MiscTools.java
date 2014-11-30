@@ -9,6 +9,7 @@ import com.elefher.implementation.MpDecision;
 import com.elefher.utils.ArrayUtils;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
@@ -34,17 +35,19 @@ public class MiscTools extends Activity {
 		/*
 		 * Check if kernel supports below features 
 		 */
-		if(MiscServices.exists(MiscServices.FORCE_FAST_CHARGE)){
+		String forceStr = MiscServices.findFilePath("force_fast_charge", that);
+		if(forceStr != null && !forceStr.isEmpty()){
 			LinearLayout fastChargeLayout = (LinearLayout) findViewById(R.id.fastCharge);
 			fastChargeLayout.setVisibility(View.VISIBLE);
 			ForceFastCharge forceFastCharge = new ForceFastCharge(this);
 		}
 		
-		if(MiscServices.exists(MiscServices.SCHED_MC_POWER_SAVINGS)){
+		String schedStr = MiscServices.findFilePath("sched_mc_power_savings", that);
+		if(schedStr != null && !schedStr.isEmpty()){
 			LinearLayout powerSavingsLayout = (LinearLayout) findViewById(R.id.powerSavings);
 			powerSavingsLayout.setVisibility(View.VISIBLE);
 			TextView curPS = (TextView) findViewById(R.id.currentPowerSavings);
-			curPS.setText(MiscServices.getSchedMcPowerSavingsState());
+			curPS.setText(MiscServices.getSchedMcPowerSavingsState(that));
 			AlertPowerSavings alertPowerSavings = new AlertPowerSavings(this);
 		}
 		
@@ -53,29 +56,37 @@ public class MiscTools extends Activity {
 		 * Mpdecision is a proprietary code and doesn't recommended. 
 		 * If feature exists then give to the user the right to disable or enable it.
 		 */
-		MiscServices miscServicesMPDecision = new MiscServices();
-		String mpdecisionFile = ArrayUtils.existPaths(MiscServices.MPDECISION_PATHS);
-		if(mpdecisionFile != null){
+		//MiscServices miscServicesMPDecision = new MiscServices();
+		String decisionStr = MiscServices.findFilePath("mp_decision", that);
+		if(decisionStr != null && !decisionStr.isEmpty()){
+		//String mpdecisionFile = ArrayUtils.existPaths(MiscServices.MPDECISION_PATHS);
+		//if(mpdecisionFile != null){
 			LinearLayout mpdecisionLayout = (LinearLayout) findViewById(R.id.mpdecision);
 			mpdecisionLayout.setVisibility(View.VISIBLE);
 			// Firstly you have to set path for mpdecision
-			MpDecision.path = mpdecisionFile;
+			MpDecision.path = decisionStr;
 			MpDecision mpDecision = new MpDecision(this);
 		}
-		MiscServices miscServicesIntelliPlug = new MiscServices();
-		String intelliPlugFile = ArrayUtils.existPaths(MiscServices.INTELLIPLUG_PATHS);
-		if(intelliPlugFile != null){
+		
+		//MiscServices miscServicesIntelliPlug = new MiscServices();
+		String intelliStr = MiscServices.findFilePath("intelli_plug", that);
+		if(intelliStr != null && !intelliStr.isEmpty()){
+		//String intelliPlugFile = ArrayUtils.existPaths(MiscServices.INTELLIPLUG_PATHS);
+		//if(intelliPlugFile != null){
 			LinearLayout mpdecisionLayout = (LinearLayout) findViewById(R.id.intelliplug);
 			mpdecisionLayout.setVisibility(View.VISIBLE);
 			// Firstly you have to set path for intelliplug
-			IntelliPlug.path = intelliPlugFile;
+			IntelliPlug.path = intelliStr;
 			IntelliPlug intelliplug = new IntelliPlug(this);
 		}
 		
 		/*
 		 * Check if screen wake control supported by kernel
 		 */
-		if(MiscServices.exists(MiscServices.SWEEP2WAKE) || MiscServices.exists(MiscServices.DOUBLETAP2WAKE)){
+		String sweep2wakeStr = MiscServices.findFilePath("sweep2wake", that);
+		String doubletap2wakeStr = MiscServices.findFilePath("doubletap2wake", that);
+		if((sweep2wakeStr != null && !sweep2wakeStr.isEmpty()) || (doubletap2wakeStr != null && !doubletap2wakeStr.isEmpty())){
+		//if(MiscServices.exists(MiscServices.SWEEP2WAKE) || MiscServices.exists(MiscServices.DOUBLETAP2WAKE)){
 			LinearLayout screenWakeControlLayout = (LinearLayout) findViewById(R.id.screenwakecontrol);
 			screenWakeControlLayout.setVisibility(View.VISIBLE);
 			/*

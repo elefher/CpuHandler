@@ -18,7 +18,7 @@ public class ForceFastCharge extends ToggleButtonService{
 
 	@Override
 	public void on() {
-		if(MiscServices.setFastChargeState("1"))
+		if(MiscServices.setFastChargeState("1", activity))
 			Toast.makeText(activity, "Apply Successfully !!", Toast.LENGTH_LONG).show();
 		else
 			Toast.makeText(activity, "Didn't Change !!", Toast.LENGTH_LONG).show();
@@ -27,7 +27,7 @@ public class ForceFastCharge extends ToggleButtonService{
 
 	@Override
 	public void off() {
-		if(MiscServices.setFastChargeState("0"))
+		if(MiscServices.setFastChargeState("0", activity))
 			Toast.makeText(activity, "Apply Successfully !!", Toast.LENGTH_LONG).show();
 		else
 			Toast.makeText(activity, "Didn't Change !!", Toast.LENGTH_LONG).show();
@@ -36,7 +36,7 @@ public class ForceFastCharge extends ToggleButtonService{
 
 	@Override
 	public void setBttnState() {
-		if(MiscServices.getFastChargeState().equals("1"))
+		if(MiscServices.getFastChargeState(activity).equals("1"))
 			toggleBttn.setChecked(true);
 		else
 			toggleBttn.setChecked(false);
