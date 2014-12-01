@@ -2,7 +2,7 @@ package com.elefher.implementation;
 
 import java.util.Arrays;
 
-import com.cpu.tuner.R;
+import com.cpu.handler.R;
 import com.elefher.customclasses.CpuControl;
 
 import android.app.Activity;

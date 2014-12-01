@@ -2,7 +2,7 @@ package com.elefher.customclasses;
 
 import java.util.ArrayList;
 
-import com.cpu.tuner.R;
+import com.cpu.handler.R;
 import com.elefher.tab.Voltages;
 
 import android.app.Activity;

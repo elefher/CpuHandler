@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.widget.Toast;
 
 import com.elefher.abstractclasses.ToggleButtonService;
-import com.cpu.tuner.R;
+import com.cpu.handler.R;
 import com.elefher.customclasses.MiscServices;
 
 public class IntelliPlug extends ToggleButtonService{

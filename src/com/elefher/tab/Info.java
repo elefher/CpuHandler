@@ -2,7 +2,7 @@ package com.elefher.tab;
 
 import java.util.ArrayList;
 
-import com.cpu.tuner.R;
+import com.cpu.handler.R;
 import com.elefher.customclasses.BatteryStat;
 import com.elefher.customclasses.CpuGovernors;
 import com.elefher.customclasses.CpuStat;

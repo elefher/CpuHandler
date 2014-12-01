@@ -1,8 +1,8 @@
-package com.cpu.tuner;
+package com.cpu.handler;
 
 import java.util.ArrayList;
 
-import com.cpu.tuner.R;
+import com.cpu.handler.R;
 
 import android.app.Activity;
 import android.content.Context;

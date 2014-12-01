@@ -1,10 +1,10 @@
-package com.cpu.tuner;
+package com.cpu.handler;
 
 import java.util.ArrayList;
 
 import org.json.JSONException;
 
-import com.cpu.tuner.R;
+import com.cpu.handler.R;
 import com.elefher.customclasses.CpuGpuFreqVoltages;
 import com.elefher.tab.ControlCpu;
 import com.elefher.tab.Info;
@@ -53,7 +53,7 @@ public class MainActivity extends Activity {
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
 		setContentView(R.layout.activity_main);
-		donate();
+		//donate();  Old Feature
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -105,7 +105,7 @@ public class MainActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	private void donate() {
+	/*private void donate() {
 		ImageButton donateButton = (ImageButton) findViewById(R.id.donateButton);
 		donateButton.setOnClickListener(new OnClickListener() {
 
@@ -117,7 +117,7 @@ public class MainActivity extends Activity {
 				startActivity(intent);
 			}
 		});
-	}
+	}*/
 
 	private void licenses() {
 		AlertDialog.Builder alert = new AlertDialog.Builder(this);

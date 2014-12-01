@@ -1,7 +1,7 @@
 package com.elefher.implementation;
 
 import com.elefher.abstractclasses.ToggleButtonService;
-import com.cpu.tuner.R;
+import com.cpu.handler.R;
 import com.elefher.customclasses.MiscServices;
 
 import android.app.Activity;

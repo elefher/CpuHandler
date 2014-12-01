@@ -6,7 +6,7 @@ import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import com.elefher.abstractclasses.CustomCheckBoxes;
-import com.cpu.tuner.R;
+import com.cpu.handler.R;
 import com.elefher.customclasses.CpuControl;
 import com.elefher.customclasses.CpuGovernors;
 import com.elefher.customclasses.OnBoot;

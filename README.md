@@ -18,7 +18,7 @@ ___
 
 ### Downloads ###
 
->Trickle Cpu Handler On Google Play: <a href="https://play.google.com/store/apps/details?id=com.cpu.tuner" title="Play Store TCH" target="_blank">![alt tag](http://codehit.gr/demo/del/trickle-cpu-handler-images/Play-Store.png)</a>
+>Trickle Cpu Handler On Google Play: <a href="https://play.google.com/store/apps/details?id=com.cpu.handler" title="Play Store TCH" target="_blank">![alt tag](http://codehit.gr/demo/del/trickle-cpu-handler-images/Play-Store.png)</a>
  
 >Please don't forget to rate it and state your kind reviews so as to give me a chance to improve it for you.
 
@@ -27,7 +27,7 @@ ___
 ###These devices are officially supported###
 > - Nexus 7 2013(flo)
 > - Moto G (falcon)
-
+> - Moto G 2014
 ___
 
 ###Trickle Cpu Handler Features :###

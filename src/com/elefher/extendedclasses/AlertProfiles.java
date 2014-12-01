@@ -13,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.elefher.abstractclasses.AlertDialogUtils;
-import com.cpu.tuner.R;
+import com.cpu.handler.R;
 import com.elefher.customclasses.CpuControl;
 import com.elefher.db.Profile;
 import com.elefher.db.ProfilesDataSource;

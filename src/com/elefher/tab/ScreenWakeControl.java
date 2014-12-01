@@ -1,6 +1,6 @@
 package com.elefher.tab;
 
-import com.cpu.tuner.R;
+import com.cpu.handler.R;
 import com.elefher.customclasses.DisplayText;
 import com.elefher.customclasses.MiscServices;
 import com.elefher.extendedclasses.AlertDoubleTap2Wake;

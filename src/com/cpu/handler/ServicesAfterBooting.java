@@ -1,4 +1,4 @@
-package com.cpu.tuner;
+package com.cpu.handler;
 
 import java.io.DataOutputStream;
 import java.io.File;

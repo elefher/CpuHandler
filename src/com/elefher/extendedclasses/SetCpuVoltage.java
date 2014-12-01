@@ -1,7 +1,7 @@
 package com.elefher.extendedclasses;
 
 import com.elefher.abstractclasses.EditTextButtons;
-import com.cpu.tuner.R;
+import com.cpu.handler.R;
 
 import android.app.Activity;
 import android.graphics.Color;

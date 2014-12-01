@@ -1,6 +1,6 @@
 package com.elefher.implementation;
 
-import com.cpu.tuner.R;
+import com.cpu.handler.R;
 import com.elefher.customclasses.DisplayText;
 import com.elefher.customclasses.IOSchedulers;
 import com.elefher.extendedclasses.AlertIOSchedulers;
