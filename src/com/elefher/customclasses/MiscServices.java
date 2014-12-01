@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.json.JSONException;
 
+import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
 
@@ -25,24 +26,19 @@ public class MiscServices {
 	public final static ArrayList<String> MPDECISION_PATHS = new ArrayList<String>();
 	public final static ArrayList<String> INTELLIPLUG_PATHS = new ArrayList<String>();*/
 
-	//Context cntx;
-	public MiscServices(Context cntx) {
-		//this.cntx = cntx;
-		/*MPDECISION_PATHS.add(MPDECISION);
-		MPDECISION_PATHS.add(MPDECISION_KERNEL_BASED);
-		INTELLIPLUG_PATHS.add(INTELLIPLUG);*/
+	public MiscServices() {
 	}
 
-	public static boolean exists(String file) {
+	/*public static boolean exists(String file) {
 		File f = new File(file);
 		if (f.exists())
 			return true;
 		else
 			return false;
-	}
+	}*/
 
-	public static String getFastChargeState(Context cntx) {
-		return ReadFile.getStringOfFile(findFilePath("force_fast_charge", cntx));
+	public static String getFastChargeState(Activity act) {
+		return ReadFile.getStringOfFile(findFilePath("force_fast_charge", act));
 	}
 
 	public static boolean setFastChargeState(String state, Context cntx) {
@@ -168,7 +164,7 @@ public class MiscServices {
 	}
 	
 	public static boolean setDoubleTap2Wake(String state, Context cntx) {
-		String DOUBLETAP2WAKE = findFilePath("sweep2wake", cntx);
+		String DOUBLETAP2WAKE = findFilePath("doubletap2wake", cntx);
 		try {
 			List<String> commands = new ArrayList<String>();
 

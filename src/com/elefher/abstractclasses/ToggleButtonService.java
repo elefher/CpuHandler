@@ -19,7 +19,7 @@ public abstract class ToggleButtonService {
 	}
 	
 	public void addListenerOnButton() {
-		setBttnState();
+		setBttnState(activity);
 
 		toggleBttn.setOnClickListener(new OnClickListener() {
 
@@ -35,5 +35,5 @@ public abstract class ToggleButtonService {
 	
 	public abstract void on();
 	public abstract void off();
-	public abstract void setBttnState();
+	public abstract void setBttnState(Activity act);
 }

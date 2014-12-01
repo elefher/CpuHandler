@@ -57,6 +57,7 @@ public class ScreenWakeControl extends Activity {
 			sweep2wakeLayout.setVisibility(View.VISIBLE);
 			
 			String doubleTap2WakeState = MiscServices.getDoubleTap2Wake(this);
+			System.out.println("2wake " + doubleTap2WakeState);
 			if(doubleTap2WakeState.equals("0")){
 				doubleTap2WakeState = "DoubleTap2Wake: Disabled";
 			}else if(doubleTap2WakeState.equals("1")){

@@ -23,7 +23,7 @@ public class MpDecision extends ToggleButtonService{
 			Toast.makeText(activity, "Apply Successfully !!", Toast.LENGTH_LONG).show();
 		else
 			Toast.makeText(activity, "Didn't Change !!", Toast.LENGTH_LONG).show();
-		setBttnState();
+		setBttnState(activity);
 	}
 
 	@Override
@@ -32,11 +32,11 @@ public class MpDecision extends ToggleButtonService{
 			Toast.makeText(activity, "Apply Successfully !!", Toast.LENGTH_LONG).show();
 		else
 			Toast.makeText(activity, "Didn't Change !!", Toast.LENGTH_LONG).show();
-		setBttnState();
+		setBttnState(activity);
 	}
 
 	@Override
-	public void setBttnState() {
+	public void setBttnState(Activity act) {
 		if(MiscServices.getMpDecisionIntelliPlugState(path).equals("1"))
 			toggleBttn.setChecked(true);
 		else

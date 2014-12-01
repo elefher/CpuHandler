@@ -6,10 +6,8 @@ import com.elefher.extendedclasses.AlertPowerSavings;
 import com.elefher.implementation.ForceFastCharge;
 import com.elefher.implementation.IntelliPlug;
 import com.elefher.implementation.MpDecision;
-import com.elefher.utils.ArrayUtils;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
@@ -35,7 +33,7 @@ public class MiscTools extends Activity {
 		/*
 		 * Check if kernel supports below features 
 		 */
-		String forceStr = MiscServices.findFilePath("force_fast_charge", that);
+		String forceStr = MiscServices.findFilePath("force_fast_charge", this);
 		if(forceStr != null && !forceStr.isEmpty()){
 			LinearLayout fastChargeLayout = (LinearLayout) findViewById(R.id.fastCharge);
 			fastChargeLayout.setVisibility(View.VISIBLE);
