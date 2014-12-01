@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cpu.handler"
-    android:versionCode="2"
-    android:versionName="1.1" >
+    android:versionCode="3"
+    android:versionName="1.2" >
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -32,42 +32,42 @@
             android:label="Info" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.cpu.tuner.MainActivity" />
+                android:value="com.cpu.handler.MainActivity" />
         </activity>
         <activity
             android:name="com.elefher.tab.ControlCpu"
             android:label="Control Cpu" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.cpu.tuner.MainActivity" />
+                android:value="com.cpu.handler.MainActivity" />
         </activity>
         <activity
             android:name="com.elefher.tab.Voltages"
             android:label="Voltages" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.cpu.tuner.MainActivity" />
+                android:value="com.cpu.handler.MainActivity" />
         </activity>
         <activity
             android:name="com.elefher.tab.MiscTools"
             android:label="Misc Tools" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.cpu.tuner.MainActivity" />
+                android:value="com.cpu.handler.MainActivity" />
         </activity>
         <activity
             android:name="com.cpu.handler.ServicesAfterBooting"
             android:label="Services" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.cpu.tuner.MainActivity" />
+                android:value="com.cpu.handler.MainActivity" />
         </activity>
         <activity
             android:name="com.elefher.tab.ScreenWakeControl"
             android:label="Screen Wake Control" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.cpu.tuner.MainActivity" />
+                android:value="com.cpu.handler.MainActivity" />
         </activity>
 
         <receiver
