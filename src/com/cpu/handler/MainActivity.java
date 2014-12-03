@@ -2,22 +2,18 @@ package com.cpu.handler;
 
 import java.util.ArrayList;
 
-import org.json.JSONException;
-
 import com.cpu.handler.R;
 import com.elefher.customclasses.CpuGpuFreqVoltages;
 import com.elefher.tab.ControlCpu;
+import com.elefher.tab.ControlGpu;
 import com.elefher.tab.Info;
 import com.elefher.tab.MiscTools;
 import com.elefher.tab.Voltages;
-import com.elefher.utils.ReadFile;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
@@ -27,11 +23,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
@@ -53,7 +47,6 @@ public class MainActivity extends Activity {
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
 		setContentView(R.layout.activity_main);
-		//donate();  Old Feature
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -62,6 +55,7 @@ public class MainActivity extends Activity {
 		items = new ArrayList<String>();
 		items.add("INFO");
 		items.add("CONTROL CPU");
+		items.add("CONTROL GPU");
 		if (CpuGpuFreqVoltages.hasCpuVoltages(this))
 			items.add("VOLTAGES");
 		items.add("MISC TOOLS");
@@ -78,6 +72,9 @@ public class MainActivity extends Activity {
 							.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
 				else if ("CONTROL CPU".equals(items.get(position)))
 					startActivity(new Intent().setClass(that, ControlCpu.class)
+							.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+				else if ("CONTROL GPU".equals(items.get(position)))
+					startActivity(new Intent().setClass(that, ControlGpu.class)
 							.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
 				else if ("VOLTAGES".equals(items.get(position)))
 					startActivity(new Intent().setClass(that, Voltages.class)
@@ -104,20 +101,6 @@ public class MainActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-
-	/*private void donate() {
-		ImageButton donateButton = (ImageButton) findViewById(R.id.donateButton);
-		donateButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				String url = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YA2VM42Y7T7UA";
-				Intent intent = new Intent(Intent.ACTION_VIEW);
-				intent.setData(Uri.parse(url));
-				startActivity(intent);
-			}
-		});
-	}*/
 
 	private void licenses() {
 		AlertDialog.Builder alert = new AlertDialog.Builder(this);

@@ -42,6 +42,13 @@
                 android:value="com.cpu.handler.MainActivity" />
         </activity>
         <activity
+            android:name="com.elefher.tab.ControlGpu"
+            android:label="Control Gpu" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cpu.handler.MainActivity" />
+        </activity>
+        <activity
             android:name="com.elefher.tab.Voltages"
             android:label="Voltages" >
             <meta-data

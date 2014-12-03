@@ -8,6 +8,7 @@
     <string name="BatteryStatus">Battery Status</string>
     <string name="setCpuButton">Set Cpu Freq</string>
     <string name="setcpu">Cpu Frequency Control</string>
+    <string name="setgpu">Gpu Frequency Control</string>
     <string name="setmaxfreqscreenoff">Max Screen Off: </string>
     <string name="setioschedule">I/O Scheduler Control</string>
     <string name="setcpugovernor">Cpu Governor Control</string>
@@ -21,6 +22,7 @@
     <string name="cpuFreqDescription">Try to lock min &amp; max cpu frequencies. Choosing set on boot, 
         min &amp; max frequencies will apply auto when device reboot. Also try to create cpu profiles
         with your favorite frequencies.</string>
+    <string name="gpuFreqDescription">Try to change Gpu frequency.</string>
     <string name="govDescription">Choose your favorite governor. Try to find best governor for
         cpu and let it to jump between min &amp; max frequencies. Use set on boot in order to reboot with
         your favorite governor.</string>

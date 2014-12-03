@@ -96,5 +96,18 @@
 			"/sys/android_touch/doubletap2wake"
 		]
     },
+    {
+      "gpu_available_frequencies": [
+			"/sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpu_available_frequencies",	#Moto G
+			"/sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/gpu_available_frequencies"		#Nexus 7 2013
+		]
+    },
+    {
+      "max_gpuclk": [ #current Gpu freq and set Gpu freq
+			"/sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_gpuclk",	#Moto G
+			"/sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_gpuclk"		#Nexus 7 2013
+		]
+    }
+    
   ]
 }
