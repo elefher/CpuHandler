@@ -12,8 +12,10 @@
     <string name="setmaxfreqscreenoff">Max Screen Off: </string>
     <string name="setioschedule">I/O Scheduler Control</string>
     <string name="setcpugovernor">Cpu Governor Control</string>
+    <string name="setgpugovernor">Gpu Governor Control</string>
     <string name="spinnerPrompt">Governors</string>
     <string name="currentGovernorDesc">Current Governor:</string>
+    <string name="currentGpuGovernorDesc">Current Gpu Governor:</string>
     <string name="currentIOScheduleDesc">Current I/O Schedule:</string>
     <string name="readbuffersizeDesc">Read Ahead Buffer Size:</string>
     <string name="voltagesTitle">Handle Cpu Voltages</string>
@@ -26,6 +28,8 @@
     <string name="govDescription">Choose your favorite governor. Try to find best governor for
         cpu and let it to jump between min &amp; max frequencies. Use set on boot in order to reboot with
         your favorite governor.</string>
+    <string name="gpuGovDescription">Choose your favorite governor. Try to find best governor for
+        Gpu.</string>
     <string name="ioDescription">Choose an I/O scheduler. They have many purposes depending 
             on the goal of the I/O scheduler. Try to minimize time wasted by hard disk seeks,
             to give a share of the disk bandwidth to each running process and more.</string>

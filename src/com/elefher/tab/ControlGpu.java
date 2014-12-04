@@ -1,8 +1,9 @@
 package com.elefher.tab;
 
 import com.cpu.handler.R;
-import com.elefher.customclasses.GpuFreq;
+import com.elefher.customclasses.Gpu;
 import com.elefher.implementation.GpuFreqPicker;
+import com.elefher.implementation.GpuGovernorPicker;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -23,13 +24,20 @@ public class ControlGpu extends Activity {
 
 		/* Gpu Frequency */
 		// Set current Gpu Frequency
-		GpuFreq gpuFreq = new GpuFreq(this);
+		Gpu gpu = new Gpu(this);
 		TextView curPS = (TextView) findViewById(R.id.currentGpuFrequency);
 		// Get current frequency and return it to MHz
-		curPS.setText(gpuFreq.returnTo(gpuFreq.getCurrentFrequency()));
+		curPS.setText(gpu.returnTo(gpu.getCurrentFrequency()));
 		
 		GpuFreqPicker gpuFreqPicker = new GpuFreqPicker(this);
 		/* End Gpu Frequency */
+		/* Cpu Governor*/
+		TextView curGov = (TextView) findViewById(R.id.updatedCurrentGpuGov);
+		// Get current frequency and return it to MHz
+		curGov.setText(gpu.getCurrent("gpu_governor")[0]);
+		
+		GpuGovernorPicker gpuGovernorPicker = new GpuGovernorPicker(this);
+		/* End Gpu Governor*/
 	}
 
 	@Override

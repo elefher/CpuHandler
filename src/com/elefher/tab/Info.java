@@ -21,6 +21,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.NavUtils;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -47,9 +48,9 @@ public class Info extends Activity {
 	private Handler handler = new Handler();
 
 	LinearLayout.LayoutParams params1, paramsMem, paramsCircle, paramsLine,
-			paramsLineMem, paramWith2Lines, separateLine, marginLeft, statusGovernorParams,
-			displayGovernorParams, titles;
-	
+			paramsLineMem, paramWith2Lines, separateLine, marginLeft,
+			statusGovernorParams, displayGovernorParams, titles;
+
 	Context cntx = this;
 
 	@Override
@@ -58,58 +59,65 @@ public class Info extends Activity {
 		setContentView(R.layout.info);
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
-		
+
 		memoryStat = new MemoryStat(this);
 
 		// Cpu status
 		LinearLayout lcpuInfo = (LinearLayout) findViewById(R.id.cpuInfo);
 
 		// linear layout params for circle cpu
-		marginLeft = new LinearLayout.LayoutParams(android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
+		marginLeft = new LinearLayout.LayoutParams(
+				android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
 				android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
 		marginLeft.leftMargin = 10;
-		
-		titles = new LinearLayout.LayoutParams(android.view.ViewGroup.LayoutParams.MATCH_PARENT,
+
+		titles = new LinearLayout.LayoutParams(
+				android.view.ViewGroup.LayoutParams.MATCH_PARENT,
 				android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
 
-		separateLine = new LinearLayout.LayoutParams(android.view.ViewGroup.LayoutParams.FILL_PARENT,
-				1);
+		separateLine = new LinearLayout.LayoutParams(
+				android.view.ViewGroup.LayoutParams.FILL_PARENT, 1);
 		separateLine.topMargin = 10;
 
-		paramsCircle = new LinearLayout.LayoutParams(android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
+		paramsCircle = new LinearLayout.LayoutParams(
+				android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
 				android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
 		paramsCircle.width = 120;
 		paramsCircle.height = 120;
 
-		paramsLine = new LinearLayout.LayoutParams(android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
+		paramsLine = new LinearLayout.LayoutParams(
+				android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
 				android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
 		paramsLine.width = 350;
 		paramsLine.height = 10;
 		paramsLine.setMargins(0, 60, 0, 0);
 
-		paramsLineMem = new LinearLayout.LayoutParams(android.view.ViewGroup.LayoutParams.FILL_PARENT,
-				10);
-		
+		paramsLineMem = new LinearLayout.LayoutParams(
+				android.view.ViewGroup.LayoutParams.FILL_PARENT, 10);
 
 		paramWith2Lines = new LinearLayout.LayoutParams(
 				android.view.ViewGroup.LayoutParams.FILL_PARENT, 50);
 
-		params1 = new LinearLayout.LayoutParams(300, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
+		params1 = new LinearLayout.LayoutParams(300,
+				android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
 		params1.setMargins(20, 40, 0, 0);
 
-		paramsMem = new LinearLayout.LayoutParams(android.view.ViewGroup.LayoutParams.FILL_PARENT, 60);
+		paramsMem = new LinearLayout.LayoutParams(
+				android.view.ViewGroup.LayoutParams.FILL_PARENT, 60);
 		paramsMem.setMargins(20, 40, 20, 0);
 
 		// Linear layout params for layout
 		LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
 				android.view.ViewGroup.LayoutParams.FILL_PARENT, 120);
 		layoutParams.topMargin = 10;
-		
+
 		statusGovernorParams = new LinearLayout.LayoutParams(
-				android.view.ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1.0f);
-		
+				android.view.ViewGroup.LayoutParams.MATCH_PARENT,
+				android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1.0f);
+
 		displayGovernorParams = new LinearLayout.LayoutParams(
-				android.view.ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1.0f);
+				android.view.ViewGroup.LayoutParams.MATCH_PARENT,
+				android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1.0f);
 
 		// display standard device info like kernel, os etc.
 		TextView textCodeName = (TextView) findViewById(R.id.codename);
@@ -169,11 +177,11 @@ public class Info extends Activity {
 		totalCpuLayout.addView(totalCpuLineProgressBar);
 		lcpuInfo.addView(totalCpuLayout);
 		// ****************************************************
-		
+
 		/*
-		 *  Create Linearlayout view about cpu stats & governor
-		 *  Status and governor layouts are vertical, put them together
-		 *  in horizontal layout. 
+		 * Create Linearlayout view about cpu stats & governor Status and
+		 * governor layouts are vertical, put them together in horizontal
+		 * layout.
 		 */
 		LinearLayout statusLayout = new LinearLayout(this);
 		statusLayout.setOrientation(LinearLayout.VERTICAL);
@@ -200,33 +208,35 @@ public class Info extends Activity {
 			circleProgressBars.get(i).rotation(110);
 			circleProgressBars.get(i).setCurrentProgress(0);
 			layout.addView(circleProgressBars.get(i));
-			
+
 			statusLayout.addView(layout);
 		}
-		
+
 		LinearLayout govLayout = new LinearLayout(this);
 		govLayout.setOrientation(LinearLayout.HORIZONTAL);
 		govLayout.setLayoutParams(displayGovernorParams);
-		
+
 		currentGovernor = new TextView(this);
 		currentGovernor.setTextSize(20);
 		currentGovernor.setX(225);
 		currentGovernor.setTextColor(Color.rgb(188, 198, 204));
-		currentGovernor.setText(CpuGovernors.getCurrentGovernor(this).toUpperCase());
-		
-		RotateAnimation rotate= (RotateAnimation)AnimationUtils.loadAnimation(this,R.drawable.rotateanimation);
+		currentGovernor.setText(CpuGovernors.getCurrentGovernor(this)
+				.toUpperCase());
+
+		RotateAnimation rotate = (RotateAnimation) AnimationUtils
+				.loadAnimation(this, R.drawable.rotateanimation);
 		currentGovernor.setAnimation(rotate);
-		
+
 		govLayout.addView(currentGovernor);
-		
+
 		LinearLayout statusGovLayout = new LinearLayout(this);
 		statusGovLayout.setOrientation(LinearLayout.HORIZONTAL);
 		statusGovLayout.setLayoutParams(statusGovernorParams);
 		statusGovLayout.addView(statusLayout);
 		statusGovLayout.addView(govLayout);
-		
+
 		lcpuInfo.addView(statusGovLayout);
-		
+
 		// Display cpu temperature
 		LinearLayout cpuTempLayout = new LinearLayout(this);
 		cpuTempLayout.setOrientation(LinearLayout.VERTICAL);
@@ -253,7 +263,7 @@ public class Info extends Activity {
 		LinearLayout setCenter = new LinearLayout(this);
 		setCenter.setOrientation(1); // 1 means vertical
 		setCenter.setLayoutParams(titles);
-		
+
 		batteryStats = new TextView(this);
 		batteryStats.setTextColor(Color.rgb(188, 198, 204));
 		batteryStats.setTypeface(Typeface.SANS_SERIF, Typeface.BOLD);
@@ -329,23 +339,27 @@ public class Info extends Activity {
 			currentMin
 					.setText("Current Min Freq: "
 							+ ReadFile
-									.getStringOfFile("/sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq") + " KHz");
+									.getStringOfFile("/sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq")
+							+ " KHz");
 
 			TextView currentMax = (TextView) findViewById(R.id.currentMax);
 			currentMax
 					.setText("Current Max Freq: "
 							+ ReadFile
-									.getStringOfFile("/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq") + " KHz");
+									.getStringOfFile("/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq")
+							+ " KHz");
 
 			TextView scalingCurrent = (TextView) findViewById(R.id.scalingCurrent);
 			scalingCurrent
 					.setText("Scaling Current Freq: "
 							+ ReadFile
-									.getStringOfFile("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq") + " KHz");
+									.getStringOfFile("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq")
+							+ " KHz");
 
 			// Update cpu governor
-			currentGovernor.setText(CpuGovernors.getCurrentGovernor(cntx).toUpperCase());
-			
+			currentGovernor.setText(CpuGovernors.getCurrentGovernor(cntx)
+					.toUpperCase());
+
 			// Update cpu temperature
 			displayCpuTemp();
 
@@ -370,10 +384,16 @@ public class Info extends Activity {
 	}
 
 	private void displayCpuTemp() {
-		int cpuT = Integer.parseInt(ReadFile
-				.getStringOfFile("/sys/class/thermal/thermal_zone0/temp"));
-		cpuTemp.setText("Cpu Temp: " + String.valueOf(cpuT) + " \u00b0C");
-		cpuTempProgressBar.setCurrentProgress(cpuT);
+		try {
+			int cpuT = Integer.parseInt(ReadFile
+					.getStringOfFile("/sys/class/thermal/thermal_zone0/temp"));
+			cpuTemp.setText("Cpu Temp: " + String.valueOf(cpuT) + " \u00b0C");
+			cpuTempProgressBar.setCurrentProgress(cpuT);
+		} catch (NumberFormatException n) {
+			cpuTemp.setText("Cpu Temp: doesn't supported!");
+			cpuTempProgressBar.setCurrentProgress(0);
+			n.printStackTrace();
+		}
 	}
 
 	private void displayBatteryStats() {
@@ -391,7 +411,7 @@ public class Info extends Activity {
 			batMiscStats = "Battery not present!!!";
 		}
 		batteryMiscStats.setText(batMiscStats);
-		
+
 	}
 
 	private void displayBatteryTemp() {
@@ -405,32 +425,32 @@ public class Info extends Activity {
 		}
 		batteryTempStat.setText(batteryTemp);
 	}
-	
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-	    switch (item.getItemId()) {
-	    // Respond to the action bar's Up/Home button
-	    case android.R.id.home:
-	        NavUtils.navigateUpFromSameTask(this);
-	        return true;
-	    }
-	    return super.onOptionsItemSelected(item);
+		switch (item.getItemId()) {
+		// Respond to the action bar's Up/Home button
+		case android.R.id.home:
+			NavUtils.navigateUpFromSameTask(this);
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
 	}
-	
+
 	@Override
-	protected void onPause(){
+	protected void onPause() {
 		super.onPause();
-	    synchronized (this) {
-	        if(batteryStat.battery_receiver != null){
-	            unregisterReceiver(batteryStat.battery_receiver);
-	        }
-	    }
+		synchronized (this) {
+			if (batteryStat.battery_receiver != null) {
+				unregisterReceiver(batteryStat.battery_receiver);
+			}
+		}
 	}
-	
+
 	@Override
-    public void onResume() {
-        super.onResume();
-        IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+	public void onResume() {
+		super.onResume();
+		IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
 		registerReceiver(batteryStat.battery_receiver, filter);
-    }
+	}
 }

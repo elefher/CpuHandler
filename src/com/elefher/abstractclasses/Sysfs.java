@@ -45,6 +45,8 @@ public abstract class Sysfs {
 	}
 	
 	public abstract boolean setFrequency(String freq);
+	public abstract boolean set(String Val, String To);
 	public abstract boolean setFrequencies(String minFreq, String maxFreq);
+	public abstract String[] getCurrent(String searchFile);
 	public abstract String returnTo(String val);
 }

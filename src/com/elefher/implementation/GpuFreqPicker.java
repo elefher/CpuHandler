@@ -9,7 +9,7 @@ import android.widget.Toast;
 import com.cpu.handler.R;
 import com.elefher.abstractclasses.AlertDialogUtils;
 import com.elefher.customclasses.DisplayText;
-import com.elefher.customclasses.GpuFreq;
+import com.elefher.customclasses.Gpu;
 
 public class GpuFreqPicker extends AlertDialogUtils {
 
@@ -23,8 +23,8 @@ public class GpuFreqPicker extends AlertDialogUtils {
 		createButton(R.id.gpuFreqButton);
 		// Fill items array with values
 		ArrayList<String> items = new ArrayList<String>();
-		final GpuFreq gpuFreq = new GpuFreq(activity);
-		String[] freqs = gpuFreq.getAvailableFreequencies(activity, "gpu_available_frequencies");
+		final Gpu gpu = new Gpu(activity);
+		String[] freqs = gpu.getAvailableFreequencies(activity, "gpu_available_frequencies");
 		int freqsLength = freqs.length;
 		for(int i = 0; i < freqsLength; i++){
 			items.add(freqs[i]); 
@@ -55,7 +55,7 @@ public class GpuFreqPicker extends AlertDialogUtils {
 				/*
 				 * Set the Gpu frequency and update info about the current Gpu frequency 
 				 */
-				boolean gpuFrequencyChanged = gpuFreq.setFrequency(getStringItem);
+				boolean gpuFrequencyChanged = gpu.setFrequency(getStringItem);
 				if(!gpuFrequencyChanged){
 					Toast.makeText(activity, "Sorry, but frequency didn't change!!", Toast.LENGTH_LONG).show();
 				} else {
@@ -63,7 +63,7 @@ public class GpuFreqPicker extends AlertDialogUtils {
 				}
 				
 				// Update the current Gpu frequncy
-				DisplayText.updateText(activity, R.id.currentGpuFrequency, gpuFreq.returnTo(gpuFreq.getCurrentFrequency()));
+				DisplayText.updateText(activity, R.id.currentGpuFrequency, gpu.returnTo(gpu.getCurrentFrequency()));
 				
 				/*
 				 *  Initialize var getStringItem in order to delete the preview choose 

@@ -78,6 +78,77 @@
             android:id="@+id/separate"
             style="@style/SeparateLine"
             android:orientation="horizontal" />
+        
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/gpuGovTitle"
+                style="@style/titles"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/setgpugovernor" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/govDescription"
+                    style="@style/itemdescription"
+                    android:text="@string/gpuGovDescription" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/governors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:textColor="#FFFFFF"
+                android:weightSum="1" >
+
+                <LinearLayout
+                    android:id="@+id/governorsSpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical" >
+
+                    <Button
+                        android:id="@+id/gpuGovernorButton"
+                        style="@style/setCpuButton"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="Gpu Governors" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/currentGpuGov"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/currentGpuGovDescription"
+                        style="@style/minTitleText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="@string/currentGpuGovernorDesc" />
+
+                    <TextView
+                        android:id="@+id/updatedCurrentGpuGov"
+                        style="@style/dynamicTexts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        
     </LinearLayout>
 
 </ScrollView>

@@ -107,7 +107,19 @@
 			"/sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_gpuclk",	#Moto G
 			"/sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_gpuclk"		#Nexus 7 2013
 		]
-    }
-    
+    },
+    {
+      "gpu_available_governors": [ #current Gpu freq and set Gpu freq
+			"/sys/devices/qcom,cpubw.63/devfreq/qcom,cpubw.63/available_governors",	#Moto G
+			"/sys/devices/qcom,cpubw.65/devfreq/qcom,cpubw.65/available_governors", #Moto G
+			"/sys/devices/qcom,cpubw.65/devfreq/qcom,cpubw.65/device/devfreq/qcom,cpubw.65/available_governors" #Moto G
+		]
+    },
+    {
+      "gpu_governor": [ #current Gpu governor and set Gpu governor
+			"/sys/devices/qcom,cpubw.65/devfreq/qcom,cpubw.65/governor",	#Moto G
+			"/sys/devices/qcom,cpubw.65/devfreq/qcom,cpubw.65/device/devfreq/qcom,cpubw.65/governor" #Moto G
+		]
+    }    
   ]
 }
