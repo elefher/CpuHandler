@@ -49,6 +49,7 @@
     <string name="intelliPlugDescription">Intelliplug is a hotplug replacement for qualcomms mp-decision. It\'s recommended!!</string>
     <string name="sweep2WakeDescription">Select between off, sweep2wake+sweep2sleep and sweep2sleep.</string>
     <string name="doubleTap2WakeDescription">DT2W allows you to wake the device by double tapping on the screen.</string>
+    <string name="sweep2dimDescription">Sweep2Dim: sweep in the bottom of the screen.</string>
     <string name="donateDescription">Welcome to Trickle Cpu Handler\n Don\'t forget to rate it and state your kind reviews
          so as to give me a chance to improve it for you. Also if you like it you know what you have to do!!!</string>
     <string name="licenses">Copyright © 2014 Lefteris Delimitrou\n\n

@@ -97,6 +97,11 @@
 		]
     },
     {
+      "sweep2dim": [
+        "/sys/android_touch/sweep2dim"
+      ]
+    },
+    {
       "gpu_available_frequencies": [
 			"/sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpu_available_frequencies",	#Moto G
 			"/sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/gpu_available_frequencies"		#Nexus 7 2013

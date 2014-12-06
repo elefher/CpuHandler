@@ -1,0 +1,1 @@
+Services after booting don't work in some roms because of applications which change settings to default

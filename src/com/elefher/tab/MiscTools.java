@@ -83,8 +83,8 @@ public class MiscTools extends Activity {
 		 */
 		String sweep2wakeStr = MiscServices.findFilePath("sweep2wake", that);
 		String doubletap2wakeStr = MiscServices.findFilePath("doubletap2wake", that);
-		if((sweep2wakeStr != null && !sweep2wakeStr.isEmpty()) || (doubletap2wakeStr != null && !doubletap2wakeStr.isEmpty())){
-		//if(MiscServices.exists(MiscServices.SWEEP2WAKE) || MiscServices.exists(MiscServices.DOUBLETAP2WAKE)){
+		String sweep2dimStr = MiscServices.findFilePath("sweep2dim", that);
+		if((sweep2wakeStr != null && !sweep2wakeStr.isEmpty()) || (doubletap2wakeStr != null && !doubletap2wakeStr.isEmpty()) || (sweep2dimStr != null && !sweep2dimStr.isEmpty())){
 			LinearLayout screenWakeControlLayout = (LinearLayout) findViewById(R.id.screenwakecontrol);
 			screenWakeControlLayout.setVisibility(View.VISIBLE);
 			/*
