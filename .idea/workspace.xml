@@ -18,12 +18,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef9a5e03-0792-4159-866d-c86cdffeaee3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/elefher/customclasses/MiscServices.java" afterPath="$PROJECT_DIR$/src/com/elefher/customclasses/MiscServices.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/elefher/tab/MiscTools.java" afterPath="$PROJECT_DIR$/src/com/elefher/tab/MiscTools.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/elefher/tab/ScreenWakeControl.java" afterPath="$PROJECT_DIR$/src/com/elefher/tab/ScreenWakeControl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/data/paths.json" afterPath="$PROJECT_DIR$/assets/data/paths.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/screen_wake_control.xml" afterPath="$PROJECT_DIR$/res/layout/screen_wake_control.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
     </list>
     <ignored path="CpuHandler.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -91,11 +86,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="paths.json" pinned="false" current-in-tab="false">
+          <file leaf-file-name="paths.json" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/assets/data/paths.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-8.583333" vertical-offset="1099" max-vertical-offset="2025">
-                  <caret line="87" column="6" selection-start-line="87" selection-start-column="6" selection-end-line="87" selection-end-column="6" />
+                <state vertical-scroll-proportion="0.2853261" vertical-offset="795" max-vertical-offset="2070">
+                  <caret line="60" column="45" selection-start-line="60" selection-start-column="45" selection-end-line="60" selection-end-column="45" />
                   <folding />
                 </state>
               </provider>
@@ -113,10 +108,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="strings.xml" pinned="false" current-in-tab="true">
+          <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.84183675" vertical-offset="420" max-vertical-offset="1140">
+                <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1140">
                   <caret line="50" column="45" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
                   <folding />
                 </state>
@@ -135,13 +130,13 @@
       <list>
         <option value="$PROJECT_DIR$/CpuHandler.iml" />
         <option value="$PROJECT_DIR$/src/com/elefher/customclasses/Gpu.java" />
-        <option value="$PROJECT_DIR$/assets/data/paths.json" />
         <option value="$PROJECT_DIR$/src/com/elefher/tab/MiscTools.java" />
         <option value="$PROJECT_DIR$/res/layout/screen_wake_control.xml" />
         <option value="$PROJECT_DIR$/src/com/elefher/customclasses/MiscServices.java" />
         <option value="$PROJECT_DIR$/src/com/elefher/extendedclasses/AlertSweep2Dim.java" />
         <option value="$PROJECT_DIR$/src/com/elefher/tab/ScreenWakeControl.java" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/assets/data/paths.json" />
       </list>
     </option>
   </component>
@@ -618,14 +613,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-4" width="1368" height="773" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -726,14 +721,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/data/paths.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.583333" vertical-offset="1099" max-vertical-offset="2025">
-          <caret line="87" column="6" selection-start-line="87" selection-start-column="6" selection-end-line="87" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/elefher/extendedclasses/AlertDoubleTap2Wake.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1983471" vertical-offset="0" max-vertical-offset="1020">
@@ -785,8 +772,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.84183675" vertical-offset="420" max-vertical-offset="1140">
+        <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1140">
           <caret line="50" column="45" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/data/paths.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2853261" vertical-offset="795" max-vertical-offset="2070">
+          <caret line="60" column="45" selection-start-line="60" selection-start-column="45" selection-end-line="60" selection-end-column="45" />
           <folding />
         </state>
       </provider>
