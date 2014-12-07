@@ -1,7 +1,6 @@
 package com.elefher.customclasses;
 
 import java.io.DataOutputStream;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,28 +13,14 @@ import android.util.Log;
 import com.elefher.utils.CpuUtils;
 import com.elefher.utils.ReadFile;
 
-public class MiscServices {
+/*
+ * TODO this class needs optimization
+ */
 
-	/*public final static String FORCE_FAST_CHARGE = "/sys/kernel/fast_charge/force_fast_charge";
-	public final static String SCHED_MC_POWER_SAVINGS = "/sys/devices/system/cpu/sched_mc_power_savings";
-	public final static String MPDECISION = "/sys/module/msm_mpdecision/parameters/enabled";
-	public final static String MPDECISION_KERNEL_BASED = "/sys/kernel/msm_mpdecision/conf/enabled";
-	public final static String INTELLIPLUG = "/sys/module/intelli_plug/parameters/intelli_plug_active";
-	public final static String SWEEP2WAKE = "/sys/android_touch/sweep2wake";
-	public final static String DOUBLETAP2WAKE = "/sys/android_touch/doubletap2wake";
-	public final static ArrayList<String> MPDECISION_PATHS = new ArrayList<String>();
-	public final static ArrayList<String> INTELLIPLUG_PATHS = new ArrayList<String>();*/
+public class MiscServices {
 
 	public MiscServices() {
 	}
-
-	/*public static boolean exists(String file) {
-		File f = new File(file);
-		if (f.exists())
-			return true;
-		else
-			return false;
-	}*/
 
 	public static String getFastChargeState(Activity act) {
 		return ReadFile.getStringOfFile(findFilePath("force_fast_charge", act));
@@ -191,6 +176,36 @@ public class MiscServices {
 	
 	public static String getDoubleTap2Wake(Context cntx) {
 		return ReadFile.getStringOfFile(findFilePath("doubletap2wake", cntx));
+	}
+
+	public static String getSweep2DimState(Activity act) {
+		return ReadFile.getStringOfFile(findFilePath("sweep2dim", act));
+	}
+
+	public static boolean setSweep2Dim(String state, Context cntx) {
+		String SWEEP2DIM = findFilePath("sweep2dim", cntx);
+		try {
+			List<String> commands = new ArrayList<String>();
+
+			commands.add("chmod 0664 " + SWEEP2DIM + "\n");
+			commands.add("echo " + state + " > " + SWEEP2DIM + "\n");
+			commands.add("chmod 0444 " + SWEEP2DIM + "\n");
+			commands.add("exit\n");
+
+			Process p = Runtime.getRuntime().exec(CpuUtils.getSUbinaryPath());
+			DataOutputStream dos = new DataOutputStream(p.getOutputStream());
+			for (String command : commands) {
+				dos.writeBytes(command);
+				dos.flush();
+			}
+			dos.close();
+
+			p.waitFor();
+			return true;
+		} catch (Exception ex) {
+			Log.e("error: ", ex.toString());
+			return false;
+		}
 	}
 	
 	public static String findFilePath(String file, Context cntx){

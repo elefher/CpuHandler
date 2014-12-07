@@ -54,7 +54,6 @@
                 </LinearLayout>
             </LinearLayout>
             <View
-                android:id="@+id/separate"
                 style="@style/SeparateLine"
                 android:orientation="horizontal" />
         </LinearLayout>
@@ -102,10 +101,55 @@
                 </LinearLayout>
             </LinearLayout>
             <View
-                android:id="@+id/separate"
                 style="@style/SeparateLine"
                 android:orientation="horizontal" />
         </LinearLayout>
-    </LinearLayout>
 
+        <LinearLayout
+                android:id="@+id/sweep2dim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                <TextView
+                        style="@style/itemdescription"
+                        android:text="@string/sweep2dimDescription" />
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                <TextView
+                        android:id="@+id/sweep2dimText"
+                        style="@style/minTitleText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Sweep2Dim:" />
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                    <Button
+                            android:id="@+id/sweep2dimButton"
+                            style="@style/setCpuButton"
+                            android:layout_gravity="center"
+                            android:text="Choose" />
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                    style="@style/SeparateLine"
+                    android:orientation="horizontal" />
+        </LinearLayout>
+    </LinearLayout>
 </ScrollView>

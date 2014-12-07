@@ -4,6 +4,7 @@ import com.cpu.handler.R;
 import com.elefher.customclasses.DisplayText;
 import com.elefher.customclasses.MiscServices;
 import com.elefher.extendedclasses.AlertDoubleTap2Wake;
+import com.elefher.extendedclasses.AlertSweep2Dim;
 import com.elefher.extendedclasses.AlertSweep2Wake;
 
 import android.app.Activity;
@@ -57,7 +58,6 @@ public class ScreenWakeControl extends Activity {
 			sweep2wakeLayout.setVisibility(View.VISIBLE);
 			
 			String doubleTap2WakeState = MiscServices.getDoubleTap2Wake(this);
-			System.out.println("2wake " + doubleTap2WakeState);
 			if(doubleTap2WakeState.equals("0")){
 				doubleTap2WakeState = "DoubleTap2Wake: Disabled";
 			}else if(doubleTap2WakeState.equals("1")){
@@ -67,6 +67,26 @@ public class ScreenWakeControl extends Activity {
 			DisplayText.updateText(this, R.id.doubleTap2WakeText, doubleTap2WakeState);
 			
 			AlertDoubleTap2Wake alertDoubleTap2Wake = new AlertDoubleTap2Wake(this);
+		}
+
+		/*
+		 * Sweep2Dim
+		 */
+		String sweep2dimStr = MiscServices.findFilePath("sweep2dim", this);
+		if(sweep2dimStr != null && !sweep2dimStr.isEmpty()){
+			LinearLayout sweep2dimLayout = (LinearLayout) findViewById(R.id.sweep2dim);
+			sweep2dimLayout.setVisibility(View.VISIBLE);
+
+			String sweep2dimState = MiscServices.getSweep2DimState(this);
+			if(sweep2dimState.equals("0")){
+				sweep2dimState = "Sweep2Dim: Disabled";
+			}else if(sweep2dimState.equals("1")){
+				sweep2dimState = "Sweep2Dim: Enabled";
+			}
+			// Update the current doubletap2wake
+			DisplayText.updateText(this, R.id.sweep2dimText, sweep2dimState);
+
+			AlertSweep2Dim alertSweep2Dim = new AlertSweep2Dim(this);
 		}
 	}
 	
