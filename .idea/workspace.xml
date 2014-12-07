@@ -17,14 +17,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.cpu.handler" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef9a5e03-0792-4159-866d-c86cdffeaee3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/elefher/tab/ControlGpu.java" afterPath="$PROJECT_DIR$/src/com/elefher/tab/ControlGpu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/cpu/handler/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/cpu/handler/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/controlgpu.xml" afterPath="$PROJECT_DIR$/res/layout/controlgpu.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/data/paths.json" afterPath="$PROJECT_DIR$/assets/data/paths.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="ef9a5e03-0792-4159-866d-c86cdffeaee3" name="Default" comment="" />
     <ignored path="CpuHandler.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
