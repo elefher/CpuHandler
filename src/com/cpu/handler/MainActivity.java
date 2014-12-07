@@ -2,8 +2,8 @@ package com.cpu.handler;
 
 import java.util.ArrayList;
 
-import com.cpu.handler.R;
 import com.elefher.customclasses.CpuGpuFreqVoltages;
+import com.elefher.customclasses.Gpu;
 import com.elefher.tab.ControlCpu;
 import com.elefher.tab.ControlGpu;
 import com.elefher.tab.Info;
@@ -55,7 +55,19 @@ public class MainActivity extends Activity {
 		items = new ArrayList<String>();
 		items.add("INFO");
 		items.add("CONTROL CPU");
-		items.add("CONTROL GPU");
+		/*
+		 * Check if Gpu features exists in kernel
+		 * then enable Gpu tab or not
+		 */
+		Gpu gpuFeatures = new Gpu(this);
+		String gpuClock = gpuFeatures.findFilePath("max_gpuclk", this);
+		String gpuGov = gpuFeatures.findFilePath("gpu_governor", this);
+
+		if((gpuClock != null && !gpuClock.isEmpty()) ||
+				(gpuGov != null && !gpuGov.isEmpty())) {
+			items.add("CONTROL GPU");
+		}
+
 		if (CpuGpuFreqVoltages.hasCpuVoltages(this))
 			items.add("VOLTAGES");
 		items.add("MISC TOOLS");

@@ -29,7 +29,7 @@
         cpu and let it to jump between min &amp; max frequencies. Use set on boot in order to reboot with
         your favorite governor.</string>
     <string name="gpuGovDescription">Choose your favorite governor. Try to find best governor for
-        Gpu.</string>
+        Gpu. If governor didn\'t change then doesn\'t supported!</string>
     <string name="ioDescription">Choose an I/O scheduler. They have many purposes depending 
             on the goal of the I/O scheduler. Try to minimize time wasted by hard disk seeks,
             to give a share of the disk bandwidth to each running process and more.</string>
