@@ -37,6 +37,8 @@ ___
 > - Set Cpu Governor
 > - Set I/O Scheduler
 > - Set Read Ahead Buffer Size
+> - Set Gpu Frequency
+> - Set Gpu Governor
 > - Undervolting
 > - Force Fast Charge
 > - Power Savings
