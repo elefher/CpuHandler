@@ -16,10 +16,11 @@
                 android:layout_marginBottom="5dp"
                 android:text="@string/gridTitle" />
 
+
             <GridView
                 android:id="@+id/gridview"
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
+                android:layout_height="300dp"
                 android:background="#504A4B"
                 android:columnWidth="130dp"
                 android:gravity="center"
@@ -28,7 +29,12 @@
                 android:stretchMode="columnWidth"
                 android:verticalSpacing="10dp" >
             </GridView>
-        </LinearLayout>
-    <!-- </LinearLayout>-->
 
+            <fragment
+                    android:id="@+id/adFragment"
+                    android:name="com.elefher.advertisements.HomeBottomBannerAd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true" />
+        </LinearLayout>
 </ScrollView>

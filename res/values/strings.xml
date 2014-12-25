@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="banner_ad_bottom_home_unit_id">ca-app-pub-6277568301091173/4693983648</string>
     <string name="app_name">Trickle Cpu Handler</string>
     <string name="hello_world">Hello world!</string>
     <string name="info">Cpu Info!</string>
