@@ -10,6 +10,13 @@
             android:id="@+id/controlGpuContent"
             style="@style/Content">
 
+        <fragment
+                android:id="@+id/adFragment"
+                android:name="com.elefher.advertisements.BannerAdvertisement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true" />
+
         <LinearLayout
                 android:id="@+id/gpufreqControl"
                 android:layout_width="match_parent"

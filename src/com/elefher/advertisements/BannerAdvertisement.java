@@ -13,11 +13,11 @@ import com.google.android.gms.ads.AdView;
  * Created by elefher on 25/12/2014.
  * This class makes the ad request and loads the ad.
  */
-public class HomeBottomBannerAd extends Fragment {
+public class BannerAdvertisement extends Fragment {
 
     private AdView mAdView;
 
-    public HomeBottomBannerAd() {
+    public BannerAdvertisement() {
     }
 
     @Override
