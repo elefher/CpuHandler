@@ -21,9 +21,6 @@ import com.elefher.tab.*;
 
 import java.util.ArrayList;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-
 public class MainActivity extends Activity {
 
 	ArrayList<String> items;

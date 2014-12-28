@@ -11,7 +11,6 @@ import com.elefher.customclasses.MemoryStat;
 import com.elefher.utils.MiscProgressBar;
 import com.elefher.utils.ReadFile;
 
-import android.app.ActionBar.LayoutParams;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -21,7 +20,6 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.NavUtils;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
