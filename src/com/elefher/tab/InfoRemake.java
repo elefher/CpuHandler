@@ -18,9 +18,7 @@ public class InfoRemake extends Activity {
 
     private static int cores = CpuStat.getNumCores();
     private ArrayList<CircularCpuStatus> circularCpuStatuses;
-    LinearLayout cpuStatusesLL;
-
-    LinearLayout cpuStatusLL;
+    LinearLayout cpuStatusesLL, cpuStatusLL;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
