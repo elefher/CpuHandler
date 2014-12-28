@@ -181,6 +181,7 @@ public class Info extends Activity {
 		 * governor layouts are vertical, put them together in horizontal
 		 * layout.
 		 */
+
 		LinearLayout statusLayout = new LinearLayout(this);
 		statusLayout.setOrientation(LinearLayout.VERTICAL);
 
