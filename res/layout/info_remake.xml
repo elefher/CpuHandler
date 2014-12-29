@@ -15,5 +15,30 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"/>
 
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+            <TextView
+                    android:id="@+id/device"
+                    style="@style/GeneralInfo" />
+
+            <TextView
+                    android:id="@+id/codename"
+                    style="@style/GeneralInfo" />
+
+            <TextView
+                    android:id="@+id/kernel"
+                    style="@style/GeneralInfo" />
+
+            <TextView
+                    android:id="@+id/brand"
+                    style="@style/GeneralInfo" />
+        </LinearLayout>
+
+        <View
+                style="@style/SeparateLine"
+                android:orientation="horizontal" />
     </LinearLayout>
 </ScrollView>

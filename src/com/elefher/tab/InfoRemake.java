@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import com.cpu.handler.R;
 import com.elefher.customclasses.CpuStat;
+import com.elefher.customclasses.DeviceInfo;
 import com.elefher.extendedclasses.CircularCpuStatus;
 
 import java.util.ArrayList;
@@ -35,8 +37,22 @@ public class InfoRemake extends Activity {
         // Set parameters in LinearLayouts
         cpuStatusLL.setOrientation(LinearLayout.VERTICAL);
 
+        // display standard device info like kernel, os etc.
+        displayDeviceGeneralInfo();
+
         // Create text views about cpu status
         displayCpuStatuses();
+    }
+
+    private void displayDeviceGeneralInfo(){
+        TextView textCodeName = (TextView) findViewById(R.id.codename);
+        textCodeName.setText(DeviceInfo.codeName);
+        TextView textDevice = (TextView) findViewById(R.id.device);
+        textDevice.setText(DeviceInfo.device);
+        TextView textKernel = (TextView) findViewById(R.id.kernel);
+        textKernel.setText(DeviceInfo.kernel);
+        TextView textBrand = (TextView) findViewById(R.id.brand);
+        textBrand.setText(DeviceInfo.brand);
     }
 
     private void displayCpuStatuses(){
