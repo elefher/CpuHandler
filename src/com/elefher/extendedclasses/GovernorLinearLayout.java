@@ -5,40 +5,39 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.cpu.handler.R;
 import com.elefher.abstractclasses.CustomLinearLayoutOnTheFly;
-import com.elefher.utils.MiscProgressBar;
+import com.elefher.customclasses.CpuGovernors;
 
 /**
- * Created by elefher on 28/12/2014.
+ * Created by elefher on 30/12/2014.
  */
-public class CircularCpuStatus extends CustomLinearLayoutOnTheFly{
+public class GovernorLinearLayout extends CustomLinearLayoutOnTheFly {
 
     Context cntx;
-    int id;
-    public CircularCpuStatus(Context cntx, int id){
+
+    public GovernorLinearLayout(Context cntx){
         this.cntx = cntx;
-        this.id = id;
 
         // Initialize
         layoutSettings();
         textViewSettings();
         setText();
-        progressBarSettings();
         textViewAddView();
-        progressBarAddView();
     }
 
     @Override
     public void layoutSettings() {
         layout = new LinearLayout(cntx);
         layoutParams();
+        layout.setLayoutParams(layoutParams);
         layout.setOrientation(LinearLayout.HORIZONTAL);
     }
 
     @Override
     public void layoutParams() {
-
+        layoutParams = new LinearLayout.LayoutParams(
+                android.view.ViewGroup.LayoutParams.MATCH_PARENT,
+                android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1.0f);
     }
 
     @Override
@@ -57,25 +56,16 @@ public class CircularCpuStatus extends CustomLinearLayoutOnTheFly{
 
     @Override
     public void setText() {
-        textView.setText("Core " + id + ": ");
+        textView.setText("Governor: " + CpuGovernors.getCurrentGovernor(cntx)
+                .toUpperCase());
     }
 
     @Override
     public void progressBarSettings() {
-        progressBarParams();
-        progressBar = new MiscProgressBar(cntx, R.drawable.ringprogressbar, progressBarParams);
-        progressBar.max(100);
-        progressBar.rotation(110);
-        progressBar.setCurrentProgress(0);
     }
 
     @Override
     public void progressBarParams() {
-        progressBarParams = new LinearLayout.LayoutParams(
-                android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
-                android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
-        progressBarParams.width = 120;
-        progressBarParams.height = 120;
     }
 
     @Override

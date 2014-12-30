@@ -10,6 +10,7 @@ import com.cpu.handler.R;
 import com.elefher.customclasses.CpuStat;
 import com.elefher.customclasses.DeviceInfo;
 import com.elefher.extendedclasses.CircularCpuStatus;
+import com.elefher.extendedclasses.GovernorLinearLayout;
 import com.elefher.utils.ReadFile;
 
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ public class InfoRemake extends Activity {
     private ArrayList<CircularCpuStatus> circularCpuStatuses;
     LinearLayout cpuStatusesLL, cpuStatusLL;
     TextView currentMinFreq, currentMaxFreq, scalingCurrentFreq;
+    GovernorLinearLayout governorLayout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,7 @@ public class InfoRemake extends Activity {
         currentMinFreq = (TextView) findViewById(R.id.currentMin);
         currentMaxFreq = (TextView) findViewById(R.id.currentMax);
         scalingCurrentFreq = (TextView) findViewById(R.id.scalingCurrent);
+        governorLayout = new GovernorLinearLayout(this);
 
         // Set parameters in LinearLayouts
         cpuStatusLL.setOrientation(LinearLayout.VERTICAL);
@@ -51,8 +54,9 @@ public class InfoRemake extends Activity {
         // Display device general status
         displayDeviceGeneralStatus();
 
-        // Create text views about cpu status
+        // Create text views about cpu status and governor
         displayCpuStatuses();
+        displayGovernor();
     }
 
     private void displayDeviceGeneralInfo(){
@@ -84,6 +88,9 @@ public class InfoRemake extends Activity {
         cpuStatusesLL.addView(cpuStatusLL);
     }
 
+    /*
+     * This function also used for update
+     */
     private void displayDeviceGeneralStatus(){
         currentMinFreq.setText("Current Min Freq: " + getTargetString("scaling_min_freq") + " KHz");
         currentMaxFreq.setText("Current Max Freq: " + getTargetString("scaling_max_freq") + " KHz");
@@ -99,6 +106,10 @@ public class InfoRemake extends Activity {
             str = "Unknown";
         }
         return str;
+    }
+
+    private void displayGovernor(){
+        cpuStatusesLL.addView(governorLayout.getLayout());
     }
 
     @Override

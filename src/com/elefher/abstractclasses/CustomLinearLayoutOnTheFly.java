@@ -7,11 +7,11 @@ import com.elefher.utils.MiscProgressBar;
 /**
  * Created by elefher on 28/12/2014.
  */
-public abstract class CpuStatusLayout {
+public abstract class CustomLinearLayoutOnTheFly {
     protected LinearLayout layout, statusLayout;
     protected TextView textView;
     protected MiscProgressBar progressBar;
-    protected LinearLayout.LayoutParams progressBarParams;
+    protected LinearLayout.LayoutParams progressBarParams, layoutParams, statusLayoutParams;
 
     public void textViewAddView(){
         layout.addView(textView);
@@ -34,6 +34,7 @@ public abstract class CpuStatusLayout {
     public abstract void layoutParams();
     public abstract void textViewSettings();
     public abstract void textViewParams();
+    public abstract void setText();
     public abstract void progressBarSettings();
     public abstract void progressBarParams();
     public abstract void update();
