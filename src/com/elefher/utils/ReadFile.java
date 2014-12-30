@@ -87,4 +87,14 @@ public class ReadFile {
 		}
 		return null;
 	}
+
+	public static String findFilePath(String file, Context cntx){
+		String path = null;
+		try {
+			path = existPath(getListOfFile("data/paths.json", "path", file, cntx));
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		return path;
+	}
 }

@@ -18,25 +18,6 @@ import com.elefher.utils.ReadFile;
 
 public class CpuControl {
 
-	/*private final static String cpufreq_sys_dir = "/sys/devices/system/cpu/cpu0/cpufreq/";
-	private final static String scaling_min_freq = cpufreq_sys_dir
-			+ "scaling_min_freq";
-	private final static String cpuinfo_min_freq = cpufreq_sys_dir
-			+ "cpuinfo_min_freq";
-	private final static String scaling_max_freq = cpufreq_sys_dir
-			+ "scaling_max_freq";
-	private final static String cpuinfo_max_freq = cpufreq_sys_dir
-			+ "cpuinfo_max_freq";
-	private final static String scaling_cur_freq = cpufreq_sys_dir
-			+ "scaling_cur_freq";
-	private final static String cpuinfo_cur_freq = cpufreq_sys_dir
-			+ "cpuinfo_cur_freq";
-	private final static String scaling_available_freq = cpufreq_sys_dir
-			+ "scaling_available_frequencies";
-	private final static String scaling_stats_time_in_state = cpufreq_sys_dir
-			+ "stats/time_in_state";
-	private final static String screen_off_max_freq = cpufreq_sys_dir	+ "screen_off_max_freq";*/
-
 	static Context context;
 
 	public CpuControl(Context cntx) {

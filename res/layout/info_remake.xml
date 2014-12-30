@@ -40,5 +40,32 @@
         <View
                 style="@style/SeparateLine"
                 android:orientation="horizontal" />
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+            <TextView
+                    android:id="@+id/text"
+                    style="@style/titles"
+                    android:text="@string/DeviceStatus" />
+
+            <TextView
+                    android:id="@+id/cores"
+                    style="@style/CpuStats" />
+
+            <TextView
+                    android:id="@+id/currentMin"
+                    style="@style/CpuStats" />
+
+            <TextView
+                    android:id="@+id/currentMax"
+                    style="@style/CpuStats" />
+
+            <TextView
+                    android:id="@+id/scalingCurrent"
+                    style="@style/CpuStats" />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

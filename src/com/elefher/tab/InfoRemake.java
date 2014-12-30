@@ -10,6 +10,7 @@ import com.cpu.handler.R;
 import com.elefher.customclasses.CpuStat;
 import com.elefher.customclasses.DeviceInfo;
 import com.elefher.extendedclasses.CircularCpuStatus;
+import com.elefher.utils.ReadFile;
 
 import java.util.ArrayList;
 
@@ -21,6 +22,7 @@ public class InfoRemake extends Activity {
     private static int cores = CpuStat.getNumCores();
     private ArrayList<CircularCpuStatus> circularCpuStatuses;
     LinearLayout cpuStatusesLL, cpuStatusLL;
+    TextView currentMinFreq, currentMaxFreq, scalingCurrentFreq;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,12 +35,21 @@ public class InfoRemake extends Activity {
         cpuStatusesLL = (LinearLayout) findViewById(R.id.dynamic_content);
         cpuStatusLL = new LinearLayout(this);
         circularCpuStatuses = new ArrayList<CircularCpuStatus>(cores);
+        currentMinFreq = (TextView) findViewById(R.id.currentMin);
+        currentMaxFreq = (TextView) findViewById(R.id.currentMax);
+        scalingCurrentFreq = (TextView) findViewById(R.id.scalingCurrent);
 
         // Set parameters in LinearLayouts
         cpuStatusLL.setOrientation(LinearLayout.VERTICAL);
 
-        // display standard device info like kernel, os etc.
+        // Display standard device info like kernel, os etc.
         displayDeviceGeneralInfo();
+
+        // Display total cpu cores in device status
+        displayTotalCpuCores();
+
+        // Display device general status
+        displayDeviceGeneralStatus();
 
         // Create text views about cpu status
         displayCpuStatuses();
@@ -55,6 +66,11 @@ public class InfoRemake extends Activity {
         textBrand.setText(DeviceInfo.brand);
     }
 
+    private void displayTotalCpuCores(){
+        TextView totalCpuCores = (TextView) findViewById(R.id.cores);
+        totalCpuCores.setText("Total Cores: " + cores);
+    }
+
     private void displayCpuStatuses(){
         /*
          * Create an instance of CircuralCpuStatus for every core.
@@ -66,6 +82,23 @@ public class InfoRemake extends Activity {
         }
         // Add to the main layout
         cpuStatusesLL.addView(cpuStatusLL);
+    }
+
+    private void displayDeviceGeneralStatus(){
+        currentMinFreq.setText("Current Min Freq: " + getTargetString("scaling_min_freq") + " KHz");
+        currentMaxFreq.setText("Current Max Freq: " + getTargetString("scaling_max_freq") + " KHz");
+        scalingCurrentFreq.setText("Current Min Freq: " + getTargetString("scaling_cur_freq") + " KHz");
+    }
+
+    private String getTargetString(String targetString){
+        String str = null;
+        try{
+            str = ReadFile.getStringOfFile(ReadFile.findFilePath(targetString,this));
+        } catch (NullPointerException e){
+            e.printStackTrace();
+            str = "Unknown";
+        }
+        return str;
     }
 
     @Override
