@@ -14,6 +14,7 @@ import com.elefher.customclasses.DeviceInfo;
 import com.elefher.extendedclasses.CircularCpuStatus;
 import com.elefher.extendedclasses.CpuTemperatureLinearLayout;
 import com.elefher.extendedclasses.GovernorLinearLayout;
+import com.elefher.extendedclasses.RamLinearLayout;
 import com.elefher.utils.ReadFile;
 
 import java.util.ArrayList;
@@ -29,6 +30,7 @@ public class InfoRemake extends Activity {
     TextView currentMinFreq, currentMaxFreq, scalingCurrentFreq;
     GovernorLinearLayout governorLayout;
     CpuTemperatureLinearLayout cpuTemperatureLayout;
+    RamLinearLayout ramLayout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,7 @@ public class InfoRemake extends Activity {
         scalingCurrentFreq = (TextView) findViewById(R.id.scalingCurrent);
         governorLayout = new GovernorLinearLayout(this);
         cpuTemperatureLayout = new CpuTemperatureLinearLayout(this);
+        ramLayout = new RamLinearLayout(this);
 
         // Set parameters in LinearLayouts
         cpuStatusLL.setOrientation(LinearLayout.VERTICAL);
@@ -58,6 +61,9 @@ public class InfoRemake extends Activity {
 
         // Display device general status
         displayDeviceGeneralStatus();
+
+        // Display Ram usage
+        displayRam();
 
         // Create text views about cpu status and governor
         displayCpuStatuses();
@@ -108,6 +114,10 @@ public class InfoRemake extends Activity {
 
     private void displayCpuTemperature(){
         cpuStatusesLL.addView(cpuTemperatureLayout.getLayout());
+    }
+
+    private void displayRam(){
+        cpuStatusesLL.addView(ramLayout.getLayout());
     }
 
     private void displayGovernor(){
