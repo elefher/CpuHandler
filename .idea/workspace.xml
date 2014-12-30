@@ -19,6 +19,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7162ea43-614e-4aa1-9f66-4b2d6f977d4a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/elefher/tab/InfoRemake.java" afterPath="$PROJECT_DIR$/src/com/elefher/tab/InfoRemake.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/elefher/extendedclasses/RamLinearLayout.java" afterPath="$PROJECT_DIR$/src/com/elefher/extendedclasses/RamLinearLayout.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CpuHandler.iws" />
@@ -49,11 +50,21 @@
           <file leaf-file-name="Info.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/elefher/tab/Info.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.9477352" vertical-offset="4691" max-vertical-offset="6855">
-                  <caret line="351" column="26" selection-start-line="351" selection-start-column="26" selection-end-line="351" selection-end-column="26" />
+                <state vertical-scroll-proportion="0.33240998" vertical-offset="4575" max-vertical-offset="6855">
+                  <caret line="315" column="28" selection-start-line="315" selection-start-column="20" selection-end-line="315" selection-end-column="28" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CpuStat.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/elefher/customclasses/CpuStat.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="2968" max-vertical-offset="3480">
+                  <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -99,16 +110,18 @@
           <file leaf-file-name="InfoRemake.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/elefher/tab/InfoRemake.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.54545456" vertical-offset="645" max-vertical-offset="2445">
-                  <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
+                <state vertical-scroll-proportion="0.45918366" vertical-offset="825" max-vertical-offset="2535">
+                  <caret line="67" column="26" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#4217#4218#0" expanded="true" />
-                    <element signature="e#4288#4289#0" expanded="true" />
-                    <element signature="e#4320#4321#0" expanded="true" />
-                    <element signature="e#4380#4381#0" expanded="true" />
-                    <element signature="e#4417#4418#0" expanded="true" />
-                    <element signature="e#4482#4483#0" expanded="true" />
+                    <element signature="e#4184#4185#0" expanded="true" />
+                    <element signature="e#4255#4256#0" expanded="true" />
+                    <element signature="e#4287#4288#0" expanded="true" />
+                    <element signature="e#4347#4348#0" expanded="true" />
+                    <element signature="e#4384#4385#0" expanded="true" />
+                    <element signature="e#4449#4450#0" expanded="true" />
+                    <element signature="e#4486#4487#0" expanded="true" />
+                    <element signature="e#4551#4552#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -127,12 +140,24 @@
           <file leaf-file-name="RamLinearLayout.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/elefher/extendedclasses/RamLinearLayout.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="940" max-vertical-offset="1545">
-                  <caret line="84" column="16" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="39" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="1093" max-vertical-offset="1545">
+                  <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#1810#1811#0" expanded="true" />
                     <element signature="e#1867#1868#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CpuUsageLinearLayout.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/elefher/extendedclasses/CpuUsageLinearLayout.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="988" max-vertical-offset="1440">
+                  <caret line="86" column="13" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="13" />
+                  <folding>
+                    <element signature="e#2487#2496#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -184,6 +209,7 @@
         <option value="$PROJECT_DIR$/src/com/elefher/extendedclasses/CircularCpuStatus.java" />
         <option value="$PROJECT_DIR$/src/com/elefher/abstractclasses/CustomLinearLayoutOnTheFly.java" />
         <option value="$PROJECT_DIR$/src/com/elefher/extendedclasses/CpuTemperatureLinearLayout.java" />
+        <option value="$PROJECT_DIR$/src/com/elefher/extendedclasses/CpuUsageLinearLayout.java" />
         <option value="$PROJECT_DIR$/src/com/elefher/extendedclasses/RamLinearLayout.java" />
         <option value="$PROJECT_DIR$/src/com/elefher/tab/InfoRemake.java" />
       </list>
@@ -783,7 +809,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -833,23 +859,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/layout/fragment_ad.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="315">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1155">
-          <caret line="3" column="87" selection-start-line="3" selection-start-column="87" selection-end-line="3" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="957" max-vertical-offset="1575">
@@ -1251,14 +1260,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/elefher/abstractclasses/CustomLinearLayoutOnTheFly.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
-          <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/elefher/customclasses/CpuGovernors.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09917355" vertical-offset="0" max-vertical-offset="1350">
@@ -1295,10 +1296,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/elefher/customclasses/CpuStat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2968" max-vertical-offset="3480">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/elefher/tab/Info.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9477352" vertical-offset="4691" max-vertical-offset="6855">
-          <caret line="351" column="26" selection-start-line="351" selection-start-column="26" selection-end-line="351" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.33240998" vertical-offset="4575" max-vertical-offset="6855">
+          <caret line="315" column="28" selection-start-line="315" selection-start-column="20" selection-end-line="315" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1307,8 +1316,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/elefher/extendedclasses/RamLinearLayout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="940" max-vertical-offset="1545">
-          <caret line="84" column="16" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1093" max-vertical-offset="1545">
+          <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1810#1811#0" expanded="true" />
@@ -1317,18 +1326,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/elefher/extendedclasses/CpuUsageLinearLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="988" max-vertical-offset="1440">
+          <caret line="86" column="13" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="13" />
+          <folding>
+            <element signature="e#2487#2496#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/elefher/abstractclasses/CustomLinearLayoutOnTheFly.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/elefher/tab/InfoRemake.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54545456" vertical-offset="645" max-vertical-offset="2445">
-          <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.45918366" vertical-offset="825" max-vertical-offset="2535">
+          <caret line="67" column="26" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4217#4218#0" expanded="true" />
-            <element signature="e#4288#4289#0" expanded="true" />
-            <element signature="e#4320#4321#0" expanded="true" />
-            <element signature="e#4380#4381#0" expanded="true" />
-            <element signature="e#4417#4418#0" expanded="true" />
-            <element signature="e#4482#4483#0" expanded="true" />
+            <element signature="e#4184#4185#0" expanded="true" />
+            <element signature="e#4255#4256#0" expanded="true" />
+            <element signature="e#4287#4288#0" expanded="true" />
+            <element signature="e#4347#4348#0" expanded="true" />
+            <element signature="e#4384#4385#0" expanded="true" />
+            <element signature="e#4449#4450#0" expanded="true" />
+            <element signature="e#4486#4487#0" expanded="true" />
+            <element signature="e#4551#4552#0" expanded="true" />
           </folding>
         </state>
       </provider>

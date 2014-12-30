@@ -7,20 +7,23 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.cpu.handler.R;
 import com.elefher.abstractclasses.CustomLinearLayoutOnTheFly;
+import com.elefher.customclasses.CpuStat;
 import com.elefher.customclasses.MemoryStat;
 import com.elefher.utils.MiscProgressBar;
+
+import java.util.ArrayList;
 
 /**
  * Created by elefher on 31/12/2014.
  */
-public class RamLinearLayout extends CustomLinearLayoutOnTheFly {
+public class CpuUsageLinearLayout extends CustomLinearLayoutOnTheFly {
 
     Context cntx;
-    MemoryStat memoryStat;
+    CpuStat cpuStats;
 
-    public RamLinearLayout(Context cntx){
+    public CpuUsageLinearLayout(Context cntx){
         this.cntx = cntx;
-        memoryStat = new MemoryStat(cntx);
+        cpuStats = new CpuStat();
 
         // Initialize
         layoutSettings();
@@ -64,14 +67,14 @@ public class RamLinearLayout extends CustomLinearLayoutOnTheFly {
 
     @Override
     public void setText() {
-        textView.setText("Ram Usage: Unknown MB");
+        textView.setText("Cpu Usage: Unknown %");
     }
 
     @Override
     public void progressBarSettings() {
         progressBarParams();
         progressBar = new MiscProgressBar(cntx, R.drawable.lineprogressbar, progressBarParams);
-        progressBar.max((int) MemoryStat.getTotalMemory());
+        progressBar.max(100);
         progressBar.setCurrentProgress(0);
     }
 
@@ -83,13 +86,16 @@ public class RamLinearLayout extends CustomLinearLayoutOnTheFly {
 
     @Override
     public void setCurrentProgressBar() {
+        ArrayList<Integer> stats = new ArrayList<Integer>();
         try{
-            progressBar.setCurrentProgress((int)memoryStat.getUsageMemory());
-            textView.setText("Ram Usage: " + memoryStat.getUsageMemory() + "/" + MemoryStat.getTotalMemory() + " MB");
+            stats = cpuStats.toArrayList();
+            // In index stats.get(0) located the total cpu usage
+            progressBar.setCurrentProgress(stats.get(0));
+            textView.setText("Cpu Usage: " + stats.get(0) + " %");
         } catch (NullPointerException e){
             e.printStackTrace();
             progressBar.setCurrentProgress(0);
-            textView.setText("Ram Usage: Unknown MB");
+            textView.setText("Cpu Usage: Unknown %");
         }
     }
 
