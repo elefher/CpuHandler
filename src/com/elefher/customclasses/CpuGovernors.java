@@ -15,12 +15,6 @@ import com.elefher.utils.ReadFile;
 
 public class CpuGovernors {
 
-	/*private final static String cpufreq_sys_dir = "/sys/devices/system/cpu/cpu0/cpufreq/";
-	private final static String scaling_governor = cpufreq_sys_dir
-			+ "scaling_governor";
-	private final static String scaling_available_governors = cpufreq_sys_dir
-			+ "scaling_available_governors";*/
-
 	public CpuGovernors() {
 
 	}
@@ -38,8 +32,12 @@ public class CpuGovernors {
 	
 	public static String getCurrentGovernor(Context cntx){
 		String currentGov = "";
-		currentGov = ReadFile.getStringOfFile(findFilePath("scaling_governor", cntx));
-		
+		try {
+			currentGov = ReadFile.getStringOfFile(findFilePath("scaling_governor", cntx));
+		}catch (NullPointerException e){
+			currentGov = "Unknown";
+			e.printStackTrace();
+		}
 		return currentGov;
 	}
 	

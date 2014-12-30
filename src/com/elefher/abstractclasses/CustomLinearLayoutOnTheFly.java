@@ -11,7 +11,7 @@ public abstract class CustomLinearLayoutOnTheFly {
     protected LinearLayout layout, statusLayout;
     protected TextView textView;
     protected MiscProgressBar progressBar;
-    protected LinearLayout.LayoutParams progressBarParams, layoutParams, statusLayoutParams;
+    protected LinearLayout.LayoutParams progressBarParams, textViewParams, layoutParams, statusLayoutParams;
 
     public void textViewAddView(){
         layout.addView(textView);
@@ -37,5 +37,6 @@ public abstract class CustomLinearLayoutOnTheFly {
     public abstract void setText();
     public abstract void progressBarSettings();
     public abstract void progressBarParams();
+    public abstract void setCurrentProgressBar();
     public abstract void update();
 }

@@ -69,6 +69,11 @@ public class GovernorLinearLayout extends CustomLinearLayoutOnTheFly {
     }
 
     @Override
+    public void setCurrentProgressBar() {
+
+    }
+
+    @Override
     public void update() {
 
     }

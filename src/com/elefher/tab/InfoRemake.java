@@ -1,15 +1,18 @@
 package com.elefher.tab;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.cpu.handler.R;
 import com.elefher.customclasses.CpuStat;
 import com.elefher.customclasses.DeviceInfo;
 import com.elefher.extendedclasses.CircularCpuStatus;
+import com.elefher.extendedclasses.CpuTemperatureLinearLayout;
 import com.elefher.extendedclasses.GovernorLinearLayout;
 import com.elefher.utils.ReadFile;
 
@@ -25,6 +28,7 @@ public class InfoRemake extends Activity {
     LinearLayout cpuStatusesLL, cpuStatusLL;
     TextView currentMinFreq, currentMaxFreq, scalingCurrentFreq;
     GovernorLinearLayout governorLayout;
+    CpuTemperatureLinearLayout cpuTemperatureLayout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,7 @@ public class InfoRemake extends Activity {
         currentMaxFreq = (TextView) findViewById(R.id.currentMax);
         scalingCurrentFreq = (TextView) findViewById(R.id.scalingCurrent);
         governorLayout = new GovernorLinearLayout(this);
+        cpuTemperatureLayout = new CpuTemperatureLinearLayout(this);
 
         // Set parameters in LinearLayouts
         cpuStatusLL.setOrientation(LinearLayout.VERTICAL);
@@ -56,7 +61,11 @@ public class InfoRemake extends Activity {
 
         // Create text views about cpu status and governor
         displayCpuStatuses();
+        displayCpuTemperature();
         displayGovernor();
+
+        // Display a separate Line
+        displaySeparateLine();
     }
 
     private void displayDeviceGeneralInfo(){
@@ -97,6 +106,24 @@ public class InfoRemake extends Activity {
         scalingCurrentFreq.setText("Current Min Freq: " + getTargetString("scaling_cur_freq") + " KHz");
     }
 
+    private void displayCpuTemperature(){
+        cpuStatusesLL.addView(cpuTemperatureLayout.getLayout());
+    }
+
+    private void displayGovernor(){
+        cpuStatusesLL.addView(governorLayout.getLayout());
+    }
+
+    private void displaySeparateLine(){
+        LinearLayout.LayoutParams separateLine = new LinearLayout.LayoutParams(
+                android.view.ViewGroup.LayoutParams.FILL_PARENT, 1);
+        separateLine.topMargin = 10;
+        View separateL = new View(this);
+        separateL.setLayoutParams(separateLine);
+        separateL.setBackgroundColor(Color.rgb(237, 218, 116));
+        cpuStatusesLL.addView(separateL);
+    }
+
     private String getTargetString(String targetString){
         String str = null;
         try{
@@ -106,10 +133,6 @@ public class InfoRemake extends Activity {
             str = "Unknown";
         }
         return str;
-    }
-
-    private void displayGovernor(){
-        cpuStatusesLL.addView(governorLayout.getLayout());
     }
 
     @Override

@@ -8,17 +8,16 @@ import android.widget.TextView;
 import com.cpu.handler.R;
 import com.elefher.abstractclasses.CustomLinearLayoutOnTheFly;
 import com.elefher.utils.MiscProgressBar;
+import com.elefher.utils.ReadFile;
 
 /**
- * Created by elefher on 28/12/2014.
+ * Created by elefher on 30/12/2014.
  */
-public class CircularCpuStatus extends CustomLinearLayoutOnTheFly{
+public class CpuTemperatureLinearLayout extends CustomLinearLayoutOnTheFly {
 
     Context cntx;
-    int id;
-    public CircularCpuStatus(Context cntx, int id){
+    public CpuTemperatureLinearLayout(Context cntx){
         this.cntx = cntx;
-        this.id = id;
 
         // Initialize
         layoutSettings();
@@ -33,18 +32,22 @@ public class CircularCpuStatus extends CustomLinearLayoutOnTheFly{
     public void layoutSettings() {
         layout = new LinearLayout(cntx);
         layoutParams();
-        layout.setOrientation(LinearLayout.HORIZONTAL);
+        layout.setLayoutParams(layoutParams);
+        layout.setOrientation(LinearLayout.VERTICAL);
     }
 
     @Override
     public void layoutParams() {
-
+        layoutParams = new LinearLayout.LayoutParams(
+                android.view.ViewGroup.LayoutParams.FILL_PARENT, 60);
+        layoutParams.setMargins(20, 40, 20, 0);
     }
 
     @Override
     public void textViewSettings() {
         textView = new TextView(cntx);
         textViewParams();
+        textView.setLayoutParams(textViewParams);
         textView.setTypeface(Typeface.MONOSPACE);
         textView.setTextColor(Color.WHITE);
         textView.setTextSize(15);
@@ -52,39 +55,45 @@ public class CircularCpuStatus extends CustomLinearLayoutOnTheFly{
 
     @Override
     public void textViewParams() {
-
+        textViewParams = new LinearLayout.LayoutParams(
+                android.view.ViewGroup.LayoutParams.FILL_PARENT, 50);
     }
 
     @Override
     public void setText() {
-        textView.setText("Core " + id + ": ");
+        textView.setText("Cpu Temp: " + String.valueOf(10) + " \u00b0C");
     }
 
     @Override
     public void progressBarSettings() {
         progressBarParams();
-        progressBar = new MiscProgressBar(cntx, R.drawable.ringprogressbar, progressBarParams);
+        progressBar = new MiscProgressBar(cntx, R.drawable.lineprogressbar, progressBarParams);
         progressBar.max(100);
-        progressBar.rotation(110);
         progressBar.setCurrentProgress(0);
     }
 
     @Override
     public void progressBarParams() {
         progressBarParams = new LinearLayout.LayoutParams(
-                android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
-                android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
-        progressBarParams.width = 120;
-        progressBarParams.height = 120;
+                android.view.ViewGroup.LayoutParams.FILL_PARENT, 10);
     }
 
     @Override
     public void setCurrentProgressBar() {
-
+        String str = null;
+        try{
+            str = ReadFile.getStringOfFile(ReadFile.findFilePath("temp", cntx));
+            progressBar.setCurrentProgress(Integer.parseInt(str));
+            textView.setText("Cpu Temp: " + str + " \u00b0C");
+        } catch (NullPointerException e){
+            e.printStackTrace();
+            progressBar.setCurrentProgress(0);
+            textView.setText("Cpu Temp: Unknown \u00b0C");
+        }
     }
 
     @Override
     public void update() {
-
+        setCurrentProgressBar();
     }
 }
