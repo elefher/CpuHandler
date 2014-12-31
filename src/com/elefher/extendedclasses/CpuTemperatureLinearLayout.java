@@ -61,7 +61,7 @@ public class CpuTemperatureLinearLayout extends CustomLinearLayoutOnTheFly {
 
     @Override
     public void setText() {
-        textView.setText("Cpu Temp: " + String.valueOf(10) + " \u00b0C");
+        textView.setText("Cpu Temp: Unknown \u00b0C");
     }
 
     @Override

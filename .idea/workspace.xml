@@ -18,8 +18,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7162ea43-614e-4aa1-9f66-4b2d6f977d4a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/elefher/extendedclasses/CircularCpuStatus.java" afterPath="$PROJECT_DIR$/src/com/elefher/extendedclasses/CircularCpuStatus.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/elefher/extendedclasses/CpuTemperatureLinearLayout.java" afterPath="$PROJECT_DIR$/src/com/elefher/extendedclasses/CpuTemperatureLinearLayout.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/elefher/extendedclasses/GovernorLinearLayout.java" afterPath="$PROJECT_DIR$/src/com/elefher/extendedclasses/GovernorLinearLayout.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/elefher/tab/InfoRemake.java" afterPath="$PROJECT_DIR$/src/com/elefher/tab/InfoRemake.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/elefher/extendedclasses/RamLinearLayout.java" afterPath="$PROJECT_DIR$/src/com/elefher/extendedclasses/RamLinearLayout.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CpuHandler.iws" />
@@ -50,10 +52,12 @@
           <file leaf-file-name="Info.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/elefher/tab/Info.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.33240998" vertical-offset="4575" max-vertical-offset="6855">
-                  <caret line="315" column="28" selection-start-line="315" selection-start-column="20" selection-end-line="315" selection-end-column="28" />
+                <state vertical-scroll-proportion="0.92346936" vertical-offset="5578" max-vertical-offset="6900">
+                  <caret line="396" column="0" selection-start-line="396" selection-start-column="0" selection-end-line="396" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
+                    <element signature="e#11477#13320#0" expanded="true" />
+                    <element signature="e#13319#13320#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -79,85 +83,43 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="GovernorLinearLayout.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/elefher/extendedclasses/GovernorLinearLayout.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="610" max-vertical-offset="1275">
-                  <caret line="48" column="33" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="CpuTemperatureLinearLayout.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/elefher/extendedclasses/CpuTemperatureLinearLayout.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="125" max-vertical-offset="1500">
-                  <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
         </leaf>
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="InfoRemake.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="InfoRemake.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/elefher/tab/InfoRemake.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.45918366" vertical-offset="825" max-vertical-offset="2535">
-                  <caret line="67" column="26" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="1423" max-vertical-offset="2955">
+                  <caret line="119" column="7" selection-start-line="119" selection-start-column="7" selection-end-line="119" selection-end-column="7" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#4184#4185#0" expanded="true" />
-                    <element signature="e#4255#4256#0" expanded="true" />
-                    <element signature="e#4287#4288#0" expanded="true" />
-                    <element signature="e#4347#4348#0" expanded="true" />
-                    <element signature="e#4384#4385#0" expanded="true" />
-                    <element signature="e#4449#4450#0" expanded="true" />
-                    <element signature="e#4486#4487#0" expanded="true" />
-                    <element signature="e#4551#4552#0" expanded="true" />
+                    <element signature="e#2757#3297#0" expanded="true" />
+                    <element signature="e#3296#3297#0" expanded="true" />
+                    <element signature="e#3338#3339#0" expanded="true" />
+                    <element signature="e#3389#3390#0" expanded="true" />
+                    <element signature="e#5024#5025#0" expanded="true" />
+                    <element signature="e#5095#5096#0" expanded="true" />
+                    <element signature="e#5127#5128#0" expanded="true" />
+                    <element signature="e#5187#5188#0" expanded="true" />
+                    <element signature="e#5224#5225#0" expanded="true" />
+                    <element signature="e#5289#5290#0" expanded="true" />
+                    <element signature="e#5326#5327#0" expanded="true" />
+                    <element signature="e#5391#5392#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="CustomLinearLayoutOnTheFly.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/elefher/abstractclasses/CustomLinearLayoutOnTheFly.java">
+          <file leaf-file-name="GovernorLinearLayout.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/com/elefher/extendedclasses/GovernorLinearLayout.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
-                  <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="RamLinearLayout.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/elefher/extendedclasses/RamLinearLayout.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="1093" max-vertical-offset="1545">
-                  <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+                <state vertical-scroll-proportion="0.46683672" vertical-offset="657" max-vertical-offset="1320">
+                  <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#1810#1811#0" expanded="true" />
-                    <element signature="e#1867#1868#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="CpuUsageLinearLayout.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/elefher/extendedclasses/CpuUsageLinearLayout.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="988" max-vertical-offset="1440">
-                  <caret line="86" column="13" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="13" />
-                  <folding>
-                    <element signature="e#2487#2496#0" expanded="true" />
+                    <element signature="e#2038#2039#0" expanded="true" />
+                    <element signature="e#2063#2064#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -205,13 +167,13 @@
         <option value="$PROJECT_DIR$/src/com/elefher/extendedclasses/CpuTemperatureLibearLayout.java" />
         <option value="$PROJECT_DIR$/src/com/elefher/customclasses/CpuGovernors.java" />
         <option value="$PROJECT_DIR$/assets/data/paths.json" />
-        <option value="$PROJECT_DIR$/src/com/elefher/extendedclasses/GovernorLinearLayout.java" />
-        <option value="$PROJECT_DIR$/src/com/elefher/extendedclasses/CircularCpuStatus.java" />
         <option value="$PROJECT_DIR$/src/com/elefher/abstractclasses/CustomLinearLayoutOnTheFly.java" />
-        <option value="$PROJECT_DIR$/src/com/elefher/extendedclasses/CpuTemperatureLinearLayout.java" />
         <option value="$PROJECT_DIR$/src/com/elefher/extendedclasses/CpuUsageLinearLayout.java" />
         <option value="$PROJECT_DIR$/src/com/elefher/extendedclasses/RamLinearLayout.java" />
+        <option value="$PROJECT_DIR$/src/com/elefher/extendedclasses/CircularCpuStatus.java" />
+        <option value="$PROJECT_DIR$/src/com/elefher/extendedclasses/CpuTemperatureLinearLayout.java" />
         <option value="$PROJECT_DIR$/src/com/elefher/tab/InfoRemake.java" />
+        <option value="$PROJECT_DIR$/src/com/elefher/extendedclasses/GovernorLinearLayout.java" />
       </list>
     </option>
   </component>
@@ -809,7 +771,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -818,13 +780,13 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36728394" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1248,50 +1210,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/elefher/extendedclasses/CircularCpuStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74876034" vertical-offset="762" max-vertical-offset="1425">
-          <caret line="81" column="15" selection-start-line="81" selection-start-column="15" selection-end-line="81" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1349#1350#0" expanded="false" />
-            <element signature="e#1402#1403#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/elefher/customclasses/CpuGovernors.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09917355" vertical-offset="0" max-vertical-offset="1350">
           <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/elefher/extendedclasses/GovernorLinearLayout.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="610" max-vertical-offset="1275">
-          <caret line="48" column="33" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/elefher/extendedclasses/CpuTemperatureLinearLayout.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="125" max-vertical-offset="1500">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/data/paths.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.458333" vertical-offset="37" max-vertical-offset="2190">
-          <caret line="24" column="46" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -1304,60 +1226,104 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/elefher/abstractclasses/CustomLinearLayoutOnTheFly.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1862245" vertical-offset="0" max-vertical-offset="585">
+          <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/data/paths.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.458333" vertical-offset="37" max-vertical-offset="2190">
+          <caret line="24" column="46" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/elefher/tab/Info.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33240998" vertical-offset="4575" max-vertical-offset="6855">
-          <caret line="315" column="28" selection-start-line="315" selection-start-column="20" selection-end-line="315" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.92346936" vertical-offset="5578" max-vertical-offset="6900">
+          <caret line="396" column="0" selection-start-line="396" selection-start-column="0" selection-end-line="396" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#11477#13320#0" expanded="true" />
+            <element signature="e#13319#13320#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/elefher/extendedclasses/RamLinearLayout.java">
+    <entry file="file://$PROJECT_DIR$/src/com/elefher/extendedclasses/CpuTemperatureLinearLayout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1093" max-vertical-offset="1545">
-          <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.30612245" vertical-offset="735" max-vertical-offset="1500">
+          <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="58" selection-end-column="69" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1810#1811#0" expanded="true" />
-            <element signature="e#1867#1868#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/elefher/extendedclasses/CpuUsageLinearLayout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="988" max-vertical-offset="1440">
-          <caret line="86" column="13" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.73214287" vertical-offset="988" max-vertical-offset="1440">
+          <caret line="98" column="9" selection-start-line="88" selection-start-column="8" selection-end-line="98" selection-end-column="9" />
           <folding>
             <element signature="e#2487#2496#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/elefher/abstractclasses/CustomLinearLayoutOnTheFly.java">
+    <entry file="file://$PROJECT_DIR$/src/com/elefher/extendedclasses/RamLinearLayout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
-          <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
-          <folding />
+        <state vertical-scroll-proportion="0.8469388" vertical-offset="1063" max-vertical-offset="1515">
+          <caret line="95" column="13" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/elefher/extendedclasses/CircularCpuStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="538" max-vertical-offset="1545">
+          <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+          <folding>
+            <element signature="e#2693#2702#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/elefher/tab/InfoRemake.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45918366" vertical-offset="825" max-vertical-offset="2535">
-          <caret line="67" column="26" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1423" max-vertical-offset="2955">
+          <caret line="119" column="7" selection-start-line="119" selection-start-column="7" selection-end-line="119" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4184#4185#0" expanded="true" />
-            <element signature="e#4255#4256#0" expanded="true" />
-            <element signature="e#4287#4288#0" expanded="true" />
-            <element signature="e#4347#4348#0" expanded="true" />
-            <element signature="e#4384#4385#0" expanded="true" />
-            <element signature="e#4449#4450#0" expanded="true" />
-            <element signature="e#4486#4487#0" expanded="true" />
-            <element signature="e#4551#4552#0" expanded="true" />
+            <element signature="e#2757#3297#0" expanded="true" />
+            <element signature="e#3296#3297#0" expanded="true" />
+            <element signature="e#3338#3339#0" expanded="true" />
+            <element signature="e#3389#3390#0" expanded="true" />
+            <element signature="e#5024#5025#0" expanded="true" />
+            <element signature="e#5095#5096#0" expanded="true" />
+            <element signature="e#5127#5128#0" expanded="true" />
+            <element signature="e#5187#5188#0" expanded="true" />
+            <element signature="e#5224#5225#0" expanded="true" />
+            <element signature="e#5289#5290#0" expanded="true" />
+            <element signature="e#5326#5327#0" expanded="true" />
+            <element signature="e#5391#5392#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/elefher/extendedclasses/GovernorLinearLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46683672" vertical-offset="657" max-vertical-offset="1320">
+          <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2038#2039#0" expanded="true" />
+            <element signature="e#2063#2064#0" expanded="true" />
           </folding>
         </state>
       </provider>

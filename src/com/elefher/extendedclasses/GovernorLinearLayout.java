@@ -44,6 +44,7 @@ public class GovernorLinearLayout extends CustomLinearLayoutOnTheFly {
     public void textViewSettings() {
         textView = new TextView(cntx);
         textViewParams();
+        textView.setLayoutParams(textViewParams);
         textView.setTypeface(Typeface.MONOSPACE);
         textView.setTextColor(Color.WHITE);
         textView.setTextSize(15);
@@ -51,7 +52,9 @@ public class GovernorLinearLayout extends CustomLinearLayoutOnTheFly {
 
     @Override
     public void textViewParams() {
-
+        textViewParams = new LinearLayout.LayoutParams(
+                android.view.ViewGroup.LayoutParams.FILL_PARENT, 50);
+        textViewParams.setMargins(20, 20, 0, 0);
     }
 
     @Override
@@ -75,6 +78,6 @@ public class GovernorLinearLayout extends CustomLinearLayoutOnTheFly {
 
     @Override
     public void update() {
-
+        setText();
     }
 }

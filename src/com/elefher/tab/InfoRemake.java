@@ -3,6 +3,7 @@ package com.elefher.tab;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,6 +30,7 @@ public class InfoRemake extends Activity {
     CpuTemperatureLinearLayout cpuTemperatureLayout;
     RamLinearLayout ramLayout;
     CpuUsageLinearLayout cpuUsageLayout;
+    private Handler handler = new Handler();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -74,6 +76,32 @@ public class InfoRemake extends Activity {
 
         // Display a separate Line
         displaySeparateLine();
+
+        // Start runnable method to update the dynamic parts of code
+        startRunnableMethod();
+    }
+
+    private Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            // Update all dynamic parts of code
+            displayDeviceGeneralStatus();
+            ramLayout.update();
+            cpuUsageLayout.update();
+            cpuTemperatureLayout.update();
+            governorLayout.update();
+            // Update each core
+            for (int i = 0; i < cores; i++) {
+                circularCpuStatuses.get(i).update();
+            }
+
+            // Call again the same method
+            startRunnableMethod();
+        }
+    };
+
+    public void startRunnableMethod() {
+        handler.postDelayed(runnable, 2000);
     }
 
     private void displayDeviceGeneralInfo(){
