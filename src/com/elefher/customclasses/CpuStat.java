@@ -144,7 +144,8 @@ public class CpuStat {
 			buf.add(0, mCpuInfoTotal.getUsage());
 		}
 		if (mCpuInfoList != null) {
-			for (int i = 0; i < mCpuInfoList.size(); i++) {
+			int size = mCpuInfoList.size();
+			for (int i = 0; i < size; i++) {
 				CpuInfo info = mCpuInfoList.get(i);
 				buf.add(i+1, info.getUsage());
 				info.getUsage();

@@ -75,8 +75,7 @@ public class MainActivity extends Activity {
 			public void onItemClick(AdapterView<?> parent, View v,
 					int position, long id) {
 				if ("INFO".equals(items.get(position)))
-					startActivity(new Intent().setClass(that, Info.class)
-							.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+					startActivity(new Intent().setClass(that, Info.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
 				else if ("CONTROL CPU".equals(items.get(position)))
 					startActivity(new Intent().setClass(that, ControlCpu.class)
 							.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));

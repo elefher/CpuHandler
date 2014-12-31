@@ -30,11 +30,11 @@
                 android:verticalSpacing="10dp" >
             </GridView>
 
-            <fragment
+            <!--<fragment
                     android:id="@+id/adFragment"
                     android:name="com.elefher.advertisements.BannerAdvertisement"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true" />
+                    android:layout_alignParentBottom="true" />-->
         </LinearLayout>
 </ScrollView>

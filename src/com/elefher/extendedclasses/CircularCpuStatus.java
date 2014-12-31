@@ -19,6 +19,7 @@ public class CircularCpuStatus extends CustomLinearLayoutOnTheFly{
 
     Context cntx;
     CpuStat cpuStats;
+    ArrayList<Integer> stats = new ArrayList<Integer>();
     int id;
 
     public CircularCpuStatus(Context cntx, int id){
@@ -92,12 +93,12 @@ public class CircularCpuStatus extends CustomLinearLayoutOnTheFly{
 
     @Override
     public void setCurrentProgressBar() {
-        ArrayList<Integer> stats = new ArrayList<Integer>();
         try{
             stats = cpuStats.toArrayList();
+            int coreValue = stats.get(id+1);
             // After index 0 in stats.get(index) located the current cpu status
-            progressBar.setCurrentProgress(stats.get(id+1));
-            textView.setText("Core " + id + ": " + stats.get(id+1) + " %");
+            progressBar.setCurrentProgress(coreValue);
+            textView.setText("Core " + id + ": " + coreValue + "%");
         } catch (NullPointerException e){
             e.printStackTrace();
             progressBar.setCurrentProgress(0);
