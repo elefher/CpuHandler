@@ -1,6 +1,8 @@
 package com.elefher.tab;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -24,12 +26,13 @@ public class InfoRemake extends Activity {
 
     private static int cores = CpuStat.getNumCores();
     private ArrayList<CircularCpuStatus> circularCpuStatuses;
-    LinearLayout cpuStatusesLL, cpuStatusLL;
+    LinearLayout cpuStatusesLL, cpuStatusLL, batteryStatusesLL;
     TextView currentMinFreq, currentMaxFreq, scalingCurrentFreq;
     GovernorLinearLayout governorLayout;
     CpuTemperatureLinearLayout cpuTemperatureLayout;
     RamLinearLayout ramLayout;
     CpuUsageLinearLayout cpuUsageLayout;
+    BatteryStatusLinearLayout batteryStatusLayout;
     private Handler handler = new Handler();
 
     @Override
@@ -41,6 +44,7 @@ public class InfoRemake extends Activity {
 
         // Initialize variables
         cpuStatusesLL = (LinearLayout) findViewById(R.id.dynamic_content);
+        batteryStatusesLL = (LinearLayout) findViewById(R.id.batteryStatus);
         cpuStatusLL = new LinearLayout(this);
         circularCpuStatuses = new ArrayList<CircularCpuStatus>(cores);
         currentMinFreq = (TextView) findViewById(R.id.currentMin);
@@ -50,6 +54,7 @@ public class InfoRemake extends Activity {
         cpuTemperatureLayout = new CpuTemperatureLinearLayout(this);
         ramLayout = new RamLinearLayout(this);
         cpuUsageLayout = new CpuUsageLinearLayout(this);
+        batteryStatusLayout = new BatteryStatusLinearLayout(this);
 
         // Set parameters in LinearLayouts
         cpuStatusLL.setOrientation(LinearLayout.VERTICAL);
@@ -77,6 +82,9 @@ public class InfoRemake extends Activity {
         // Display a separate Line
         displaySeparateLine();
 
+        // Display battery status
+        displayBatteryStatuses();
+
         // Start runnable method to update the dynamic parts of code
         startRunnableMethod();
     }
@@ -90,6 +98,7 @@ public class InfoRemake extends Activity {
             cpuUsageLayout.update();
             cpuTemperatureLayout.update();
             governorLayout.update();
+            batteryStatusLayout.update();
             // Update each core
             for (int i = 0; i < cores; i++) {
                 circularCpuStatuses.get(i).update();
@@ -158,6 +167,10 @@ public class InfoRemake extends Activity {
         cpuStatusesLL.addView(governorLayout.getLayout());
     }
 
+    private void displayBatteryStatuses(){
+        batteryStatusesLL.addView(batteryStatusLayout.getLayout());
+    }
+
     private void displaySeparateLine(){
         LinearLayout.LayoutParams separateLine = new LinearLayout.LayoutParams(
                 android.view.ViewGroup.LayoutParams.FILL_PARENT, 1);
@@ -188,5 +201,22 @@ public class InfoRemake extends Activity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        synchronized (this) {
+            if (batteryStatusLayout.batteryStat.battery_receiver != null) {
+                unregisterReceiver(batteryStatusLayout.batteryStat.battery_receiver);
+            }
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+        registerReceiver(batteryStatusLayout.batteryStat.battery_receiver, filter);
     }
 }

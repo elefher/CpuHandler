@@ -410,7 +410,6 @@ public class Info extends Activity {
 			batMiscStats = "Battery not present!!!";
 		}
 		batteryMiscStats.setText(batMiscStats);
-
 	}
 
 	private void displayBatteryTemp() {
