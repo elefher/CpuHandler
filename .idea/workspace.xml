@@ -18,12 +18,235 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7162ea43-614e-4aa1-9f66-4b2d6f977d4a" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/res/layout/info_remake.xml" afterPath="$PROJECT_DIR$/res/layout/info.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/elefher/tab/InfoRemake.java" afterPath="$PROJECT_DIR$/src/com/elefher/tab/Info.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/.classpath" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/README.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/google-play-services_lib.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/libs/google-play-services.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/libs/google-play-services.jar.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/proguard.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/project.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/color/common_signin_btn_text_dark.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/color/common_signin_btn_text_light.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/color/wallet_primary_text_holo_light.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/color/wallet_secondary_text_holo_dark.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/common_full_open_on_phone.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/common_ic_googleplayservices.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/common_signin_btn_icon_disabled_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/common_signin_btn_icon_disabled_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/common_signin_btn_icon_disabled_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/common_signin_btn_icon_disabled_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/common_signin_btn_icon_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/common_signin_btn_icon_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/common_signin_btn_icon_normal_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/common_signin_btn_icon_normal_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/common_signin_btn_icon_pressed_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/common_signin_btn_icon_pressed_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/common_signin_btn_text_disabled_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/common_signin_btn_text_disabled_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/common_signin_btn_text_disabled_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/common_signin_btn_text_disabled_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/common_signin_btn_text_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/common_signin_btn_text_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/common_signin_btn_text_normal_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/common_signin_btn_text_normal_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/common_signin_btn_text_pressed_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/common_signin_btn_text_pressed_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/ic_plusone_medium_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/ic_plusone_small_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/ic_plusone_standard_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/ic_plusone_tall_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/powered_by_google_dark.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-hdpi/powered_by_google_light.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-mdpi/common_signin_btn_icon_disabled_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-mdpi/common_signin_btn_icon_disabled_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-mdpi/common_signin_btn_icon_disabled_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-mdpi/common_signin_btn_icon_disabled_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-mdpi/common_signin_btn_icon_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-mdpi/common_signin_btn_icon_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-mdpi/common_signin_btn_icon_normal_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-mdpi/common_signin_btn_icon_normal_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-mdpi/common_signin_btn_icon_pressed_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-mdpi/common_signin_btn_icon_pressed_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-mdpi/common_signin_btn_text_disabled_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-mdpi/common_signin_btn_text_disabled_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-mdpi/common_signin_btn_text_disabled_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-mdpi/common_signin_btn_text_disabled_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-mdpi/common_signin_btn_text_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-mdpi/common_signin_btn_text_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-mdpi/common_signin_btn_text_normal_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-mdpi/common_signin_btn_text_normal_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-mdpi/common_signin_btn_text_pressed_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-mdpi/common_signin_btn_text_pressed_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-mdpi/ic_plusone_medium_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-mdpi/ic_plusone_small_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-mdpi/ic_plusone_standard_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-mdpi/ic_plusone_tall_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-mdpi/powered_by_google_dark.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-mdpi/powered_by_google_light.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-tvdpi/ic_plusone_medium_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-tvdpi/ic_plusone_small_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-tvdpi/ic_plusone_standard_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-tvdpi/ic_plusone_tall_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xhdpi/common_signin_btn_icon_disabled_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xhdpi/common_signin_btn_icon_disabled_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xhdpi/common_signin_btn_icon_disabled_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xhdpi/common_signin_btn_icon_disabled_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xhdpi/common_signin_btn_icon_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xhdpi/common_signin_btn_icon_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xhdpi/common_signin_btn_icon_normal_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xhdpi/common_signin_btn_icon_normal_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xhdpi/common_signin_btn_icon_pressed_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xhdpi/common_signin_btn_icon_pressed_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xhdpi/common_signin_btn_text_disabled_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xhdpi/common_signin_btn_text_disabled_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xhdpi/common_signin_btn_text_disabled_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xhdpi/common_signin_btn_text_disabled_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xhdpi/common_signin_btn_text_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xhdpi/common_signin_btn_text_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xhdpi/common_signin_btn_text_normal_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xhdpi/common_signin_btn_text_normal_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xhdpi/common_signin_btn_text_pressed_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xhdpi/common_signin_btn_text_pressed_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xhdpi/ic_plusone_medium_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xhdpi/ic_plusone_small_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xhdpi/ic_plusone_standard_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xhdpi/ic_plusone_tall_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xhdpi/powered_by_google_dark.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xhdpi/powered_by_google_light.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xxhdpi/common_signin_btn_icon_disabled_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xxhdpi/common_signin_btn_icon_disabled_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xxhdpi/common_signin_btn_icon_disabled_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xxhdpi/common_signin_btn_icon_disabled_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xxhdpi/common_signin_btn_icon_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xxhdpi/common_signin_btn_icon_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xxhdpi/common_signin_btn_icon_normal_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xxhdpi/common_signin_btn_icon_normal_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xxhdpi/common_signin_btn_icon_pressed_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xxhdpi/common_signin_btn_icon_pressed_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xxhdpi/common_signin_btn_text_disabled_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xxhdpi/common_signin_btn_text_disabled_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xxhdpi/common_signin_btn_text_disabled_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xxhdpi/common_signin_btn_text_disabled_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xxhdpi/common_signin_btn_text_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xxhdpi/common_signin_btn_text_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xxhdpi/common_signin_btn_text_normal_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xxhdpi/common_signin_btn_text_normal_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xxhdpi/common_signin_btn_text_pressed_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xxhdpi/common_signin_btn_text_pressed_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xxhdpi/ic_plusone_medium_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xxhdpi/ic_plusone_small_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xxhdpi/ic_plusone_standard_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xxhdpi/ic_plusone_tall_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xxhdpi/powered_by_google_dark.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable-xxhdpi/powered_by_google_light.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable/common_signin_btn_icon_dark.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable/common_signin_btn_icon_light.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable/common_signin_btn_text_dark.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/drawable/common_signin_btn_text_light.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/raw/gtm_analytics" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-af/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-am/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-ar/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-bg/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-bn-rBD/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-ca/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-cs/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-da/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-de/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-el/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-en-rGB/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-en-rIN/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-es-rUS/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-es/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-es/wallet_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-et-rEE/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-eu-rES/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-fa/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-fi/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-fr-rCA/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-fr/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-gl-rES/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-hi/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-hr/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-hu/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-hy-rAM/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-in/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-is-rIS/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-it/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-iw/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-ja/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-ka-rGE/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-kk-rKZ/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-km-rKH/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-kn-rIN/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-ko/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-ky-rKG/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-lo-rLA/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-lt/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-lv/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-mk-rMK/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-ml-rIN/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-mn-rMN/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-mr-rIN/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-ms-rMY/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-my-rMM/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-nb/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-ne-rNP/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-nl/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-pl/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-pt-rBR/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-pt-rPT/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-pt/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-ro/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-ru/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-si-rLK/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-sk/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-sl/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-sr/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-sv/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-sw/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-ta-rIN/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-te-rIN/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-th/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-tl/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-tr/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-uk/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-ur-rPK/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-uz-rUZ/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-vi/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-zh-rCN/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-zh-rHK/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-zh-rTW/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values-zu/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values/admob_ads_attrs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values/admob_iap_style.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values/admob_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values/common_attrs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values/common_colors.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values/common_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values/maps_attrs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values/version.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values/wallet_attrs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values/wallet_colors.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values/wallet_strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/res/values/wallet_styles.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google-play-services_lib/src/android/UnusedStub.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/layout/fragment_ad.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/elefher/advertisements/BannerAdvertisement.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/elefher/customclasses/CpuControl.java" afterPath="$PROJECT_DIR$/src/com/elefher/customclasses/CpuControl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/elefher/customclasses/CpuGovernors.java" afterPath="$PROJECT_DIR$/src/com/elefher/customclasses/CpuGovernors.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CpuHandler.iml" afterPath="$PROJECT_DIR$/CpuHandler.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/cpu/handler/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/cpu/handler/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/elefher/tab/MiscTools.java" afterPath="$PROJECT_DIR$/src/com/elefher/tab/MiscTools.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/res/layout/activity_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/controlcpu.xml" afterPath="$PROJECT_DIR$/res/layout/controlcpu.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/controlgpu.xml" afterPath="$PROJECT_DIR$/res/layout/controlgpu.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/info.xml" afterPath="$PROJECT_DIR$/res/layout/info.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/misctools.xml" afterPath="$PROJECT_DIR$/res/layout/misctools.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.properties" afterPath="$PROJECT_DIR$/project.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/screen_wake_control.xml" afterPath="$PROJECT_DIR$/res/layout/screen_wake_control.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/voltages.xml" afterPath="$PROJECT_DIR$/res/layout/voltages.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CpuHandler.iws" />
@@ -49,24 +272,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Info.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Info.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/elefher/tab/Info.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9514563" vertical-offset="2502" max-vertical-offset="3180">
-              <caret line="221" column="1" selection-start-line="221" selection-start-column="1" selection-end-line="221" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2880" max-vertical-offset="3225">
+              <caret line="204" column="0" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#3718#3719#0" expanded="false" />
+                <element signature="e#3769#3770#0" expanded="false" />
+                <element signature="e#5404#5405#0" expanded="false" />
+                <element signature="e#5475#5476#0" expanded="false" />
+                <element signature="e#5507#5508#0" expanded="false" />
+                <element signature="e#5567#5568#0" expanded="false" />
+                <element signature="e#5604#5605#0" expanded="false" />
+                <element signature="e#5669#5670#0" expanded="false" />
+                <element signature="e#5706#5707#0" expanded="false" />
+                <element signature="e#5771#5772#0" expanded="false" />
+                <element signature="e#5815#5816#0" expanded="false" />
+                <element signature="e#5889#5890#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CpuGovernors.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/elefher/customclasses/CpuGovernors.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1515">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -76,16 +300,20 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="885" max-vertical-offset="2790">
               <caret line="94" column="32" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#488#489#0" expanded="false" />
+                <element signature="e#509#510#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1440">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.14814815" vertical-offset="0" max-vertical-offset="1590">
+              <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -94,8 +322,20 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/cpu/handler/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="1635">
-              <caret line="98" column="31" selection-start-line="98" selection-start-column="31" selection-end-line="98" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1365" max-vertical-offset="2280">
+              <caret line="112" column="5" selection-start-line="112" selection-start-column="5" selection-end-line="112" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MiscTools.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/elefher/tab/MiscTools.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="990" max-vertical-offset="1725">
+              <caret line="102" column="54" selection-start-line="102" selection-start-column="54" selection-end-line="102" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -122,7 +362,6 @@
         <option value="$PROJECT_DIR$/src/com/elefher/advertisements/HomeBottomBannerAd.java" />
         <option value="$PROJECT_DIR$/res/layout/fragment_ad.xml" />
         <option value="$PROJECT_DIR$/src/com/elefher/abstractclasses/CpuInfoLayout.java" />
-        <option value="$PROJECT_DIR$/src/com/elefher/advertisements/BannerAdvertisement.java" />
         <option value="$PROJECT_DIR$/src/com/elefher/abstractclasses/CpuStatusLayout.java" />
         <option value="$PROJECT_DIR$/src/com/elefher/utils/ReadFile.java" />
         <option value="$PROJECT_DIR$/src/com/elefher/extendedclasses/CustomLinearLayout.java" />
@@ -132,24 +371,26 @@
         <option value="$PROJECT_DIR$/src/com/elefher/extendedclasses/RamLinearLayout.java" />
         <option value="$PROJECT_DIR$/src/com/elefher/extendedclasses/CpuTemperatureLinearLayout.java" />
         <option value="$PROJECT_DIR$/src/com/elefher/extendedclasses/GovernorLinearLayout.java" />
-        <option value="$PROJECT_DIR$/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/res/layout/voltages.xml" />
-        <option value="$PROJECT_DIR$/res/layout/screen_wake_control.xml" />
-        <option value="$PROJECT_DIR$/res/layout/misctools.xml" />
-        <option value="$PROJECT_DIR$/res/layout/info.xml" />
-        <option value="$PROJECT_DIR$/res/layout/controlcpu.xml" />
-        <option value="$PROJECT_DIR$/res/layout/controlgpu.xml" />
         <option value="$PROJECT_DIR$/src/com/elefher/customclasses/CpuStat.java" />
         <option value="$PROJECT_DIR$/src/com/elefher/extendedclasses/CpuUsageLinearLayout.java" />
         <option value="$PROJECT_DIR$/src/com/elefher/extendedclasses/CircularCpuStatus.java" />
         <option value="$PROJECT_DIR$/res/layout/info_remake.xml" />
         <option value="$PROJECT_DIR$/src/com/elefher/tab/InfoRemake.java" />
         <option value="$PROJECT_DIR$/src/com/elefher/extendedclasses/BatteryStatusLinearLayout.java" />
-        <option value="$PROJECT_DIR$/src/com/cpu/handler/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/com/elefher/tab/Info.java" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/com/elefher/customclasses/CpuGovernors.java" />
         <option value="$PROJECT_DIR$/src/com/elefher/customclasses/CpuControl.java" />
+        <option value="$PROJECT_DIR$/src/com/elefher/advertisements/BannerAdvertisement.java" />
+        <option value="$PROJECT_DIR$/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/res/layout/controlcpu.xml" />
+        <option value="$PROJECT_DIR$/res/layout/controlgpu.xml" />
+        <option value="$PROJECT_DIR$/res/layout/info.xml" />
+        <option value="$PROJECT_DIR$/res/layout/misctools.xml" />
+        <option value="$PROJECT_DIR$/res/layout/screen_wake_control.xml" />
+        <option value="$PROJECT_DIR$/res/layout/voltages.xml" />
+        <option value="$PROJECT_DIR$/src/com/elefher/tab/MiscTools.java" />
+        <option value="$PROJECT_DIR$/src/com/cpu/handler/MainActivity.java" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
       </list>
     </option>
   </component>
@@ -293,43 +534,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CpuHandler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CpuHandler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CpuHandler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CpuHandler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
+              <option name="myItemId" value="libs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -348,7 +553,7 @@
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/google-play-services_lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/StartAppInApp-2.4.11.jar!/" />
     <property name="ExportedModule" value="CpuHandler" />
     <property name="ExportedApkPath" value="$USER_HOME$/Documents/trickle-cpu-handler/Trickle-Cpu-Handler-1.4.apk" />
     <property name="AndroidRunProguardForReleaseBuild" value="false" />
@@ -419,6 +624,19 @@
       </ExternalSystemSettings>
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -445,19 +663,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -568,7 +773,8 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -589,7 +795,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -619,13 +824,51 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/layout/fragment_ad.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="315">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1500">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/cpu/handler/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1095" max-vertical-offset="1635">
+          <caret line="98" column="31" selection-start-line="98" selection-start-column="31" selection-end-line="98" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/elefher/customclasses/CpuControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="885" max-vertical-offset="2790">
+          <caret line="94" column="32" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#488#489#0" expanded="false" />
+            <element signature="e#509#510#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1440">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/cpu/handler/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1185" max-vertical-offset="1725">
+          <caret line="98" column="31" selection-start-line="98" selection-start-column="31" selection-end-line="98" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -647,7 +890,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2055">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -662,7 +907,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2130">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -677,7 +924,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1740">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -692,7 +941,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="1740">
           <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -707,7 +958,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="1740">
           <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -722,7 +975,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="1740">
           <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -737,7 +992,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1740">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -755,27 +1012,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/fragment_ad.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48257372" vertical-offset="0" max-vertical-offset="373">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/elefher/implementation/CpuFreqProfile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09917355" vertical-offset="0" max-vertical-offset="605">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/elefher/advertisements/BannerAdvertisement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5206612" vertical-offset="120" max-vertical-offset="1170">
-          <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -790,7 +1030,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="100" max-vertical-offset="1395">
           <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -822,56 +1061,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45833334" vertical-offset="315" max-vertical-offset="675">
-          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/voltages.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5416667" vertical-offset="0" max-vertical-offset="1365">
-          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/screen_wake_control.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5416667" vertical-offset="0" max-vertical-offset="2505">
-          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/misctools.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5416667" vertical-offset="0" max-vertical-offset="4380">
-          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/controlgpu.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5" vertical-offset="0" max-vertical-offset="2790">
-          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/gridlayout.xml">
       <provider editor-type-id="android-designer">
         <state />
@@ -900,7 +1089,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="932" max-vertical-offset="1560">
           <caret line="96" column="43" selection-start-line="96" selection-start-column="43" selection-end-line="96" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -908,7 +1096,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15517241" vertical-offset="15" max-vertical-offset="1140">
           <caret line="7" column="31" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -916,18 +1103,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1814" max-vertical-offset="3495">
           <caret line="146" column="43" selection-start-line="146" selection-start-column="43" selection-end-line="146" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/controlcpu.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="717" max-vertical-offset="7140">
-          <caret line="84" column="27" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -935,18 +1110,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="730" max-vertical-offset="1395">
           <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/info.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="987" max-vertical-offset="1560">
-          <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -954,7 +1117,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="207" max-vertical-offset="1770">
           <caret line="50" column="55" selection-start-line="50" selection-start-column="55" selection-end-line="50" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -962,25 +1124,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.47933885" vertical-offset="1255" max-vertical-offset="1920">
           <caret line="103" column="61" selection-start-line="103" selection-start-column="61" selection-end-line="103" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cpu/handler/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="1635">
-          <caret line="98" column="31" selection-start-line="98" selection-start-column="31" selection-end-line="98" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1440">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -996,17 +1139,170 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="885" max-vertical-offset="2790">
           <caret line="94" column="32" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#488#489#0" expanded="false" />
+            <element signature="e#509#510#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/elefher/tab/Info.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9514563" vertical-offset="2502" max-vertical-offset="3180">
-          <caret line="221" column="1" selection-start-line="221" selection-start-column="1" selection-end-line="221" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2539" max-vertical-offset="3180">
+          <caret line="204" column="0" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
+          <folding>
+            <element signature="e#3718#3719#0" expanded="false" />
+            <element signature="e#3769#3770#0" expanded="false" />
+            <element signature="e#5404#5405#0" expanded="false" />
+            <element signature="e#5475#5476#0" expanded="false" />
+            <element signature="e#5507#5508#0" expanded="false" />
+            <element signature="e#5567#5568#0" expanded="false" />
+            <element signature="e#5604#5605#0" expanded="false" />
+            <element signature="e#5669#5670#0" expanded="false" />
+            <element signature="e#5706#5707#0" expanded="false" />
+            <element signature="e#5771#5772#0" expanded="false" />
+            <element signature="e#5815#5816#0" expanded="false" />
+            <element signature="e#5889#5890#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51742625" vertical-offset="287" max-vertical-offset="660">
+          <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="36" selection-end-column="60" />
+          <folding>
+            <element signature="e#618#637#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/controlcpu.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64343166" vertical-offset="0" max-vertical-offset="7125">
+          <caret line="16" column="56" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
+          <folding>
+            <element signature="e#1235#1251#0" expanded="false" />
+            <element signature="e#1630#1658#0" expanded="false" />
+            <element signature="e#2096#2119#0" expanded="false" />
+            <element signature="e#6623#6652#0" expanded="false" />
+            <element signature="e#9448#9472#0" expanded="false" />
+            <element signature="e#9823#9847#0" expanded="false" />
+            <element signature="e#10284#10307#0" expanded="false" />
+            <element signature="e#11921#11950#0" expanded="false" />
+            <element signature="e#12896#12919#0" expanded="false" />
+            <element signature="e#13273#13296#0" expanded="false" />
+            <element signature="e#14775#14806#0" expanded="false" />
+            <element signature="e#16458#16489#0" expanded="false" />
+            <element signature="e#17879#17907#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/controlgpu.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20107238" vertical-offset="165" max-vertical-offset="2775">
+          <caret line="16" column="56" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
+          <folding>
+            <element signature="e#1353#1369#0" expanded="false" />
+            <element signature="e#1770#1798#0" expanded="false" />
+            <element signature="e#4491#4515#0" expanded="false" />
+            <element signature="e#4920#4947#0" expanded="false" />
+            <element signature="e#6801#6833#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/info.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5630027" vertical-offset="0" max-vertical-offset="1545">
+          <caret line="14" column="56" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
+          <folding>
+            <element signature="e#1754#1776#0" expanded="false" />
+            <element signature="e#2798#2821#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/misctools.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20107238" vertical-offset="180" max-vertical-offset="4365">
+          <caret line="17" column="56" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
+          <folding>
+            <element signature="e#941#960#0" expanded="false" />
+            <element signature="e#1477#1508#0" expanded="false" />
+            <element signature="e#3440#3473#0" expanded="false" />
+            <element signature="e#5902#5933#0" expanded="false" />
+            <element signature="e#8210#8242#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/screen_wake_control.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20107238" vertical-offset="180" max-vertical-offset="2490">
+          <caret line="17" column="56" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
+          <folding>
+            <element signature="e#1187#1218#0" expanded="false" />
+            <element signature="e#2955#2990#0" expanded="false" />
+            <element signature="e#4762#4792#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/voltages.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24128686" vertical-offset="165" max-vertical-offset="1350">
+          <caret line="17" column="56" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/elefher/tab/MiscTools.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="990" max-vertical-offset="1725">
+          <caret line="102" column="54" selection-start-line="102" selection-start-column="54" selection-end-line="102" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/cpu/handler/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1365" max-vertical-offset="2280">
+          <caret line="112" column="5" selection-start-line="112" selection-start-column="5" selection-end-line="112" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14814815" vertical-offset="0" max-vertical-offset="1590">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1027,7 +1323,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Android (CpuHandler)|Android</last-edited>
+          <last-edited>Android</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1050,7 +1346,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>Android API 19 Platform</last-edited>
+          <last-edited>1.7</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1086,7 +1382,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>google-play-services</last-edited>
+          <last-edited>android-support-v4</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

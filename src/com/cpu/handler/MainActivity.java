@@ -2,7 +2,6 @@ package com.cpu.handler;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,6 +17,8 @@ import android.widget.TextView;
 import com.elefher.customclasses.CpuGpuFreqVoltages;
 import com.elefher.customclasses.Gpu;
 import com.elefher.tab.*;
+import com.startapp.android.publish.StartAppAd;
+import com.startapp.android.publish.StartAppSDK;
 
 import java.util.ArrayList;
 
@@ -25,6 +26,7 @@ public class MainActivity extends Activity {
 
 	ArrayList<String> items;
 	Activity that = this;
+	private StartAppAd startAppAd = new StartAppAd(this);
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -39,6 +41,8 @@ public class MainActivity extends Activity {
 	@Override
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
+		// Used for ads by StartApp
+		StartAppSDK.init(this, "112840346", "212530724", true);
 		setContentView(R.layout.activity_main);
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
@@ -98,6 +102,8 @@ public class MainActivity extends Activity {
 		switch (item.getItemId()) {
 		case android.R.id.home:
 			this.finish();
+			startAppAd.showAd(); // show the ad
+			startAppAd.loadAd(StartAppAd.AdMode.AUTOMATIC); // load the next ad
 			return true;
 		case R.id.action_licenses:
 			licenses();
@@ -125,5 +131,23 @@ public class MainActivity extends Activity {
 		});
 
 		alert.show();
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		startAppAd.onResume();
+	}
+
+	@Override
+	public void onPause() {
+		super.onPause();
+		startAppAd.onPause();
+	}
+
+	@Override
+	public void onBackPressed() {
+		startAppAd.onBackPressed();
+		super.onBackPressed();
 	}
 }

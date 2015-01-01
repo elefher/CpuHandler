@@ -17,11 +17,13 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import com.startapp.android.publish.StartAppAd;
 
 public class MiscTools extends Activity {
 	
 /** Called when the activity is first created. */
 	Activity that = this;
+	private StartAppAd startAppAd = new StartAppAd(this);
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -97,6 +99,8 @@ public class MiscTools extends Activity {
 				public void onClick(View v) {
 					startActivity(new Intent().setClass(that, ScreenWakeControl.class).addFlags(
 							Intent.FLAG_ACTIVITY_CLEAR_TOP));
+					startAppAd.showAd(); // show the ad
+					startAppAd.loadAd(StartAppAd.AdMode.AUTOMATIC); // load the next ad
 				}
 			});
 		}
@@ -111,5 +115,17 @@ public class MiscTools extends Activity {
 	        return true;
 	    }
 	    return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		startAppAd.onResume();
+	}
+
+	@Override
+	public void onPause() {
+		super.onPause();
+		startAppAd.onPause();
 	}
 }

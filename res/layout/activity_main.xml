@@ -30,11 +30,10 @@
                 android:verticalSpacing="10dp" >
             </GridView>
 
-            <!--<fragment
-                    android:id="@+id/adFragment"
-                    android:name="com.elefher.advertisements.BannerAdvertisement"
+            <com.startapp.android.publish.banner.banner3d.Banner3D
+                    android:id="@+id/startApp3DBanner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true" />-->
+                    android:layout_centerHorizontal="true"/>
         </LinearLayout>
 </ScrollView>
