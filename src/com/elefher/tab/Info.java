@@ -1,454 +1,222 @@
 package com.elefher.tab;
 
-import java.util.ArrayList;
-
-import com.cpu.handler.R;
-import com.elefher.customclasses.BatteryStat;
-import com.elefher.customclasses.CpuGovernors;
-import com.elefher.customclasses.CpuStat;
-import com.elefher.customclasses.DeviceInfo;
-import com.elefher.customclasses.MemoryStat;
-import com.elefher.utils.MiscProgressBar;
-import com.elefher.utils.ReadFile;
-
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.NavUtils;
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.AnimationUtils;
-import android.view.animation.RotateAnimation;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import com.cpu.handler.R;
+import com.elefher.customclasses.CpuStat;
+import com.elefher.customclasses.DeviceInfo;
+import com.elefher.extendedclasses.*;
+import com.elefher.utils.ReadFile;
 
+import java.util.ArrayList;
+
+/**
+ * Created by elefher on 28/12/2014.
+ */
 public class Info extends Activity {
 
-	/** Called when the activity is first created. */
-	public static int cores = CpuStat.getNumCores();
-	long totalMemory = MemoryStat.getTotalMemory();
-	MemoryStat memoryStat;
-	CpuStat cpuStats = new CpuStat();
-	BatteryStat batteryStat;
-	ArrayList<TextView> textViewList;
-	ArrayList<MiscProgressBar> circleProgressBars;
-	MiscProgressBar totalCpuLineProgressBar, memoryUsageProgressBar,
-			batteryTempProgressBar, cpuTempProgressBar;
-	TextView totalCpu, totalCpuCores, memoryUsage, batteryStats,
-			batteryMiscStats, batteryTempStat, cpuTemp, currentGovernor;
-	private boolean started = false;
-	private Handler handler = new Handler();
+    private static int cores = CpuStat.getNumCores();
+    private ArrayList<CircularCpuStatus> circularCpuStatuses;
+    LinearLayout cpuStatusesLL, cpuStatusLL, batteryStatusesLL;
+    TextView currentMinFreq, currentMaxFreq, scalingCurrentFreq;
+    GovernorLinearLayout governorLayout;
+    CpuTemperatureLinearLayout cpuTemperatureLayout;
+    RamLinearLayout ramLayout;
+    CpuUsageLinearLayout cpuUsageLayout;
+    BatteryStatusLinearLayout batteryStatusLayout;
+    private Handler handler = new Handler();
 
-	LinearLayout.LayoutParams params1, paramsMem, paramsCircle, paramsLine,
-			paramsLineMem, paramWith2Lines, separateLine, marginLeft,
-			statusGovernorParams, displayGovernorParams, titles;
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.info);
 
-	Context cntx = this;
+        getActionBar().setDisplayHomeAsUpEnabled(true);
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.info);
+        // Initialize variables
+        cpuStatusesLL = (LinearLayout) findViewById(R.id.dynamic_content);
+        batteryStatusesLL = (LinearLayout) findViewById(R.id.batteryStatus);
+        cpuStatusLL = new LinearLayout(this);
+        circularCpuStatuses = new ArrayList<CircularCpuStatus>(cores);
+        currentMinFreq = (TextView) findViewById(R.id.currentMin);
+        currentMaxFreq = (TextView) findViewById(R.id.currentMax);
+        scalingCurrentFreq = (TextView) findViewById(R.id.scalingCurrent);
+        governorLayout = new GovernorLinearLayout(this);
+        cpuTemperatureLayout = new CpuTemperatureLinearLayout(this);
+        ramLayout = new RamLinearLayout(this);
+        cpuUsageLayout = new CpuUsageLinearLayout(this);
+        batteryStatusLayout = new BatteryStatusLinearLayout(this);
 
-		getActionBar().setDisplayHomeAsUpEnabled(true);
+        // Set parameters in LinearLayouts
+        cpuStatusLL.setOrientation(LinearLayout.VERTICAL);
 
-		memoryStat = new MemoryStat(this);
+        // Display standard device info like kernel, os etc.
+        displayDeviceGeneralInfo();
 
-		// Cpu status
-		LinearLayout lcpuInfo = (LinearLayout) findViewById(R.id.cpuInfo);
+        // Display total cpu cores in device status
+        displayTotalCpuCores();
 
-		// linear layout params for circle cpu
-		marginLeft = new LinearLayout.LayoutParams(
-				android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
-				android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
-		marginLeft.leftMargin = 10;
+        // Display device general status
+        displayDeviceGeneralStatus();
 
-		titles = new LinearLayout.LayoutParams(
-				android.view.ViewGroup.LayoutParams.MATCH_PARENT,
-				android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
+        // Display Ram usage
+        displayRam();
 
-		separateLine = new LinearLayout.LayoutParams(
-				android.view.ViewGroup.LayoutParams.FILL_PARENT, 1);
-		separateLine.topMargin = 10;
+        // Display Cpu usage
+        displayCpuUsage();
 
-		paramsCircle = new LinearLayout.LayoutParams(
-				android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
-				android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
-		paramsCircle.width = 120;
-		paramsCircle.height = 120;
+        // Create text views about cpu status and governor
+        displayCpuStatuses();
+        displayCpuTemperature();
+        displayGovernor();
 
-		paramsLine = new LinearLayout.LayoutParams(
-				android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
-				android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
-		paramsLine.width = 350;
-		paramsLine.height = 10;
-		paramsLine.setMargins(0, 60, 0, 0);
+        // Display a separate Line
+        displaySeparateLine();
 
-		paramsLineMem = new LinearLayout.LayoutParams(
-				android.view.ViewGroup.LayoutParams.FILL_PARENT, 10);
+        // Display battery status
+        displayBatteryStatuses();
 
-		paramWith2Lines = new LinearLayout.LayoutParams(
-				android.view.ViewGroup.LayoutParams.FILL_PARENT, 50);
+        // Start runnable method to update the dynamic parts of code
+        startRunnableMethod();
+    }
 
-		params1 = new LinearLayout.LayoutParams(300,
-				android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
-		params1.setMargins(20, 40, 0, 0);
+    private Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            // Update all dynamic parts of code
+            displayDeviceGeneralStatus();
+            ramLayout.update();
+            cpuUsageLayout.update();
+            cpuTemperatureLayout.update();
+            governorLayout.update();
+            batteryStatusLayout.update();
+            // Update each core
+            for (int i = 0; i < cores; i++) {
+                circularCpuStatuses.get(i).update();
+            }
 
-		paramsMem = new LinearLayout.LayoutParams(
-				android.view.ViewGroup.LayoutParams.FILL_PARENT, 60);
-		paramsMem.setMargins(20, 40, 20, 0);
+            // Call again the same method
+            startRunnableMethod();
+        }
+    };
 
-		// Linear layout params for layout
-		LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-				android.view.ViewGroup.LayoutParams.FILL_PARENT, 120);
-		layoutParams.topMargin = 10;
+    public void startRunnableMethod() {
+        handler.postDelayed(runnable, 2000);
+    }
 
-		statusGovernorParams = new LinearLayout.LayoutParams(
-				android.view.ViewGroup.LayoutParams.MATCH_PARENT,
-				android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1.0f);
+    private void displayDeviceGeneralInfo(){
+        TextView textCodeName = (TextView) findViewById(R.id.codename);
+        textCodeName.setText(DeviceInfo.codeName);
+        TextView textDevice = (TextView) findViewById(R.id.device);
+        textDevice.setText(DeviceInfo.device);
+        TextView textKernel = (TextView) findViewById(R.id.kernel);
+        textKernel.setText(DeviceInfo.kernel);
+        TextView textBrand = (TextView) findViewById(R.id.brand);
+        textBrand.setText(DeviceInfo.brand);
+    }
 
-		displayGovernorParams = new LinearLayout.LayoutParams(
-				android.view.ViewGroup.LayoutParams.MATCH_PARENT,
-				android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1.0f);
+    private void displayTotalCpuCores(){
+        TextView totalCpuCores = (TextView) findViewById(R.id.cores);
+        totalCpuCores.setText("Total Cores: " + cores);
+    }
 
-		// display standard device info like kernel, os etc.
-		TextView textCodeName = (TextView) findViewById(R.id.codename);
-		textCodeName.setText(DeviceInfo.codeName);
-		TextView textDevice = (TextView) findViewById(R.id.device);
-		textDevice.setText(DeviceInfo.device);
-		TextView textKernel = (TextView) findViewById(R.id.kernel);
-		textKernel.setText(DeviceInfo.kernel);
-		TextView textBrand = (TextView) findViewById(R.id.brand);
-		textBrand.setText(DeviceInfo.brand);
-		// *************************************************
+    private void displayCpuStatuses(){
+        /*
+         * Create an instance of CircuralCpuStatus for every core.
+         * Display every core as a circle with percentage in main layout
+         */
+        for (int i = 0; i < cores; i++) {
+            circularCpuStatuses.add(i, new CircularCpuStatus(this, i));
+            cpuStatusLL.addView(circularCpuStatuses.get(i).getLayout());
+        }
+        // Add to the main layout
+        cpuStatusesLL.addView(cpuStatusLL);
+    }
 
-		// Total cpu cores
-		totalCpuCores = (TextView) findViewById(R.id.cores);
-		totalCpuCores.setText("Total Cores: " + cores);
+    /*
+     * This function also used for update
+     */
+    private void displayDeviceGeneralStatus(){
+        currentMinFreq.setText("Current Min Freq: " + getTargetString("scaling_min_freq") + " KHz");
+        currentMaxFreq.setText("Current Max Freq: " + getTargetString("scaling_max_freq") + " KHz");
+        scalingCurrentFreq.setText("Current Min Freq: " + getTargetString("scaling_cur_freq") + " KHz");
+    }
 
-		// Initialize progress bars
-		textViewList = new ArrayList<TextView>(cores);
-		circleProgressBars = new ArrayList<MiscProgressBar>(cores);
-		totalCpuLineProgressBar = new MiscProgressBar(this,
-				R.drawable.lineprogressbar, paramsLineMem);
-		memoryUsageProgressBar = new MiscProgressBar(this,
-				R.drawable.lineprogressbar, paramsLineMem);
-		batteryTempProgressBar = new MiscProgressBar(this,
-				R.drawable.lineprogressbar, paramsLineMem);
-		cpuTempProgressBar = new MiscProgressBar(this,
-				R.drawable.lineprogressbar, paramsLineMem);
+    private void displayCpuTemperature(){
+        cpuStatusesLL.addView(cpuTemperatureLayout.getLayout());
+    }
 
-		// Memory stats
-		LinearLayout memoryLayout = new LinearLayout(this);
-		memoryLayout.setOrientation(LinearLayout.VERTICAL);
-		memoryLayout.setLayoutParams(paramsMem);
-		memoryUsage = new TextView(this);
-		memoryUsage.setTextColor(Color.WHITE);
-		memoryUsage.setText("Mem Usage: " + ("0 / " + totalMemory + "MB"));
-		memoryUsage.setLayoutParams(paramWith2Lines);
-		memoryUsageProgressBar.max((int) totalMemory);
-		memoryUsageProgressBar.setCurrentProgress(0);
-		memoryLayout.addView(memoryUsage);
-		memoryLayout.addView(memoryUsageProgressBar);
-		lcpuInfo.addView(memoryLayout);
-		// *************************************************************
+    private void displayRam(){
+        cpuStatusesLL.addView(ramLayout.getLayout());
+    }
 
-		// Total cpu usage
-		LinearLayout totalCpuLayout = new LinearLayout(this);
-		totalCpuLayout.setOrientation(LinearLayout.VERTICAL);
-		totalCpuLayout.setLayoutParams(paramsMem);
-		totalCpu = new TextView(this);
-		totalCpu.setTypeface(Typeface.MONOSPACE);
-		totalCpu.setLayoutParams(paramWith2Lines);
-		totalCpu.setTextColor(Color.WHITE);
-		totalCpu.setTextSize(15);
-		totalCpu.setText("Cpu Usage: ");
-		totalCpuLineProgressBar.max(100);
-		totalCpuLineProgressBar.setCurrentProgress(0);
-		totalCpuLayout.addView(totalCpu);
-		totalCpuLayout.addView(totalCpuLineProgressBar);
-		lcpuInfo.addView(totalCpuLayout);
-		// ****************************************************
+    private void displayCpuUsage(){
+        cpuStatusesLL.addView(cpuUsageLayout.getLayout());
+    }
 
-		/*
-		 * Create Linearlayout view about cpu stats & governor Status and
-		 * governor layouts are vertical, put them together in horizontal
-		 * layout.
-		 */
+    private void displayGovernor(){
+        cpuStatusesLL.addView(governorLayout.getLayout());
+    }
 
-		LinearLayout statusLayout = new LinearLayout(this);
-		statusLayout.setOrientation(LinearLayout.VERTICAL);
+    private void displayBatteryStatuses(){
+        batteryStatusesLL.addView(batteryStatusLayout.getLayout());
+    }
 
-		// Create text views about cpu status
-		for (int i = 0; i < cores; i++) {
-			// Create every time a new linear layout in order to have a
-			// new line.
-			LinearLayout layout = new LinearLayout(this);
-			layout.setOrientation(LinearLayout.HORIZONTAL);
-			layout.setLayoutParams(layoutParams);
+    private void displaySeparateLine(){
+        LinearLayout.LayoutParams separateLine = new LinearLayout.LayoutParams(
+                android.view.ViewGroup.LayoutParams.FILL_PARENT, 1);
+        separateLine.topMargin = 10;
+        View separateL = new View(this);
+        separateL.setLayoutParams(separateLine);
+        separateL.setBackgroundColor(Color.rgb(237, 218, 116));
+        cpuStatusesLL.addView(separateL);
+    }
 
-			textViewList.add(i, new TextView(this));
-			textViewList.get(i).setTypeface(Typeface.MONOSPACE);
-			textViewList.get(i).setLayoutParams(params1);
-			textViewList.get(i).setTextColor(Color.WHITE);
-			textViewList.get(i).setTextSize(15);
-			textViewList.get(i).setText("Core " + i + ": ");
-			layout.addView(textViewList.get(i));
+    private String getTargetString(String targetString){
+        String str = null;
+        try{
+            str = ReadFile.getStringOfFile(ReadFile.findFilePath(targetString,this));
+        } catch (NullPointerException e){
+            e.printStackTrace();
+            str = "Unknown";
+        }
+        return str;
+    }
 
-			circleProgressBars.add(i, new MiscProgressBar(this,
-					R.drawable.ringprogressbar, paramsCircle));
-			circleProgressBars.get(i).max(100);
-			circleProgressBars.get(i).rotation(110);
-			circleProgressBars.get(i).setCurrentProgress(0);
-			layout.addView(circleProgressBars.get(i));
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
-			statusLayout.addView(layout);
-		}
+    @Override
+    protected void onPause() {
+        super.onPause();
+        synchronized (this) {
+            if (batteryStatusLayout.batteryStat.battery_receiver != null) {
+                unregisterReceiver(batteryStatusLayout.batteryStat.battery_receiver);
+            }
+        }
+    }
 
-		LinearLayout govLayout = new LinearLayout(this);
-		govLayout.setOrientation(LinearLayout.HORIZONTAL);
-		govLayout.setLayoutParams(displayGovernorParams);
-
-		currentGovernor = new TextView(this);
-		currentGovernor.setTextSize(20);
-		currentGovernor.setX(225);
-		currentGovernor.setTextColor(Color.rgb(188, 198, 204));
-		currentGovernor.setText(CpuGovernors.getCurrentGovernor(this)
-				.toUpperCase());
-
-		RotateAnimation rotate = (RotateAnimation) AnimationUtils
-				.loadAnimation(this, R.drawable.rotateanimation);
-		currentGovernor.setAnimation(rotate);
-
-		govLayout.addView(currentGovernor);
-
-		LinearLayout statusGovLayout = new LinearLayout(this);
-		statusGovLayout.setOrientation(LinearLayout.HORIZONTAL);
-		statusGovLayout.setLayoutParams(statusGovernorParams);
-		statusGovLayout.addView(statusLayout);
-		statusGovLayout.addView(govLayout);
-
-		lcpuInfo.addView(statusGovLayout);
-
-		// Display cpu temperature
-		LinearLayout cpuTempLayout = new LinearLayout(this);
-		cpuTempLayout.setOrientation(LinearLayout.VERTICAL);
-		cpuTempLayout.setLayoutParams(paramsMem);
-		cpuTemp = new TextView(this);
-		cpuTemp.setTextColor(Color.WHITE);
-		cpuTemp.setTypeface(Typeface.MONOSPACE);
-		cpuTemp.setTextSize(15);
-		cpuTemp.setLayoutParams(paramWith2Lines);
-		cpuTempProgressBar.max(100);
-		cpuTempProgressBar.setCurrentProgress(0);
-		cpuTempLayout.addView(cpuTemp);
-		cpuTempLayout.addView(cpuTempProgressBar);
-		displayCpuTemp();
-		lcpuInfo.addView(cpuTempLayout);
-
-		// Display a separate line
-		View separateL = new View(this);
-		separateL.setLayoutParams(separateLine);
-		separateL.setBackgroundColor(Color.rgb(237, 218, 116));
-		lcpuInfo.addView(separateL);
-
-		// Display Battery Status Title
-		LinearLayout setCenter = new LinearLayout(this);
-		setCenter.setOrientation(1); // 1 means vertical
-		setCenter.setLayoutParams(titles);
-
-		batteryStats = new TextView(this);
-		batteryStats.setTextColor(Color.rgb(188, 198, 204));
-		batteryStats.setTypeface(Typeface.SANS_SERIF, Typeface.BOLD);
-		batteryStats.setGravity(Gravity.CENTER);
-		batteryStats.setTextSize(25);
-		batteryStats.setLayoutParams(titles);
-		batteryStats.setText(R.string.BatteryStatus);
-		setCenter.addView(batteryStats);
-		lcpuInfo.addView(setCenter);
-
-		// Battery misc stats
-		batteryStat = new BatteryStat(this);
-		LinearLayout setCenterMisc = new LinearLayout(this);
-		setCenter.setOrientation(1); // 1 means vertical
-		setCenter.setLayoutParams(titles);
-
-		batteryMiscStats = new TextView(this);
-		batteryMiscStats.setTextColor(Color.rgb(86, 165, 236));
-		batteryMiscStats.setTypeface(Typeface.SANS_SERIF);
-		batteryMiscStats.setGravity(Gravity.CENTER);
-		batteryMiscStats.setTextSize(15);
-		batteryMiscStats.setLayoutParams(titles);
-		setCenterMisc.addView(batteryMiscStats);
-		displayBatteryStats();
-		lcpuInfo.addView(setCenterMisc);
-
-		// Battery temperature stat
-		LinearLayout batteryTempLayout = new LinearLayout(this);
-		batteryTempLayout.setOrientation(LinearLayout.VERTICAL);
-		batteryTempLayout.setLayoutParams(paramsMem);
-		batteryTempStat = new TextView(this);
-		batteryTempStat.setTextColor(Color.WHITE);
-		batteryTempStat.setTypeface(Typeface.MONOSPACE);
-		batteryTempStat.setTextSize(15);
-		batteryTempStat.setLayoutParams(paramWith2Lines);
-		batteryTempProgressBar.max(100);
-		batteryTempProgressBar.setCurrentProgress(0);
-		batteryTempLayout.addView(batteryTempStat);
-		batteryTempLayout.addView(batteryTempProgressBar);
-		displayBatteryTemp();
-		lcpuInfo.addView(batteryTempLayout);
-
-		startCpuStatus();
-		// *******************************************************************
-	}
-
-	private Runnable runnable = new Runnable() {
-		@Override
-		public void run() {
-			ArrayList<Integer> stats = new ArrayList<Integer>();
-			stats = cpuStats.toArrayList();
-
-			// update memory usage
-			long usageMem = memoryStat.getUsageMemory();
-			memoryUsage.setText("Mem Usage: "
-					+ (usageMem + " / " + totalMemory + "MB"));
-			memoryUsageProgressBar.setCurrentProgress((int) usageMem);
-
-			// update total cpu usage
-			int totalCpuUsage = stats.get(0);
-			totalCpu.setText("Cpu Usage: " + totalCpuUsage + "%");
-			totalCpuLineProgressBar.setCurrentProgress(totalCpuUsage);
-
-			// Update cpu's cores percentages and circle bar
-			int corePer;
-			for (int i = 0; i < cores; i++) {
-				corePer = stats.get(i + 1);
-				textViewList.get(i).setText("Core " + i + ": " + corePer + "%");
-				circleProgressBars.get(i).setCurrentProgress(corePer);
-			}
-
-			TextView currentMin = (TextView) findViewById(R.id.currentMin);
-			currentMin
-					.setText("Current Min Freq: "
-							+ ReadFile
-									.getStringOfFile("/sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq")
-							+ " KHz");
-
-			TextView currentMax = (TextView) findViewById(R.id.currentMax);
-			currentMax
-					.setText("Current Max Freq: "
-							+ ReadFile
-									.getStringOfFile("/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq")
-							+ " KHz");
-
-			TextView scalingCurrent = (TextView) findViewById(R.id.scalingCurrent);
-			scalingCurrent
-					.setText("Scaling Current Freq: "
-							+ ReadFile
-									.getStringOfFile("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq")
-							+ " KHz");
-
-			// Update cpu governor
-			currentGovernor.setText(CpuGovernors.getCurrentGovernor(cntx)
-					.toUpperCase());
-
-			// Update cpu temperature
-			displayCpuTemp();
-
-			// Update Battery stats
-			displayBatteryStats();
-			displayBatteryTemp();
-
-			if (started) {
-				startCpuStatus();
-			}
-		}
-	};
-
-	public void stopCpuStatus() {
-		started = false;
-		handler.removeCallbacks(runnable);
-	}
-
-	public void startCpuStatus() {
-		started = true;
-		handler.postDelayed(runnable, 2000);
-	}
-
-	private void displayCpuTemp() {
-		try {
-			int cpuT = Integer.parseInt(ReadFile
-					.getStringOfFile("/sys/class/thermal/thermal_zone0/temp"));
-			cpuTemp.setText("Cpu Temp: " + String.valueOf(cpuT) + " \u00b0C");
-			cpuTempProgressBar.setCurrentProgress(cpuT);
-		} catch (NumberFormatException n) {
-			cpuTemp.setText("Cpu Temp: doesn't supported!");
-			cpuTempProgressBar.setCurrentProgress(0);
-			n.printStackTrace();
-		}
-	}
-
-	private void displayBatteryStats() {
-		String batMiscStats = "";
-		if (batteryStat.isPresent) {
-			batMiscStats += "Level: " + batteryStat.level + "% \n";
-			batMiscStats += "Battery Plugged in : "
-					+ batteryStat.getPlugTypeString(batteryStat.plugged) + "\n";
-			batMiscStats += "Voltage = " + batteryStat.voltage + " mV";
-			batMiscStats += " Health: "
-					+ batteryStat.getHealthString(batteryStat.health) + "\n";
-			batMiscStats += "Status: "
-					+ batteryStat.getStatusString(batteryStat.status);
-		} else {
-			batMiscStats = "Battery not present!!!";
-		}
-		batteryMiscStats.setText(batMiscStats);
-	}
-
-	private void displayBatteryTemp() {
-		String batteryTemp = "";
-		float bTemp = (float) batteryStat.temperature / 10;
-		if (batteryStat.isPresent) {
-			batteryTemp = "Battery Temperature: " + bTemp + " \u00b0C \n";
-			batteryTempProgressBar.setCurrentProgress(Math.round(bTemp));
-		} else {
-			batteryTemp = "Battery not present!!!";
-		}
-		batteryTempStat.setText(batteryTemp);
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		// Respond to the action bar's Up/Home button
-		case android.R.id.home:
-			NavUtils.navigateUpFromSameTask(this);
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
-
-	@Override
-	protected void onPause() {
-		super.onPause();
-		synchronized (this) {
-			if (batteryStat.battery_receiver != null) {
-				unregisterReceiver(batteryStat.battery_receiver);
-			}
-		}
-	}
-
-	@Override
-	public void onResume() {
-		super.onResume();
-		IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
-		registerReceiver(batteryStat.battery_receiver, filter);
-	}
+    @Override
+    public void onResume() {
+        super.onResume();
+        IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+        registerReceiver(batteryStatusLayout.batteryStat.battery_receiver, filter);
+    }
 }

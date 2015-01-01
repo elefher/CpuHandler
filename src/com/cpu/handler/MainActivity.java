@@ -47,8 +47,6 @@ public class MainActivity extends Activity {
 
 		items = new ArrayList<String>();
 		items.add("INFO");
-		// Test Code
-		items.add("INFO 2");
 		items.add("CONTROL CPU");
 		/*
 		 * Check if Gpu features exists in kernel
@@ -87,10 +85,6 @@ public class MainActivity extends Activity {
 							.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
 				else if ("MISC TOOLS".equals(items.get(position)))
 					startActivity(new Intent().setClass(that, MiscTools.class)
-							.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
-				//Test Code
-				else if ("INFO 2".equals(items.get(position)))
-					startActivity(new Intent().setClass(that, InfoRemake.class)
 							.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
 				else if (position >= 4)
 					System.out.println("bigger than 4");

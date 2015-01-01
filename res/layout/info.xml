@@ -1,74 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#504A4B" >
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#504A4B">
 
+    <!-- Screen Design for Info tab -->
     <LinearLayout
-        android:id="@+id/cpuInfo"
-        style="@style/Content" >
-
+            android:id="@+id/content"
+            style="@style/Content">
         <!--<fragment
                 android:id="@+id/adFragment"
                 android:name="com.elefher.advertisements.BannerAdvertisement"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true" />-->
-
-        <!-- Screen Design for Info tab -->
+                android:layout_alignParentBottom="true"/>-->
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
             <TextView
-                android:id="@+id/device"
-                style="@style/GeneralInfo" />
+                    android:id="@+id/device"
+                    style="@style/GeneralInfo"/>
 
             <TextView
-                android:id="@+id/codename"
-                style="@style/GeneralInfo" />
+                    android:id="@+id/codename"
+                    style="@style/GeneralInfo"/>
 
             <TextView
-                android:id="@+id/kernel"
-                style="@style/GeneralInfo" />
+                    android:id="@+id/kernel"
+                    style="@style/GeneralInfo"/>
 
             <TextView
-                android:id="@+id/brand"
-                style="@style/GeneralInfo" />
+                    android:id="@+id/brand"
+                    style="@style/GeneralInfo"/>
         </LinearLayout>
 
         <View
-            android:id="@+id/separate"
-            style="@style/SeparateLine"
-            android:orientation="horizontal" />
+                style="@style/SeparateLine"
+                android:orientation="horizontal"/>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
             <TextView
-                android:id="@+id/text"
-                style="@style/titles"
-                android:text="@string/DeviceStatus" />
+                    android:id="@+id/text"
+                    style="@style/titles"
+                    android:text="@string/DeviceStatus"/>
 
             <TextView
-                android:id="@+id/cores"
-                style="@style/CpuStats" />
+                    android:id="@+id/cores"
+                    style="@style/CpuStats"/>
 
             <TextView
-                android:id="@+id/currentMin"
-                style="@style/CpuStats" />
+                    android:id="@+id/currentMin"
+                    style="@style/CpuStats"/>
 
             <TextView
-                android:id="@+id/currentMax"
-                style="@style/CpuStats" />
+                    android:id="@+id/currentMax"
+                    style="@style/CpuStats"/>
 
             <TextView
-                android:id="@+id/scalingCurrent"
-                style="@style/CpuStats" />
+                    android:id="@+id/scalingCurrent"
+                    style="@style/CpuStats"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/dynamic_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TextView
+                    style="@style/titles"
+                    android:text="@string/BatteryStatus"/>
+
+            <TextView
+                    android:id="@+id/batteryMiscStats"
+                    style="@style/CpuStats"/>
+
+            <LinearLayout
+                    android:id="@+id/batteryStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

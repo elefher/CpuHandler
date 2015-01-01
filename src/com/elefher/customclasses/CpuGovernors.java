@@ -9,7 +9,6 @@ import org.json.JSONException;
 import android.content.Context;
 import android.util.Log;
 
-import com.elefher.tab.Info;
 import com.elefher.utils.CpuUtils;
 import com.elefher.utils.ReadFile;
 
@@ -46,10 +45,11 @@ public class CpuGovernors {
 			return false;
 		
 		String scaling_governor = findFilePath("scaling_governor", cntx);
+		int cores = CpuStat.getNumCores();
 		try {
 			List<String> commands = new ArrayList<String>();
 
-			for (int i = 0; i < Info.cores; i++) {
+			for (int i = 0; i < cores; i++) {
 				/*
 				 * Prepare permissions so that we can write
 				 */

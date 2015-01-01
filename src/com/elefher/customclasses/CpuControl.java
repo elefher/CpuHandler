@@ -88,10 +88,11 @@ public class CpuControl {
 		
 		String scaling_min_freq = findFilePath("scaling_min_freq", cntx);
 		String scaling_max_freq = findFilePath("scaling_max_freq", cntx);
+		int cores = CpuStat.getNumCores();
 		try {
 			List<String> commands = new ArrayList<String>();
 
-			for (int i = 0; i < Info.cores; i++) {
+			for (int i = 0; i < cores; i++) {
 				/*
 				 * Prepare permissions so that we can write
 				 */
