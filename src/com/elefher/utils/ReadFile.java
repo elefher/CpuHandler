@@ -12,7 +12,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Context;
-import android.util.Log;
 
 public class ReadFile {
 
@@ -44,9 +43,9 @@ public class ReadFile {
 
 		int jsonPathsLength = jsonPaths.length();
 		ArrayList<String> pathList = new ArrayList<String>();
-		
+
 		for (int i = 0; i < jsonPathsLength; i++) {
-			// check if searchPath is equal with object  
+			// check if searchPath is equal with object
 			if(jsonPaths.getJSONObject(i).names().toString().toLowerCase().indexOf(searchPath) != -1){
 				// Store every value from array to an ArrayList
 				JSONArray jArr = jsonPaths.getJSONObject(i).getJSONArray(searchPath);
@@ -76,7 +75,7 @@ public class ReadFile {
 		}
 		return json;
 	}
-	
+
 	public static String existPath(ArrayList<String> paths){
 		int pathsSize = paths.size();
 		for(int i = 0; i < pathsSize; i++){

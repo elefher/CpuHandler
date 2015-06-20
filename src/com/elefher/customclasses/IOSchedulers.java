@@ -23,13 +23,16 @@ public class IOSchedulers {
 	public static String[] getAvailableIOSchedules() {
 		String[] ioSchedulers = CpuUtils.readStringArray(ioscheduler);
 		int SchedulesLength = ioSchedulers.length;
-		if (ioSchedulers != null) {
-			for (int i = 0; i < SchedulesLength; i++) {
-				if (ioSchedulers[i].charAt(0) == '[') {
-					ioSchedulers[i] = ioSchedulers[i].substring(1,
-							ioSchedulers[i].length() - 1);
-					break;
-				}
+
+		if (ioSchedulers == null || SchedulesLength > 0) {
+			return null;
+		}
+
+		for (int i = 0; i < SchedulesLength; i++) {
+			if (ioSchedulers[i].charAt(0) == '[') {
+				ioSchedulers[i] = ioSchedulers[i].substring(1,
+						ioSchedulers[i].length() - 1);
+				break;
 			}
 		}
 
@@ -41,12 +44,14 @@ public class IOSchedulers {
 		String currentIO = null;
 		int IOLength = IOS.length;
 
-		if (IOS != null) {
-			for (int i = 0; i < IOLength; i++) {
-				if (IOS[i].charAt(0) == '[') {
-					currentIO = IOS[i].substring(1, IOS[i].length() - 1);
-					break;
-				}
+		if (IOS == null || IOLength > 0) {
+			return null;
+		}
+
+		for (int i = 0; i < IOLength; i++) {
+			if (IOS[i].charAt(0) == '[') {
+				currentIO = IOS[i].substring(1, IOS[i].length() - 1);
+				break;
 			}
 		}
 		return currentIO;
@@ -119,7 +124,7 @@ public class IOSchedulers {
 		}
 		return null;
 	}
-	
+
 	/*
 	 * This function sets the cache of the sdcard in kb/s
 	 */
