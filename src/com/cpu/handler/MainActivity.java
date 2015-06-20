@@ -1,5 +1,7 @@
 package com.cpu.handler;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -9,18 +11,25 @@ import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
 import android.util.Log;
-import android.view.*;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.TextView;
+
 import com.elefher.customclasses.CpuGpuFreqVoltages;
 import com.elefher.customclasses.Gpu;
-import com.elefher.tab.*;
+import com.elefher.tab.ControlCpu;
+import com.elefher.tab.ControlGpu;
+import com.elefher.tab.Info;
+import com.elefher.tab.MiscTools;
+import com.elefher.tab.Voltages;
+import com.elefher.utils.RootUtil;
 import com.startapp.android.publish.StartAppAd;
 import com.startapp.android.publish.StartAppSDK;
-
-import java.util.ArrayList;
 
 public class MainActivity extends Activity {
 
@@ -41,6 +50,12 @@ public class MainActivity extends Activity {
 	@Override
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
+		// Check if the device is ROOT
+		boolean isRoot = checkIfDeviceIsRoot();
+		if (!isRoot){
+			displayRootMessageExit();
+		}
+
 		// Used for ads by StartApp
 		StartAppSDK.init(this, "112840346", "212530724", true);
 		setContentView(R.layout.activity_main);
@@ -93,7 +108,6 @@ public class MainActivity extends Activity {
 				else if (position >= 4)
 					System.out.println("bigger than 4");
 			}
-
 		});
 	}
 
@@ -130,6 +144,30 @@ public class MainActivity extends Activity {
 			}
 		});
 
+		alert.show();
+	}
+
+	private boolean checkIfDeviceIsRoot(){
+		RootUtil rootUtil = new RootUtil();
+		return rootUtil.isDeviceRooted();
+	}
+
+	private void displayRootMessageExit(){
+		AlertDialog.Builder alert = new AlertDialog.Builder(this);
+
+		final TextView message = new TextView(this);
+		final SpannableString s = new SpannableString(getText(R.string.errorMessage));
+		message.setText(s);
+
+		alert.setTitle("ROOT access:");
+		alert.setView(message);
+
+		alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int whichButton) {
+				finish();
+			}
+		});
 		alert.show();
 	}
 

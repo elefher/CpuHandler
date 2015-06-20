@@ -67,5 +67,6 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <a href="http://www.gnu.org/licenses">http://www.gnu.org/licenses</a>.\n\n
 Contact Email: eldelielev@gmail.com</string>
+    <string name="errorMessage">This App requires ROOT PERMISSIONS to work.\n\nThis device does not have proper ROOT access!</string>
 
 </resources>
