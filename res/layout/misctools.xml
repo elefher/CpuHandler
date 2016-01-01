@@ -74,7 +74,6 @@
             </LinearLayout>
 
             <View
-                android:id="@+id/separate"
                 style="@style/SeparateLine"
                 android:orientation="horizontal" />
         </LinearLayout>
@@ -108,7 +107,6 @@
                     android:orientation="horizontal" >
 
                     <TextView
-                        android:id="@+id/powerSavingsText"
                         style="@style/minTitleText"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -138,7 +136,6 @@
             </LinearLayout>
 
             <View
-                android:id="@+id/separate"
                 style="@style/SeparateLine"
                 android:orientation="horizontal" />
         </LinearLayout>
@@ -172,7 +169,6 @@
                     android:orientation="horizontal" >
 
                     <TextView
-                        android:id="@+id/powerSavingsText"
                         style="@style/minTitleText"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -198,7 +194,6 @@
             </LinearLayout>
 
             <View
-                android:id="@+id/separate"
                 style="@style/SeparateLine"
                 android:orientation="horizontal" />
         </LinearLayout>
@@ -232,7 +227,6 @@
                     android:orientation="horizontal" >
 
                     <TextView
-                        android:id="@+id/powerSavingsText"
                         style="@style/minTitleText"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -258,7 +252,6 @@
             </LinearLayout>
 
             <View
-                android:id="@+id/separate"
                 style="@style/SeparateLine"
                 android:orientation="horizontal" />
         </LinearLayout>
@@ -277,7 +270,6 @@
                 android:text="Screen Wake Control" />
 
             <View
-                android:id="@+id/separate"
                 style="@style/SeparateLine"
                 android:orientation="horizontal" />
         </LinearLayout>
