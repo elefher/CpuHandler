@@ -45,7 +45,7 @@ public class CpuUsageLinearLayout extends CustomLinearLayoutOnTheFly {
     @Override
     public void layoutParams() {
         layoutParams = new LinearLayout.LayoutParams(
-                android.view.ViewGroup.LayoutParams.FILL_PARENT, 60);
+                android.view.ViewGroup.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         layoutParams.setMargins(20, 40, 20, 0);
     }
 
@@ -62,7 +62,7 @@ public class CpuUsageLinearLayout extends CustomLinearLayoutOnTheFly {
     @Override
     public void textViewParams() {
         textViewParams = new LinearLayout.LayoutParams(
-                android.view.ViewGroup.LayoutParams.FILL_PARENT, 50);
+                android.view.ViewGroup.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
     }
 
     @Override

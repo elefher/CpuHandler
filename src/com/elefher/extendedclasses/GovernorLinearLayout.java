@@ -53,7 +53,7 @@ public class GovernorLinearLayout extends CustomLinearLayoutOnTheFly {
     @Override
     public void textViewParams() {
         textViewParams = new LinearLayout.LayoutParams(
-                android.view.ViewGroup.LayoutParams.FILL_PARENT, 50);
+                android.view.ViewGroup.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         textViewParams.setMargins(20, 20, 0, 0);
     }
 

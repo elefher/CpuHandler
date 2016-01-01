@@ -39,8 +39,8 @@ public class CpuTemperatureLinearLayout extends CustomLinearLayoutOnTheFly {
     @Override
     public void layoutParams() {
         layoutParams = new LinearLayout.LayoutParams(
-                android.view.ViewGroup.LayoutParams.FILL_PARENT, 60);
-        layoutParams.setMargins(20, 40, 20, 0);
+                android.view.ViewGroup.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        layoutParams.setMargins(20, 80, 20, 0);
     }
 
     @Override
@@ -56,7 +56,7 @@ public class CpuTemperatureLinearLayout extends CustomLinearLayoutOnTheFly {
     @Override
     public void textViewParams() {
         textViewParams = new LinearLayout.LayoutParams(
-                android.view.ViewGroup.LayoutParams.FILL_PARENT, 50);
+                android.view.ViewGroup.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
     }
 
     @Override
@@ -83,8 +83,9 @@ public class CpuTemperatureLinearLayout extends CustomLinearLayoutOnTheFly {
         String str = null;
         try{
             str = ReadFile.getStringOfFile(ReadFile.findFilePath("temp", cntx));
-            progressBar.setCurrentProgress(Integer.parseInt(str));
-            textView.setText("Cpu Temp: " + str + " \u00b0C");
+            float tempVal = Integer.parseInt(str) / 1000;
+            progressBar.setCurrentProgress((int)tempVal);
+            textView.setText("Cpu Temp: " + tempVal + " \u00b0C");
         } catch (NullPointerException e){
             e.printStackTrace();
             progressBar.setCurrentProgress(0);
