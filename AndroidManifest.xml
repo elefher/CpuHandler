@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cpu.handler"
+<<<<<<< HEAD
     android:versionCode="7"
     android:versionName="1.6" >
+=======
+    android:versionCode="8"
+    android:versionName="1.7" >
+>>>>>>> 441907256af9d33a5a58a84c22a017984b8c4402
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -15,7 +20,7 @@
 
     <uses-sdk
         android:minSdkVersion="14"
-        android:targetSdkVersion="22" />
+        android:targetSdkVersion="23" />
 
     <application
         android:allowBackup="true"
